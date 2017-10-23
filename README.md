@@ -10,7 +10,7 @@ Return xpath and regularexpression triggered responses to specific request.
 * SQL Server or SQLite database support.
 * XSLT support with the request message as input.
 
-#Defaults
+# Defaults
 Out of the box the service retrieves its data from the dbstub.db SQLite database.
 Default endpoints are :
 - Socket : 0.0.0.0:8008 
@@ -20,7 +20,7 @@ Default endpoints are :
 
 Start the service by running `dotnet dBosque.Stub.Standalone.dll -o`
 
-#How it works
+# How it works
 Each message send to one of the endpoinst is parsed to determine the namespace and rootnode.
 Based upon the namespace and rootnode a template is located.
 In case templates exist for the given namespace and rootnode the complete request message is parsed to see if any xpath expression, as defined in the template, match the request message.
