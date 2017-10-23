@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>C:\Source\core\stub\dBosque.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoCommon.cs" Link="AssemblyInfoCommon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\AnalyzerSettings\AnalyzerSettings.json" Link="AnalyzerSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XmlGenerator\Readme.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="NSwag.Core" Version="11.8.3" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj" />
+    <ProjectReference Include="..\dBosque.Stub.Repository\dBosque.Stub.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

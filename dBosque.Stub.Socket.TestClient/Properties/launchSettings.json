@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dBosque.Stub.Socket.TestClient": {
+      "commandName": "Project",
+      "commandLineArgs": "localhost 8008"
+    }
+  }
+}

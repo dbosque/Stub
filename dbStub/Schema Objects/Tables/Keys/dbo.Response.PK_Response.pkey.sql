@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Response] ADD CONSTRAINT [PK_Response] PRIMARY KEY CLUSTERED  ([ResponseID]) ON [PRIMARY]
+
+

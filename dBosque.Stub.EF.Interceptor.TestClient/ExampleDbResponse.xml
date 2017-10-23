@@ -1,0 +1,26 @@
+﻿<DS xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:schema>
+		<xsd:element name="MessageType">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="MessageTypeID" type="xsd:int"/>
+					<xsd:element name="Namespace" type="xsd:string"/>
+					<xsd:element name="Rootnode" type="xsd:string"/>
+					<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="PassthroughEnabled" type="xsd:boolean"/>
+					<xsd:element name="PassthroughUrl" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Sample" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<MessageType>
+		<MessageTypeID>1</MessageTypeID>
+		<Namespace>tempnamepsace</Namespace>
+		<Rootnode>temprootnode</Rootnode>
+		<Description>asdkjl</Description>
+		<PassthroughEnabled>true</PassthroughEnabled>
+		<PassthroughUrl />
+		<Sample />
+	</MessageType>
+</DS>

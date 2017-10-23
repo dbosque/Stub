@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Request] ADD CONSTRAINT [PK_Request] PRIMARY KEY CLUSTERED  ([RequestID]) ON [PRIMARY]
+
+

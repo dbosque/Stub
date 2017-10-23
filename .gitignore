@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*/bin
+*/obj
+/dBosque.Stub.Standalone/data/logs
+/packages/*
+/dbStub/dbStub.jfm
+/dbStub/dbStub.dbmdl
+/.vs/*

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27EB1D92-EA65-4093-B0CF-77E7C9B83074}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dBosque.Stub.Plugin.Runner</RootNamespace>
+    <AssemblyName>dBosque.Stub.Plugin.Runner</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\dBosque.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DockPanelSuite">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog">
+      <Version>2.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Settings.Configuration">
+      <Version>2.4.0</Version>
+    </PackageReference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoCommon.cs">
+      <Link>Properties\AssemblyInfoCommon.cs</Link>
+    </Compile>
+    <Compile Include="LoggerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoggerInfo.Designer.cs">
+      <DependentUpon>LoggerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogMessage.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Runner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dBosque.Stub.AspNet.Host\dBosque.Stub.AspNet.Host.csproj">
+      <Project>{cb97b1ab-5603-411c-9501-978818f2c6b4}</Project>
+      <Name>dBosque.Stub.AspNet.Host</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.Editor.Interfaces\dBosque.Stub.Editor.Interfaces.csproj">
+      <Project>{b7ea29f2-45d6-4618-bde0-f0d052f5bee4}</Project>
+      <Name>dBosque.Stub.Editor.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj">
+      <Project>{6cac28e5-79d9-4850-8eab-3a1852e1bf65}</Project>
+      <Name>dBosque.Stub.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.Repository.Interfaces\dBosque.Stub.Repository.Interfaces.csproj">
+      <Project>{4b777b12-1723-4f91-8029-d37cdf34a3ef}</Project>
+      <Name>dBosque.Stub.Repository.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.Repository\dBosque.Stub.Repository.csproj">
+      <Project>{492587F0-4C0F-46EE-842D-554B0FF333CF}</Project>
+      <Name>dBosque.Stub.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.Services\dBosque.Stub.Services.csproj">
+      <Project>{8acf207a-e632-435a-9930-d18307d073d1}</Project>
+      <Name>dBosque.Stub.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.Sockets\dBosque.Stub.Sockets.csproj">
+      <Project>{a6d29ded-ec65-4dcc-81d8-c3017afb6bea}</Project>
+      <Name>dBosque.Stub.Sockets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.WCF\dBosque.Stub.WCF.csproj">
+      <Project>{788858c2-71d8-4375-afdb-b7cb44b84dc2}</Project>
+      <Name>dBosque.Stub.WCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.WebApi.Configuration\dBosque.Stub.WebApi.Configuration.csproj">
+      <Project>{eb0b5103-45ee-4f1d-9ac5-c8e197601f8e}</Project>
+      <Name>dBosque.Stub.WebApi.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dBosque.Stub.WebApi\dBosque.Stub.WebApi.csproj">
+      <Project>{abdb5ff1-1982-4b85-98ca-2a1db14dd99e}</Project>
+      <Name>dBosque.Stub.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoggerInfo.resx">
+      <DependentUpon>LoggerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup.resx">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\AnalyzerSettings\AnalyzerSettings.json">
+      <Link>AnalyzerSettings.json</Link>
+    </AdditionalFiles>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\LogMessage.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm-Error-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm-Tick-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm-Warning-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ic_clear_all_black_24dp.png" />
+    <Content Include="Resources\ic_highlight_off_black_24dp.png" />
+    <Content Include="Resources\ic_info_outline_black_24dp.png" />
+    <Content Include="Resources\ic_mail_black_24dp.png" />
+    <Content Include="Resources\ic_pause_black_24dp.png" />
+    <Content Include="Resources\ic_play_arrow_black_24dp.png" />
+    <Content Include="Resources\ic_report_problem_black_24dp.png" />
+    <Content Include="Resources\ic_stop_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\dBosque.SIG.RoslynAnalyzers.1.2.6477.22037\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

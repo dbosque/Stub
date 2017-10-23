@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Template] ADD CONSTRAINT [PK_Template] PRIMARY KEY CLUSTERED  ([TemplateID]) ON [PRIMARY]
+
+

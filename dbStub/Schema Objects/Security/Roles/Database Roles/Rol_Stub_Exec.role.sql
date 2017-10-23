@@ -1,0 +1,4 @@
+﻿CREATE ROLE [Rol_Stub_Exec]
+AUTHORIZATION [dbo]
+
+
