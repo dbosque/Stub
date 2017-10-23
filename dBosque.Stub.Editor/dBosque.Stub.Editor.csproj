@@ -3,10 +3,6 @@
   <PropertyGroup>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <BaseNuGetRuntimeIdentifier>win-x64</BaseNuGetRuntimeIdentifier>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -21,6 +17,10 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -161,9 +161,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Version.cs" />
-    <None Include="appsettings.json">
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <Compile Include="Controls\Behaviours\DragDropPasteContentEventArgs.cs" />
     <Compile Include="Controls\Behaviours\DragDropPasteBehaviour.cs" />
     <Compile Include="Controls\Behaviours\PeriodicEventBehaviour.cs" />
@@ -338,13 +338,10 @@
     <EmbeddedResource Include="Forms\TenantsForm.resx">
       <DependentUpon>TenantsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <AdditionalFiles Include="..\AnalyzerSettings\AnalyzerSettings.json">
-      <Link>AnalyzerSettings.json</Link>
-    </AdditionalFiles>
-    <None Include="..\dbstub.db">
+    <Content Include="..\dbstub.db">
       <Link>dbstub.db</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -376,9 +373,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="dBosque.Stub.Editor.Configuration.db">
+    <Content Include="dBosque.Stub.Editor.Configuration.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="Properties\DataSources\MessageType.datasource" />
     <None Include="Properties\DataSources\MessageTypeItem.datasource" />
     <None Include="Properties\DataSources\Stub.Repository.ConfigurationDb.Setting.datasource" />
@@ -403,37 +400,37 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icons\bw-openapi-spec.png" />
-    <Content Include="Icons\contacts.png" />
-    <Content Include="Icons\ic_add_circle_black_24dp.png" />
-    <Content Include="Icons\ic_cached_black_24dp.png" />
-    <Content Include="Icons\ic_check_black_24dp.png" />
-    <Content Include="Icons\ic_check_box_black_24dp.png" />
-    <Content Include="Icons\ic_check_box_outline_blank_black_24dp.png" />
-    <Content Include="Icons\ic_close_black_24dp.png" />
-    <Content Include="Icons\ic_cloud_download_black_24dp.png" />
-    <Content Include="Icons\ic_cloud_off_black_48dp.ico" />
-    <Content Include="Icons\ic_cloud_off_black_48dp.png" />
-    <Content Include="Icons\ic_cloud_off_white_48dp.ico" />
-    <Content Include="Icons\ic_cloud_off_white_48dp.png" />
-    <Content Include="Icons\ic_content_copy_black_24dp.png" />
-    <Content Include="Icons\ic_content_paste_black_24dp.png" />
-    <Content Include="Icons\ic_create_new_folder_black_24dp.png" />
-    <Content Include="Icons\ic_delete_forever_black_24dp.png" />
-    <Content Include="Icons\ic_drafts_black_24dp.png" />
-    <Content Include="Icons\ic_extension_black_24dp.png" />
-    <Content Include="Icons\ic_flag_black_24dp.png" />
-    <Content Include="Icons\ic_note_add_black_24dp.png" />
-    <Content Include="Icons\ic_remove_circle_black_24dp.png" />
-    <Content Include="Icons\ic_save_black_24dp.png" />
-    <Content Include="Icons\ic_select_all_black_24dp.png" />
-    <Content Include="Icons\ic_settings_black_24dp.png" />
-    <Content Include="Icons\ic_undo_black_24dp.png" />
-    <Content Include="Icons\if_world_115770.png" />
-    <Content Include="Icons\power-plug.png" />
+    <None Include="Icons\bw-openapi-spec.png" />
+    <None Include="Icons\contacts.png" />
+    <None Include="Icons\ic_add_circle_black_24dp.png" />
+    <None Include="Icons\ic_cached_black_24dp.png" />
+    <None Include="Icons\ic_check_black_24dp.png" />
+    <None Include="Icons\ic_check_box_black_24dp.png" />
+    <None Include="Icons\ic_check_box_outline_blank_black_24dp.png" />
+    <None Include="Icons\ic_close_black_24dp.png" />
+    <None Include="Icons\ic_cloud_download_black_24dp.png" />
+    <None Include="Icons\ic_cloud_off_black_48dp.ico" />
+    <None Include="Icons\ic_cloud_off_black_48dp.png" />
+    <None Include="Icons\ic_cloud_off_white_48dp.ico" />
+    <None Include="Icons\ic_cloud_off_white_48dp.png" />
+    <None Include="Icons\ic_content_copy_black_24dp.png" />
+    <None Include="Icons\ic_content_paste_black_24dp.png" />
+    <None Include="Icons\ic_create_new_folder_black_24dp.png" />
+    <None Include="Icons\ic_delete_forever_black_24dp.png" />
+    <None Include="Icons\ic_drafts_black_24dp.png" />
+    <None Include="Icons\ic_extension_black_24dp.png" />
+    <None Include="Icons\ic_flag_black_24dp.png" />
+    <None Include="Icons\ic_note_add_black_24dp.png" />
+    <None Include="Icons\ic_remove_circle_black_24dp.png" />
+    <None Include="Icons\ic_save_black_24dp.png" />
+    <None Include="Icons\ic_select_all_black_24dp.png" />
+    <None Include="Icons\ic_settings_black_24dp.png" />
+    <None Include="Icons\ic_undo_black_24dp.png" />
+    <None Include="Icons\if_world_115770.png" />
+    <None Include="Icons\power-plug.png" />
     <Content Include="ic_cloud_off_black_48dp.ico" />
     <Content Include="ic_cloud_off_white_48dp.ico" />
-    <Content Include="inspector.ico" />
+    <None Include="inspector.ico" />
     <None Include="Resources\ic_pause_black_24dp.png" />
     <None Include="Resources\ic_play_arrow_black_24dp.png" />
     <None Include="Resources\ic_mail_black_24dp.png" />
@@ -484,9 +481,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\dBosque.SIG.RoslynAnalyzers.1.2.6477.22037\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Appccelerate.EventBroker">

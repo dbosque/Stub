@@ -11,9 +11,6 @@
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="AssemblyInfoCommon.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <AdditionalFiles Include="..\AnalyzerSettings\AnalyzerSettings.json" Link="AnalyzerSettings.json" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.0" />

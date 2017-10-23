@@ -75,9 +75,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\AnalyzerSettings\AnalyzerSettings.json">
-      <Link>AnalyzerSettings.json</Link>
-    </AdditionalFiles>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

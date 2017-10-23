@@ -7,8 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Editor", "dBos
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C0B3C54-7C00-4561-8BBD-DE1DEFF4E8A1}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		AssemblyInfoCommon.cs = AssemblyInfoCommon.cs
 		dbstub.db = dbstub.db
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "dbStub", "dbStub\dbStub.sqlproj", "{87D238E1-6142-4F9B-BE7F-8A5F15E8894F}"
@@ -16,11 +19,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Plugin.Runner", "dBosque.Stub.Plugin.Runner\dBosque.Stub.Plugin.Runner.csproj", "{27EB1D92-EA65-4093-B0CF-77E7C9B83074}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.EF.Interceptor", "dBosque.Stub.EF.Interceptor\dBosque.Stub.EF.Interceptor.csproj", "{69019DA9-A181-426B-8BC6-0E62DF0B6795}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thirdparty", "Thirdparty", "{E2070C36-1DC7-4F5D-B042-D0891BC707D2}"
-	ProjectSection(SolutionItems) = preProject
-		Microsoft.SqlServer.Management.SqlParser.dll = Microsoft.SqlServer.Management.SqlParser.dll
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Interfaces", "dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj", "{6CAC28E5-79D9-4850-8EAB-3A1852E1BF65}"
 EndProject
@@ -54,10 +52,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{AB996172-4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.EF.Interceptor.TestClient", "dBosque.Stub.EF.Interceptor.TestClient\dBosque.Stub.EF.Interceptor.TestClient.csproj", "{90875EEE-913E-4AC5-BD29-52DE4C70E7F3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "dBosque.Stub.Editor.Installer", "dBosque.Stub.Editor.Installer\dBosque.Stub.Editor.Installer.vdproj", "{70660108-FCF6-4ABD-881D-6904CCC0CD0E}"
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = False
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -299,6 +296,12 @@ Global
 		{90875EEE-913E-4AC5-BD29-52DE4C70E7F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90875EEE-913E-4AC5-BD29-52DE4C70E7F3}.Release|x64.ActiveCfg = Release|Any CPU
 		{90875EEE-913E-4AC5-BD29-52DE4C70E7F3}.Release|x64.Build.0 = Release|Any CPU
+		{70660108-FCF6-4ABD-881D-6904CCC0CD0E}.Debug|Any CPU.ActiveCfg = Debug
+		{70660108-FCF6-4ABD-881D-6904CCC0CD0E}.Debug|x64.ActiveCfg = Debug
+		{70660108-FCF6-4ABD-881D-6904CCC0CD0E}.Default|Any CPU.ActiveCfg = Debug
+		{70660108-FCF6-4ABD-881D-6904CCC0CD0E}.Default|x64.ActiveCfg = Debug
+		{70660108-FCF6-4ABD-881D-6904CCC0CD0E}.Release|Any CPU.ActiveCfg = Release
+		{70660108-FCF6-4ABD-881D-6904CCC0CD0E}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

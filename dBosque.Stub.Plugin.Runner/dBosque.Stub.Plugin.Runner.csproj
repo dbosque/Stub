@@ -186,9 +186,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\AnalyzerSettings\AnalyzerSettings.json">
-      <Link>AnalyzerSettings.json</Link>
-    </AdditionalFiles>
     <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -213,9 +210,6 @@
     <Content Include="Resources\ic_play_arrow_black_24dp.png" />
     <Content Include="Resources\ic_report_problem_black_24dp.png" />
     <Content Include="Resources\ic_stop_black_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\dBosque.SIG.RoslynAnalyzers.1.2.6477.22037\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
