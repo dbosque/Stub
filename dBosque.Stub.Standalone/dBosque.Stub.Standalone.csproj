@@ -52,7 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update=".dockerignore">
+    <None Update="docker\windows\.dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
   </ItemGroup>
