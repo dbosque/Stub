@@ -30,4 +30,4 @@ Instead of the default HttpStatusCode 200, any other HttpStatusCode can be retur
 
 ## Installation
 - Editor + Server : [Installer](https://dbosque.blob.core.windows.net/blog/dBosque.Stub.Editor.msi)
-- Server on Docker : [Dockerfile](../dBosque.Stub.Standalone/Dockerfile-linux-remote)
+- Server on Docker : [Dockerfile](dBosque.Stub.Standalone/Dockerfile-linux-remote)
