@@ -14,6 +14,18 @@
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="dbstub.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbstub.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
@@ -43,16 +55,14 @@
     <None Update=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="dbstub.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="data\logs\" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="call &quot;C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe&quot; dir  &quot;$(TargetDir).&quot;  -v -var var.dBosque.Stub.Standalone.TargetDir -dr INSTALLFOLDERSERVICE -srd -cg StandaloneBinaries -ag -scom -sreg -sfrag  -o &quot;$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs&quot;  -t &quot;$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt&quot;" />
+  </Target>
 
 </Project>

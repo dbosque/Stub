@@ -161,9 +161,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Version.cs" />
-    <Content Include="appsettings.json">
+    <None Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Compile Include="Controls\Behaviours\DragDropPasteContentEventArgs.cs" />
     <Compile Include="Controls\Behaviours\DragDropPasteBehaviour.cs" />
     <Compile Include="Controls\Behaviours\PeriodicEventBehaviour.cs" />
@@ -338,10 +338,10 @@
     <EmbeddedResource Include="Forms\TenantsForm.resx">
       <DependentUpon>TenantsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="..\dbstub.db">
+    <None Include="..\dbstub.db">
       <Link>dbstub.db</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -373,9 +373,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="dBosque.Stub.Editor.Configuration.db">
+    <None Include="dBosque.Stub.Editor.Configuration.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <None Include="Properties\DataSources\MessageType.datasource" />
     <None Include="Properties\DataSources\MessageTypeItem.datasource" />
     <None Include="Properties\DataSources\Stub.Repository.ConfigurationDb.Setting.datasource" />
@@ -430,7 +430,6 @@
     <None Include="Icons\power-plug.png" />
     <Content Include="ic_cloud_off_black_48dp.ico" />
     <Content Include="ic_cloud_off_white_48dp.ico" />
-    <None Include="inspector.ico" />
     <None Include="Resources\ic_pause_black_24dp.png" />
     <None Include="Resources\ic_play_arrow_black_24dp.png" />
     <None Include="Resources\ic_mail_black_24dp.png" />
@@ -547,6 +546,9 @@
     <PostBuildEvent>REM Merge assembly in exe
 REM "..\..\..\..\..\Beheer\External references\Microsoft\ilmerge" /out:"$(TargetDir)StubInspector.exe" "$(TargetPath)" "$(TargetDir)StubInspector.Interfaces.dll"
 </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>call "C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe" dir  "$(TargetDir)."  -v -var var.dBosque.Stub.Editor.TargetDir -dr INSTALLFOLDER -srd -cg EditorBinaries -ag -scom -sreg -sfrag  -o "$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs"  -t "$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt"</PreBuildEvent>
   </PropertyGroup>
   <!-- <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets')" />-->
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

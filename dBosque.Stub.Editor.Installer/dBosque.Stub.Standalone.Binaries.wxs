@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDERSERVICE">
+            <Component Id="cmpC2CEE5D0FB7C2E60047078257052E5CF" Guid="*">
+                <File Id="filBA9119C3F8DBBDE92020D776006AEDDC" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\appsettings.json" />
+            </Component>
+            <Component Id="cmp370F39C55907A9651EA98E96D5E28C66" Guid="*">
+                <File Id="fil8AB5BC5D703935C8E49E677531A1B487" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.AspNet.Host.dll" />
+            </Component>
+            
+            <Component Id="cmp9FA0D5D30D8EDAD2C0BFFA92F277F178" Guid="*">
+                <File Id="fil2B1AA3682AB58D59F0FB17461A1459B0" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Interfaces.dll" />
+            </Component>
+            
+            <Component Id="cmpC8ED21E8DDE3280C321F1A7EE4603688" Guid="*">
+                <File Id="fil9DEDFD6DB87DE4120AF12D78FF4E780F" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Repository.dll" />
+            </Component>
+            <Component Id="cmp976E11507C8F5BC820D66AF758524EC0" Guid="*">
+                <File Id="filF0B57553D02BDA099708ED6C6CB74D9F" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Repository.Entities.dll" />
+            </Component>
+            
+            <Component Id="cmpF9BF88E8A7D1CE9B038970987BB3CD5A" Guid="*">
+                <File Id="filAF3172CD2EB7CEC1BBAF57855D4F40E3" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Repository.Interfaces.dll" />
+            </Component>
+            
+            
+            <Component Id="cmp820B4E99CA23510B4EF87EDD1ED3DB62" Guid="*">
+                <File Id="fil35E2B341C9969F80279E9C78A3DC4C63" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Services.dll" />
+            </Component>
+            
+            <Component Id="cmp37790539EE8915DC89E71303BCAEE10F" Guid="*">
+                <File Id="fil5EECF72CCD8AE4C695D193AE1DC2EA91" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Sockets.dll" />
+            </Component>
+            
+            <Component Id="cmpAF66B63435C80F3F397EC9EB84C01739" Guid="*">
+                <File Id="fil23C8DD02839BB8E6A4F9ADA6BD87D67A" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Standalone.deps.json" />
+            </Component>
+            <Component Id="cmp81CBE3EA0FC8886AEC10FFF948883738" Guid="*">
+                <File Id="filD1BED61E9CB0BDB788537EA16D2F112B" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Standalone.dll" />
+            </Component>
+            
+            <Component Id="cmp4C5146AC975F453971B921B625013F2B" Guid="*">
+                <File Id="fil86C405DEDB0797BCB7206EF60E5168F0" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Standalone.runtimeconfig.dev.json" />
+            </Component>
+            <Component Id="cmp0A1E9E1AB8D07B2E014A75CFABBE4D76" Guid="*">
+                <File Id="fil2CAAB7C7B9FAE0F99F0AB4C3997FC341" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.Standalone.runtimeconfig.json" />
+            </Component>
+            <Component Id="cmp019DCA3861E327711E74C453B4228203" Guid="*">
+                <File Id="filBF17C657FAF4D79BAA3B045FA5B757EA" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.WCF.dll" />
+            </Component>
+            
+            <Component Id="cmp43E3939E99F38680A6B4DB169C4121F1" Guid="*">
+                <File Id="filBF0ADC9D18460B9442916961E0E034B4" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.WebApi.Configuration.dll" />
+            </Component>
+            
+            <Component Id="cmpBDBE6776DE01E225EEE0A661B1DFB637" Guid="*">
+                <File Id="fil2AD05B24FA47A46175BDA67E80E3B49B" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.WebApi.Configuration.xml" />
+            </Component>
+            <Component Id="cmp297132030D8A3F0DE0C3588ED2BF4CA6" Guid="*">
+                <File Id="filCD93A44901E0D18AA30AC9C4EEACF553" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dBosque.Stub.WebApi.dll" />
+            </Component>
+            
+            <Component Id="cmp0F963B22C445F4A2DCE151047B4F8DE3" Guid="*">
+                <File Id="filC71726D2E245CCAB3F992A67C5FB431F" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\dbstub.db" />
+            </Component>
+            <Directory Id="dir29A3777921CDF963EA141A51CFB2B795" Name="data">
+                <Component Id="cmp0F3E0AB53C409A1ABDC2A010F8923FE5" Guid="*">
+                    <File Id="fil57CA2E807645C6A8BFF0C53255F9907F" KeyPath="yes" Source="$(var.dBosque.Stub.Standalone.TargetDir)\data\dbstub.db" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="StandaloneBinaries">
+            <ComponentRef Id="cmpC2CEE5D0FB7C2E60047078257052E5CF" />
+            <ComponentRef Id="cmp370F39C55907A9651EA98E96D5E28C66" />
+            
+            <ComponentRef Id="cmp9FA0D5D30D8EDAD2C0BFFA92F277F178" />
+            
+            <ComponentRef Id="cmpC8ED21E8DDE3280C321F1A7EE4603688" />
+            <ComponentRef Id="cmp976E11507C8F5BC820D66AF758524EC0" />
+            
+            <ComponentRef Id="cmpF9BF88E8A7D1CE9B038970987BB3CD5A" />
+            
+            
+            <ComponentRef Id="cmp820B4E99CA23510B4EF87EDD1ED3DB62" />
+            
+            <ComponentRef Id="cmp37790539EE8915DC89E71303BCAEE10F" />
+            
+            <ComponentRef Id="cmpAF66B63435C80F3F397EC9EB84C01739" />
+            <ComponentRef Id="cmp81CBE3EA0FC8886AEC10FFF948883738" />
+            
+            <ComponentRef Id="cmp4C5146AC975F453971B921B625013F2B" />
+            <ComponentRef Id="cmp0A1E9E1AB8D07B2E014A75CFABBE4D76" />
+            <ComponentRef Id="cmp019DCA3861E327711E74C453B4228203" />
+            
+            <ComponentRef Id="cmp43E3939E99F38680A6B4DB169C4121F1" />
+            
+            <ComponentRef Id="cmpBDBE6776DE01E225EEE0A661B1DFB637" />
+            <ComponentRef Id="cmp297132030D8A3F0DE0C3588ED2BF4CA6" />
+            
+            <ComponentRef Id="cmp0F963B22C445F4A2DCE151047B4F8DE3" />
+            <ComponentRef Id="cmp0F3E0AB53C409A1ABDC2A010F8923FE5" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

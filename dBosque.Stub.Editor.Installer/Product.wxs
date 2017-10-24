@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Stub Editor" Language="1033" Version="1.4.0.0" Manufacturer="dBosque" UpgradeCode="0b443edc-cf08-47ff-a16f-da141a377853">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+    <Icon Id="APPLICATIONICON.ico" SourceFile="dBosque.Stub.Editor.ico" />
+    <Property Id="ARPPRODUCTICON" Value="APPLICATIONICON.ico" />
+  
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="ManufacturerFolder" Name="dBosque">
+          <Directory Id="INSTALLFOLDER" Name="Stub Editor" >
+            <Directory Id="INSTALLFOLDERSERVICE" Name="Service"/>
+          </Directory>
+          </Directory>
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+          <Directory Id="ApplicationProgramsFolder" Name="Stub Editor"/>
+      </Directory>
+		</Directory>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="Entrypoint" Guid="dba74a12-d63b-4397-a865-0c2236a3341e">
+        <File Id="dBosque.Stub.Editor.exe" Source="$(var.dBosque.Stub.Editor.TargetDir)dBosque.Stub.Editor.exe" KeyPath="yes"/>        
+      </Component>
+    </DirectoryRef>
+
+    <!-- Step 2: Add the shortcut to your installer package -->
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="F7CF941C-8F02-4AC1-A53F-985EC7DB020C">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+             Name="dBosque Stub Editor"
+             Description="Stub Editor"
+             Target="[#dBosque.Stub.Editor.exe]"
+             Icon ="APPLICATIONICON.ico"
+             WorkingDirectory="INSTALLFOLDER"/>      
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RemoveFolder Id="ManufacturerFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\dBosque\Stub Editor" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentGroupRef Id="EditorBinaries"/>
+    </ComponentGroup>
+    <ComponentGroup Id="ServiceComponents" Directory="INSTALLFOLDERSERVICE">
+      <ComponentGroupRef Id="StandaloneBinaries"/>
+    </ComponentGroup>
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="Entrypoint" />
+      <ComponentGroupRef Id="ProductComponents"/>
+      <ComponentGroupRef Id="ServiceComponents"/>
+    </Feature>
+  </Product>
+</Wix>
