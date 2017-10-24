@@ -27,3 +27,7 @@ In case templates exist for the given namespace and rootnode the complete reques
 In case a valid template is found, the stored response message will be returned.
 
 Instead of the default HttpStatusCode 200, any other HttpStatusCode can be returned.
+
+## Installation
+- Editor + Server : [Installer](https://dbosque.blob.core.windows.net/blog/dBosque.Stub.Editor.msi)
+- Server on Docker : [Dockerfile](../blob/master/dBosque.Stub.Standalone/Dockerfile-linux-remote)
