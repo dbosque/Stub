@@ -6,7 +6,7 @@
 [assembly: AssemblyDescription("A generic message stub.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("dBosque")]
-[assembly: AssemblyProduct("dBosque.Stub.Editor")]
+[assembly: AssemblyProduct("dBosque Stub Editor")]
 [assembly: AssemblyCopyright("Copyright © dBosque 2010-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

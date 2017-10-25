@@ -1,4 +1,6 @@
-﻿using dBosque.Stub.Editor.Interfaces;
+﻿using Appccelerate.EventBroker;
+using dBosque.Stub.Editor.Controls.Extensions;
+using dBosque.Stub.Editor.Interfaces;
 using dBosque.Stub.Editor.Models;
 using System;
 using System.Collections.Generic;
@@ -14,13 +16,18 @@ namespace dBosque.Stub.Editor.Pluggable
     /// </summary>
     internal class Plugins
     {
+
+        [EventPublication("topic://Error")]
+        public event EventHandler<Controls.Errorhandling.ErrorEventArgs> OnError;
+
         /// <summary>
         /// Create a plugin handler
         /// </summary>
         /// <param name="owner"></param>
-        public Plugins(MarshalByRefObject owner)
+        public Plugins(MarshalByRefObject owner, IEventBroker broker)
         {
             _owner = owner;
+            broker.Register(this);
         }
 
         private MarshalByRefObject _owner;
@@ -95,7 +102,7 @@ namespace dBosque.Stub.Editor.Pluggable
                 PluggedItem plugin = currentItem.Tag as PluggedItem;
                 // Start it.
                 if (plugin != null && !plugin.Start(_owner))
-                    MessageBox.Show($"Error running plugin. {plugin?.Name}");
+                    OnError.Invoke(new Controls.Errorhandling.ErrorEventArgs($"Error running plugin. {plugin?.Name}", "Error"));
             }
         }
 

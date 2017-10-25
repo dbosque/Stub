@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dBosque.Stub.Server": {
+      "commandName": "Project",
+      "commandLineArgs": "-o"
+    }
+  }
+}

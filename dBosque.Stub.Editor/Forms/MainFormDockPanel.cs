@@ -40,6 +40,7 @@ namespace dBosque.Stub.Editor.Forms
         private IControlFactory _controlFactory;
         private TemplateViewController _controller;
         private DockPanelController _dockController;
+        private Plugins _plugins;
 
         private readonly ToolStripRenderer _toolStripProfessionalRenderer = new ToolStripProfessionalRenderer();
 
@@ -93,8 +94,9 @@ namespace dBosque.Stub.Editor.Forms
                                     .RegisterFactory(controlFactory);
 
             _broker.Register(this);
-           
-            if (_config.HasConnectionStrings)
+            _plugins = new Plugins(dockPanel1, _broker).LoadAll();
+
+             if (_config.HasConnectionStrings)
                 CreateControlsForActiveConnection();
           
             visualStudioToolStripExtender1.DefaultRenderer = _toolStripProfessionalRenderer;
@@ -143,8 +145,8 @@ namespace dBosque.Stub.Editor.Forms
         }
 
         private void UpdateAvailabilityPlugins()
-        {            
-            new Plugins(dockPanel1).LoadAll().SetupControls(pluginButton, pluginsToolStripMenuItem);
+        {
+            _plugins.SetupControls(pluginButton, pluginsToolStripMenuItem);
         }
 
         private void ForceRepositoryReload()
@@ -172,7 +174,7 @@ namespace dBosque.Stub.Editor.Forms
         ///<param name="e"></param>   
         public void OnError( ErrorEventArgs e)
         {
-            MessageBox.Show(e.Message, "Error");
+            MessageBox.Show(e.Message, e.Caption);
         }
 
     

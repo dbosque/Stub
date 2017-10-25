@@ -18,7 +18,7 @@ Default endpoints are :
 - Soap   : http://*:8081/soap
 - Configuration : http://*:8081/configuration
 
-Start the service by running `dotnet dBosque.Stub.Standalone.dll -o`
+Start the service by running `dotnet dBosque.Stub.Server.dll -o`
 
 ## How it works
 Each message send to one of the endpoinst is parsed to determine the namespace and rootnode.
@@ -30,7 +30,7 @@ Instead of the default HttpStatusCode 200, any other HttpStatusCode can be retur
 
 ## Installation
 - Editor + Server : [Installer](https://dbosque.blob.core.windows.net/blog/dBosque.Stub.Editor.msi)
-- Server on Docker : [Dockerfile](dBosque.Stub.Standalone/docker/linux-remote/Dockerfile)
+- Server on Docker : [Dockerfile](dBosque.Stub.Server/docker/linux-remote/Dockerfile)
   or 
-  ` docker build https://github.com/dbosque/Stub.git#master:dBosque.Stub.Standalone\docker\linux-remote -t stub`
+  ` docker build https://github.com/dbosque/Stub.git#master:dBosque.Stub.Server\docker\linux-remote -t stub`
    `docker run -p 8008:8008 -p 8081:8081 -v c:\docker\data:/app/data -d -it stub`

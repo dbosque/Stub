@@ -46,7 +46,7 @@
       <ComponentGroupRef Id="EditorBinaries"/>
     </ComponentGroup>
     <ComponentGroup Id="ServiceComponents" Directory="INSTALLFOLDERSERVICE">
-      <ComponentGroupRef Id="StandaloneBinaries"/>
+      <ComponentGroupRef Id="ServerBinaries"/>
     </ComponentGroup>
     <Feature Id="MainApplication" Title="Main Application" Level="1">
       <ComponentRef Id="ApplicationShortcut" />

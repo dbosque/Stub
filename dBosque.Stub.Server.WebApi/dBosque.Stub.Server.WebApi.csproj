@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>C:\Source\core\stub\dBosque.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoCommon.cs" Link="AssemblyInfoCommon.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dBosque.Stub.Server.AspNetCore.Host\dBosque.Stub.Server.AspNetCore.Host.csproj" />
+    <ProjectReference Include="..\dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj" />
+    <ProjectReference Include="..\dBosque.Stub.Repository.Entities\dBosque.Stub.Repository.Entities.csproj" />
+    <ProjectReference Include="..\dBosque.Stub.Repository\dBosque.Stub.Repository.csproj" />
+    <ProjectReference Include="..\dBosque.Stub.Services\dBosque.Stub.Services.csproj" />
+  </ItemGroup>
+
+</Project>

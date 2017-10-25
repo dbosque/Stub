@@ -443,9 +443,9 @@
       <Project>{6cac28e5-79d9-4850-8eab-3a1852e1bf65}</Project>
       <Name>dBosque.Stub.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\dBosque.Stub.Plugin.Runner\dBosque.Stub.Plugin.Runner.csproj">
+    <ProjectReference Include="..\dBosque.Stub.Editor.Plugin.Runner\dBosque.Stub.Editor.Plugin.Runner.csproj">
       <Project>{27eb1d92-ea65-4093-b0cf-77e7c9b83074}</Project>
-      <Name>dBosque.Stub.Plugin.Runner</Name>
+      <Name>dBosque.Stub.Editor.Plugin.Runner</Name>
     </ProjectReference>
     <ProjectReference Include="..\dBosque.Stub.Repository.Entities\dBosque.Stub.Repository.Entities.csproj">
       <Project>{4b8c748d-1b3b-4ac3-89f6-8cf0a02e4232}</Project>

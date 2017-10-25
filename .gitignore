@@ -5,7 +5,7 @@
 */bin
 */obj
 */Debug
-/dBosque.Stub.Standalone/data/logs
+/dBosque.Stub.Server/data/logs
 /packages/*
 /dbStub/dbStub.jfm
 /dbStub/dbStub.dbmdl

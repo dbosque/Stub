@@ -16,9 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "dbStub", "dbStub\dbStub.sqlproj", "{87D238E1-6142-4F9B-BE7F-8A5F15E8894F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Plugin.Runner", "dBosque.Stub.Plugin.Runner\dBosque.Stub.Plugin.Runner.csproj", "{27EB1D92-EA65-4093-B0CF-77E7C9B83074}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Editor.Plugin.Runner", "dBosque.Stub.Editor.Plugin.Runner\dBosque.Stub.Editor.Plugin.Runner.csproj", "{27EB1D92-EA65-4093-B0CF-77E7C9B83074}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.EF.Interceptor", "dBosque.Stub.EF.Interceptor\dBosque.Stub.EF.Interceptor.csproj", "{69019DA9-A181-426B-8BC6-0E62DF0B6795}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Client.EF.Interceptor", "dBosque.Stub.Client.EF.Interceptor\dBosque.Stub.Client.EF.Interceptor.csproj", "{69019DA9-A181-426B-8BC6-0E62DF0B6795}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Interfaces", "dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj", "{6CAC28E5-79D9-4850-8EAB-3A1852E1BF65}"
 EndProject
@@ -26,31 +26,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Repository", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Services", "dBosque.Stub.Services\dBosque.Stub.Services.csproj", "{8ACF207A-E632-435A-9930-D18307D073D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Socket.Client", "dBosque.Stub.Socket.Client\dBosque.Stub.Socket.Client.csproj", "{194EB2E4-C16E-4576-9390-A19CE648F644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Client.Socket", "dBosque.Stub.Client.Socket\dBosque.Stub.Client.Socket.csproj", "{194EB2E4-C16E-4576-9390-A19CE648F644}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Sockets", "dBosque.Stub.Sockets\dBosque.Stub.Sockets.csproj", "{A6D29DED-EC65-4DCC-81D8-C3017AFB6BEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Server.Sockets", "dBosque.Stub.Server.Sockets\dBosque.Stub.Server.Sockets.csproj", "{A6D29DED-EC65-4DCC-81D8-C3017AFB6BEA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.WebApi", "dBosque.Stub.WebApi\dBosque.Stub.WebApi.csproj", "{ABDB5FF1-1982-4B85-98CA-2A1DB14DD99E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Server.WebApi", "dBosque.Stub.Server.WebApi\dBosque.Stub.Server.WebApi.csproj", "{ABDB5FF1-1982-4B85-98CA-2A1DB14DD99E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Repository.Entities", "dBosque.Stub.Repository.Entities\dBosque.Stub.Repository.Entities.csproj", "{4B8C748D-1B3B-4AC3-89F6-8CF0A02E4232}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Repository.Interfaces", "dBosque.Stub.Repository.Interfaces\dBosque.Stub.Repository.Interfaces.csproj", "{4B777B12-1723-4F91-8029-D37CDF34A3EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Standalone", "dBosque.Stub.Standalone\dBosque.Stub.Standalone.csproj", "{39926F46-400A-442C-9733-1C8EA970C457}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Server", "dBosque.Stub.Server\dBosque.Stub.Server.csproj", "{39926F46-400A-442C-9733-1C8EA970C457}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.AspNet.Host", "dBosque.Stub.AspNet.Host\dBosque.Stub.AspNet.Host.csproj", "{CB97B1AB-5603-411C-9501-978818F2C6B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Server.AspNetCore.Host", "dBosque.Stub.Server.AspNetCore.Host\dBosque.Stub.Server.AspNetCore.Host.csproj", "{CB97B1AB-5603-411C-9501-978818F2C6B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.WebApi.Configuration", "dBosque.Stub.WebApi.Configuration\dBosque.Stub.WebApi.Configuration.csproj", "{EB0B5103-45EE-4F1D-9AC5-C8E197601F8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Server.WebApi.Configuration", "dBosque.Stub.Server.WebApi.Configuration\dBosque.Stub.Server.WebApi.Configuration.csproj", "{EB0B5103-45EE-4F1D-9AC5-C8E197601F8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.WCF", "dBosque.Stub.WCF\dBosque.Stub.WCF.csproj", "{788858C2-71D8-4375-AFDB-B7CB44B84DC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Server.Soap", "dBosque.Stub.Server.Soap\dBosque.Stub.Server.Soap.csproj", "{788858C2-71D8-4375-AFDB-B7CB44B84DC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Socket.TestClient", "dBosque.Stub.Socket.TestClient\dBosque.Stub.Socket.TestClient.csproj", "{252AF62B-F728-4190-9646-FBFB16E3DEE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dBosque.Stub.Client.Socket.TestClient", "dBosque.Stub.Client.Socket.TestClient\dBosque.Stub.Client.Socket.TestClient.csproj", "{252AF62B-F728-4190-9646-FBFB16E3DEE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Editor.Interfaces", "dBosque.Stub.Editor.Interfaces\dBosque.Stub.Editor.Interfaces.csproj", "{B7EA29F2-45D6-4618-BDE0-F0D052F5BEE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{AB996172-4052-469E-B3EF-90291743F15B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.EF.Interceptor.TestClient", "dBosque.Stub.EF.Interceptor.TestClient\dBosque.Stub.EF.Interceptor.TestClient.csproj", "{90875EEE-913E-4AC5-BD29-52DE4C70E7F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dBosque.Stub.Client.EF.Interceptor.TestClient", "dBosque.Stub.Client.EF.Interceptor.TestClient\dBosque.Stub.Client.EF.Interceptor.TestClient.csproj", "{90875EEE-913E-4AC5-BD29-52DE4C70E7F3}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "dBosque.Stub.Editor.Installer", "dBosque.Stub.Editor.Installer\dBosque.Stub.Editor.Installer.wixproj", "{0C97F865-8F3C-4E78-9A3A-44E26F0D75E6}"
 EndProject

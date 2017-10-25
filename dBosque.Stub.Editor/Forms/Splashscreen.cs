@@ -1,8 +1,10 @@
 ﻿using Appccelerate.EventBroker;
 using Appccelerate.EventBroker.Handlers;
+using dBosque.Stub.Editor.Controls.Errorhandling;
 using System;
 using System.ComponentModel;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace dBosque.Stub.Editor.Forms
 {
@@ -20,6 +22,20 @@ namespace dBosque.Stub.Editor.Forms
         public void OnApplicationClosed(object sender, EventArgs e)
         {
             Close();
+        }
+
+        /// <summary>
+        /// Handle the Error event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        [EventSubscription("topic://Error", typeof(OnUserInterface))]
+        void OnError(ErrorEventArgs e)
+        {
+            if (Visible)
+                MessageBox.Show(e.Message, e.Caption);
+            if (e.Fatal)
+                Application.Exit();
         }
 
         public Splashscreen(IEventBroker broker)

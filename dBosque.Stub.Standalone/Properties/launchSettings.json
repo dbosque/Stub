@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "dBosque.Stub.Standalone": {
-      "commandName": "Project",
-      "commandLineArgs": "-o"
-    }
-  }
-}

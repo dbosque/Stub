@@ -13,10 +13,6 @@
             <Component Id="cmpF82FCA80BBAF44D285C97F10993DEEE6" Guid="*">
                 <File Id="fil840B80AC19861C7F9F04FBDCFAE331CE" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\appsettings.json" />
             </Component>
-            <Component Id="cmpC3EF9497965AA4FD8B93AF2DAC3C88F2" Guid="*">
-                <File Id="fil9A1CEC5143B2D43B3464E48A2883D93E" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.AspNet.Host.dll" />
-            </Component>
-            
             <Component Id="cmp0D58396B016231D4547DF9B395504E02" Guid="*">
                 <File Id="fil49A65D6A6D962FB9D7542C0579B10B56" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Editor.Configuration.db" />
             </Component>
@@ -32,14 +28,14 @@
                 <File Id="filC651AC4B310E57E4ACADF5121FD59B86" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Editor.layout" />
             </Component>
             
+            <Component Id="cmp9C9248893F71135E7E0166B0976E72ED" Guid="*">
+                <File Id="fil21E8AC23AB95C07106ECE1E48246BFA2" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Editor.Plugin.Runner.dll" />
+            </Component>
+            
+            
             <Component Id="cmpA630654CE42A2D02767CA2D72F08A06B" Guid="*">
                 <File Id="filA15840732765579AFD34761EF6D883E8" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Interfaces.dll" />
             </Component>
-            
-            <Component Id="cmp77A9B3E3663F5922FB40E82D72C441CF" Guid="*">
-                <File Id="fil0309AFC6048AFE032BF37AD6B8172962" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Plugin.Runner.dll" />
-            </Component>
-            
             
             <Component Id="cmp721D5F22E2672D64D67CD50B5A38F96B" Guid="*">
                 <File Id="fil1D78BE3A7ABE8448445A8246B0F6A266" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Repository.dll" />
@@ -53,27 +49,31 @@
             </Component>
             
             
+            <Component Id="cmpC93E4B5CF559DE3D87B8D4405119D141" Guid="*">
+                <File Id="filD53D804D2C7B13BA7507C14259DC6FF9" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Server.AspNetCore.Host.dll" />
+            </Component>
+            
+            <Component Id="cmpEAAA5E6568E4865FCA8AC88AEEDF307D" Guid="*">
+                <File Id="filB0E6B66C979D49C1315E818FE66C9B7A" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Server.Soap.dll" />
+            </Component>
+            
+            <Component Id="cmp37D384ADE06B9E992D883CC461984D72" Guid="*">
+                <File Id="fil1D6A1DE09509978613ABB92953A17DDD" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Server.Sockets.dll" />
+            </Component>
+            
+            <Component Id="cmpDDCBFE2DF44EF6608B3376056F41B513" Guid="*">
+                <File Id="filE8F51C72A28BC027833ED7F55A7770DB" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Server.WebApi.Configuration.dll" />
+            </Component>
+            
+            <Component Id="cmp4A144D4B194B31E29BFA2BD0A5CAE728" Guid="*">
+                <File Id="filF7850FEBE82E82B28E58C7B4E4FA0817" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Server.WebApi.Configuration.xml" />
+            </Component>
+            <Component Id="cmp154DA4CA1E6318A7EF63B38C5A2E2F10" Guid="*">
+                <File Id="fil33B32AD6AC1FE23DA731EFCEFDF953A1" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Server.WebApi.dll" />
+            </Component>
+            
             <Component Id="cmp423CF0A97AEB58066BA34B6C90A8A510" Guid="*">
                 <File Id="filC23CE3A7D792305AB2F2343C973EB7AA" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Services.dll" />
-            </Component>
-            
-            <Component Id="cmp103ED07D2643BF1C9CE9020EAC41FBB6" Guid="*">
-                <File Id="filA8C905AF2C4A2651BEAF47754CD15645" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Sockets.dll" />
-            </Component>
-            
-            <Component Id="cmpA87B20A6BAC505E886A9798B3E284403" Guid="*">
-                <File Id="fil99938271DFFC5C528D1B8B6E41715EC9" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.WCF.dll" />
-            </Component>
-            
-            <Component Id="cmpC4486C97F641741AAC5B119E849779CC" Guid="*">
-                <File Id="fil5167B3BD9052BD950849C12FE62AC066" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.WebApi.Configuration.dll" />
-            </Component>
-            
-            <Component Id="cmp0444474764DA2E66024F34492B101DA4" Guid="*">
-                <File Id="fil85C9BCE8706D1A4337E69E83739A98AB" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.WebApi.Configuration.xml" />
-            </Component>
-            <Component Id="cmp2CBA99BD6E1FF5A14DF1439B5337DBE3" Guid="*">
-                <File Id="fil0DE811227D60D71AD14DDD5D0F965BB8" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.WebApi.dll" />
             </Component>
             
             <Component Id="cmp40D9D52D420530C34B0ED27CA23F5B8D" Guid="*">
@@ -420,6 +420,9 @@
             </Component>
             <Component Id="cmpBF8809ED33815FD076E06377CDD76FBC" Guid="*">
                 <File Id="fil56DF007369EFF5DF7AED8BD5CD383E2A" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\SQLitePCLRaw.provider.e_sqlite3.dll" />
+            </Component>
+            <Component Id="cmp161C839AFA7F415E607E8F0C73C607BB" Guid="*">
+                <File Id="fil01C424928A516A340D79F79D255060FA" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\StubTrace-2017-10-25.log" />
             </Component>
             <Component Id="cmp013A04F13FEF865E687AAE7918B178B1" Guid="*">
                 <File Id="filC16BCC8B7F11A50E5A46DA67D68F8FFE" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\Swashbuckle.AspNetCore.dll" />
@@ -855,8 +858,6 @@
             <ComponentRef Id="cmp2A602385EB87ED949FF5714D47FDE473" />
             
             <ComponentRef Id="cmpF82FCA80BBAF44D285C97F10993DEEE6" />
-            <ComponentRef Id="cmpC3EF9497965AA4FD8B93AF2DAC3C88F2" />
-            
             <ComponentRef Id="cmp0D58396B016231D4547DF9B395504E02" />
             
             <ComponentRef Id="cmp35B18511CE513DDFEA93B431EDB0E535" />
@@ -864,10 +865,10 @@
             
             <ComponentRef Id="cmpB84B74341ECDB7E62888FD19B6EA0D5D" />
             
+            <ComponentRef Id="cmp9C9248893F71135E7E0166B0976E72ED" />
+            
+            
             <ComponentRef Id="cmpA630654CE42A2D02767CA2D72F08A06B" />
-            
-            <ComponentRef Id="cmp77A9B3E3663F5922FB40E82D72C441CF" />
-            
             
             <ComponentRef Id="cmp721D5F22E2672D64D67CD50B5A38F96B" />
             <ComponentRef Id="cmpC2FA187553FC89DD5BC6FE92BCC3CA12" />
@@ -875,16 +876,18 @@
             <ComponentRef Id="cmpD2BA9A6504BF3AB638F8A9B8AF4CFBCE" />
             
             
+            <ComponentRef Id="cmpC93E4B5CF559DE3D87B8D4405119D141" />
+            
+            <ComponentRef Id="cmpEAAA5E6568E4865FCA8AC88AEEDF307D" />
+            
+            <ComponentRef Id="cmp37D384ADE06B9E992D883CC461984D72" />
+            
+            <ComponentRef Id="cmpDDCBFE2DF44EF6608B3376056F41B513" />
+            
+            <ComponentRef Id="cmp4A144D4B194B31E29BFA2BD0A5CAE728" />
+            <ComponentRef Id="cmp154DA4CA1E6318A7EF63B38C5A2E2F10" />
+            
             <ComponentRef Id="cmp423CF0A97AEB58066BA34B6C90A8A510" />
-            
-            <ComponentRef Id="cmp103ED07D2643BF1C9CE9020EAC41FBB6" />
-            
-            <ComponentRef Id="cmpA87B20A6BAC505E886A9798B3E284403" />
-            
-            <ComponentRef Id="cmpC4486C97F641741AAC5B119E849779CC" />
-            
-            <ComponentRef Id="cmp0444474764DA2E66024F34492B101DA4" />
-            <ComponentRef Id="cmp2CBA99BD6E1FF5A14DF1439B5337DBE3" />
             
             <ComponentRef Id="cmp40D9D52D420530C34B0ED27CA23F5B8D" />
             <ComponentRef Id="cmpD59A9DA5AB1588BFB3303C78F4AE7978" />
@@ -1001,6 +1004,7 @@
             <ComponentRef Id="cmp64C05AA1C43E0D9DBAD9C14A66C00F23" />
             <ComponentRef Id="cmp9E349E891D154ADBFB83038532027A46" />
             <ComponentRef Id="cmpBF8809ED33815FD076E06377CDD76FBC" />
+            <ComponentRef Id="cmp161C839AFA7F415E607E8F0C73C607BB" />
             <ComponentRef Id="cmp013A04F13FEF865E687AAE7918B178B1" />
             <ComponentRef Id="cmpA5FED8161FD657378956DA3AE3A09E60" />
             <ComponentRef Id="cmp77BB727475A9C0C22B87E602EE0EA12F" />

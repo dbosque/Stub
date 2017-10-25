@@ -2,6 +2,7 @@
 using dBosque.Stub.Editor.Controls.Behaviours;
 using dBosque.Stub.Editor.Controls.Extensions;
 using dBosque.Stub.Editor.Flow;
+using dBosque.Stub.Editor.Models;
 using dBosque.Stub.Repository.Interfaces;
 using dBosque.Stub.Repository.StubDb.Entities;
 using System;
@@ -41,11 +42,13 @@ namespace dBosque.Stub.Editor.Controls
             InitializeComponent();
             _factory = factory;
             _tick = new PeriodicEventFocusBehaviour(this, () => UpdateLogging(false), updatePlayStopButton);
-            updatePlayStopButton();
+            updatePlayStopButton();            
         }   
 
         private void UpdateLogging(bool force = false)
-        {            
+        {
+            tenantDataGridViewTextBoxColumn.Visible = GlobalSettings.Instance.Version?.IsFull ?? false;
+
             // Get the query to use
             var repos = _factory.CreateConfiguration();
             var data = _factory.CreateDataRepository();//GlobalSettings.Instance.Configuration);
