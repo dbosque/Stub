@@ -5,7 +5,7 @@ EXPOSE 8008
 ENTRYPOINT ["dotnet", "dBosque.Stub.Server.dll" , "-o"]
 
 # Install app
-ENV APP_VERSION 1.4
+ENV APP_VERSION 1.5
 ENV APP_DOWNLOAD_URL https://dbosque.blob.core.windows.net/blog/dBosque.Stub.$APP_VERSION.tar.gz
 
 RUN curl -SL $APP_DOWNLOAD_URL --output app.tar.gz \

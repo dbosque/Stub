@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="Stub Editor" Language="1033" Version="1.4.0.0" Manufacturer="dBosque" UpgradeCode="0b443edc-cf08-47ff-a16f-da141a377853">
+	<Product Id="*" Name="Stub Editor" Language="1033" Version="1.5.0.0" Manufacturer="dBosque" UpgradeCode="0b443edc-cf08-47ff-a16f-da141a377853">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     <MediaTemplate EmbedCab="yes" />
     <Icon Id="APPLICATIONICON.ico" SourceFile="dBosque.Stub.Editor.ico" />
