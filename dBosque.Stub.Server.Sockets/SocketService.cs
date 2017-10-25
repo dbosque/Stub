@@ -40,6 +40,7 @@ namespace dBosque.Stub.Server.Sockets
             _logger = logger;
             var port = hosting?.Value.Uri?? portNumber.ToString();
             int.TryParse(port, out portNumber);
+            Enabled = hosting?.Value?.Enabled ?? true;
         }
 
         /// <summary>
@@ -54,6 +55,8 @@ namespace dBosque.Stub.Server.Sockets
         }
 
         public IStubService Service => this;
+
+        public bool Enabled { get; private set; }
 
         /// <summary>
         /// Start the service

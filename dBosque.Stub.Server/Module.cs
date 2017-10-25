@@ -6,10 +6,9 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class Module
     {
-        public static IServiceCollection AddHostingModule(this IServiceCollection service, IConfiguration configuration, string sectionName = "Server")
+        public static IServiceCollection AddHostingModule(this IServiceCollection service)
         {
-            service.AddTransient<IServiceRegister, OneEndpointServiceRegister>()
-                    .Configure<dBosque.Stub.Server.Configuration.Hosting>(configuration.GetSection(sectionName));
+            service.AddTransient<IServiceRegister, OneEndpointServiceRegister>();
             return service;
         }
     }

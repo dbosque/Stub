@@ -86,7 +86,7 @@ namespace dBosque.Stub.Server
             AssertDatabaseAvailability();
 
             // Get all services
-            var services = provider.GetServices<IServiceRegister>().Select(s => s.Service).ToList();
+            var services = provider.GetServices<IServiceRegister>().Where(s => s.Enabled).Select(s => s.Service).ToList();
             var configuration = provider.GetService<IConfiguration>();
             // Start all
             services.ForEach(s => s.Start(ConfigureGeneric, configuration));
@@ -124,7 +124,7 @@ namespace dBosque.Stub.Server
             if (!System.IO.File.Exists("./data/dbstub.db"))
             {
                 Log.Logger.Warning($"No database at ./data");
-                if (!System.IO.Directory.Exists("./data"))
+                if (!System.IO.Directory.Exists("./data") && System.IO.File.Exists("dbstub.db"))
                     System.IO.Directory.CreateDirectory("./data");
                 System.IO.File.Copy("dbstub.db", "./data/dbstub.db");
                 Log.Logger.Information("Default database copied to ./data");
@@ -139,7 +139,8 @@ namespace dBosque.Stub.Server
         {
             collection
                 .AddScoped(s => _configuration)
-                .AddRepositoryModule(_configuration);            
+                .AddRepositoryModule(_configuration)
+                .Configure<Configuration.Hosting>(_configuration.GetSection("Server"));
         }
 
 
@@ -160,7 +161,7 @@ namespace dBosque.Stub.Server
                            .AddSocketModule(_configuration);
 
             if (_onePort.HasValue())
-                serviceProvider.AddHostingModule(_configuration);
+                serviceProvider.AddHostingModule();
             else
                 serviceProvider
                     .AddWebApiModule(_configuration)

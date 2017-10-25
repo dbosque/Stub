@@ -9,5 +9,7 @@
         /// Default Uri where the configuration api is hosted
         /// </summary>
         public string Uri { get; set; }
+
+        public bool Enabled { get; set; }
     }
 }

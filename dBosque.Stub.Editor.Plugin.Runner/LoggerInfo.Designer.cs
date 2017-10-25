@@ -183,14 +183,12 @@ namespace dBosque.Stub.Editor.Plugin.Runner
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource logMessageBindingSource;
-        private System.Windows.Forms.DataGridViewImageColumn severityDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton startButton;
         private System.Windows.Forms.ToolStripButton stopButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton clearButton;
         private System.Windows.Forms.ToolStripButton closeButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn textDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.DataGridViewTextBoxColumn Textb;
     }

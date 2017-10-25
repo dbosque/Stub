@@ -15,6 +15,8 @@ namespace dBosque.Stub.Server.Soap
         /// </summary>
         public ServiceRegister(IConfigurationRepository config, ILogger<ServiceRegister> logger, IOptions<Configuration.Hosting> hosting)
             : base(logger, "soap", $"{hosting?.Value.Uri ?? "http://*:8083"}")
-        { }
+        {
+            Enabled = hosting?.Value?.Enabled ?? true;
+        }
     }
 }

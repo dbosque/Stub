@@ -54,6 +54,9 @@
                 <File Id="filA9FD1A7BE9020A74A3C2B93F2D8C01A2" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.WebApi.Configuration.dll" />
             </Component>
             
+            <Component Id="cmp843397A76B439C4F2B3B816D9CDD5E2B" Guid="*">
+                <File Id="filB29AC6D45243029EC2459CA4641D8F65" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.WebApi.Configuration.xml" />
+            </Component>
             <Component Id="cmpBFE907AEC7816A91DEA894E26C6928B8" Guid="*">
                 <File Id="filF5B737C7E0CCA71267524F23F54AF1EA" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.WebApi.dll" />
             </Component>
@@ -130,6 +133,7 @@
             
             <ComponentRef Id="cmpBBE2A703E8A1C293BA7ABB93277FBEEA" />
             
+            <ComponentRef Id="cmp843397A76B439C4F2B3B816D9CDD5E2B" />
             <ComponentRef Id="cmpBFE907AEC7816A91DEA894E26C6928B8" />
             
             <ComponentRef Id="cmp820B4E99CA23510B4EF87EDD1ED3DB62" />

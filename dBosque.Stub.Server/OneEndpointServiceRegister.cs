@@ -11,8 +11,10 @@ namespace dBosque.Stub.Server
         /// Default constructor
         /// </summary>
         public OneEndpointServiceRegister(IConfigurationRepository config, IOptions<Configuration.Hosting> hosting, ILogger<OneEndpointServiceRegister> logger)
-            : base(logger, "all", $"http://*:{hosting?.Value.Uri ?? "http://*:8081"}")
-        { }
+            : base(logger, "all", $"{hosting?.Value.Uri ?? "http://*:8081"}")
+        {
+            Enabled = true;
+        }
 
     }
 }

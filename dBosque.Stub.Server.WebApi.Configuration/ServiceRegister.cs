@@ -15,6 +15,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// </summary>
         public ServiceRegister(IConfigurationRepository config, ILogger<ServiceRegister> logger, IOptions<Hosting> hosting)
             : base(logger, "configuration", $"{hosting?.Value.Uri ?? "http://*:8082"}")
-        {}
+        {
+            Enabled = hosting?.Value?.Enabled ?? true;
+        }
      }
 }

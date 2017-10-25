@@ -25,10 +25,7 @@ namespace dBosque.Stub.Server.Soap
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                // .AddScoped<IRepositoryFactory, Repository.RepositoryFactory>()
                 .AddTransient<IStubHandler<Message>, GenericStubHandler<Message>>();
-                //.AddOptions()
-               // .Configure<Datastore>(Configuration.GetSection("Datastore"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

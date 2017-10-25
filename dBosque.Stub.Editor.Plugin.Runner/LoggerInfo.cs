@@ -85,7 +85,7 @@ namespace dBosque.Stub.Editor.Plugin.Runner
         public void Setup()
         {
             var provider = SetupServices();
-            _services.AddRange(provider.GetServices<IServiceRegister>().Select(s => s.Service).ToList());
+            _services.AddRange(provider.GetServices<IServiceRegister>().Where(s => s.Enabled).Select(s => s.Service).ToList());
         }
 
         public bool Start()

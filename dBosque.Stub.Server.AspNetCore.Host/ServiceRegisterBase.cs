@@ -10,6 +10,7 @@ namespace dBosque.Stub.Server.AspNetCore.Host
             _service = new WebApiHost<T>(url, name, logger);
         }
 
+        public bool Enabled { get; protected set; }
 
         protected IStubService _service;
 
