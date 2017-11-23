@@ -32,7 +32,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>dBosque.Stub.Editor</RootNamespace>
     <AssemblyName>dBosque.Stub.Editor</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -545,10 +545,11 @@
   <PropertyGroup>
     <PostBuildEvent>REM Merge assembly in exe
 REM "..\..\..\..\..\Beheer\External references\Microsoft\ilmerge" /out:"$(TargetDir)StubInspector.exe" "$(TargetPath)" "$(TargetDir)StubInspector.Interfaces.dll"
-</PostBuildEvent>
+call "C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe" dir  "$(TargetDir)."  -v -var var.dBosque.Stub.Editor.TargetDir -dr INSTALLFOLDER -srd -cg EditorBinaries -ag -scom -sreg -sfrag  -o "$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs"  -t "$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>call "C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe" dir  "$(TargetDir)."  -v -var var.dBosque.Stub.Editor.TargetDir -dr INSTALLFOLDER -srd -cg EditorBinaries -ag -scom -sreg -sfrag  -o "$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs"  -t "$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets')" />-->
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

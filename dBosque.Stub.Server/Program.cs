@@ -48,15 +48,17 @@ namespace dBosque.Stub.Server
         /// <returns></returns>
         private static CommandLineApplication SetUpApp()
         {
-            var app = new CommandLineApplication();
-            app.Name = "dBosque.Stub.Server";
-            app.Description = "Standalone stub hosting for SOAP, REST and sockets.";
-            app.ExtendedHelpText = Environment.NewLine +
+            var app = new CommandLineApplication
+            {
+                Name = "dBosque.Stub.Server",
+                Description = "Standalone stub hosting for SOAP, REST and sockets.",
+                ExtendedHelpText = Environment.NewLine +
                                    "Standalone stub hosting for SOAP, REST and sockets." + Environment.NewLine +
-                                   "Default configuration is stored in the appsettings.json file." + Environment.NewLine + Environment.NewLine + 
+                                   "Default configuration is stored in the appsettings.json file." + Environment.NewLine + Environment.NewLine +
                                    "Supports processing of input messages based on the URI and messagebody and returns a specific (configured) response." + Environment.NewLine +
-                                   "If no specific response is available but a passthourgh URL is provided or configured, the message will be forwarded." + Environment.NewLine + 
-                                   "Messages can be added through the configuration API or the additonal Editor application." + Environment.NewLine;
+                                   "If no specific response is available but a passthourgh URL is provided or configured, the message will be forwarded." + Environment.NewLine +
+                                   "Messages can be added through the configuration API or the additonal Editor application." + Environment.NewLine
+            };
             app.HelpOption("-?|-h|--help");
             app.VersionOption("-v|--version", () => {
                 return string.Format("Version {0}", Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion);

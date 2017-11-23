@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension">
-      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\WiX Toolset v3.11\bin\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\WiX Toolset v3.11\bin\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
     </WixExtension>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />

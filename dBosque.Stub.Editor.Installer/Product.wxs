@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 	<Product Id="*" Name="Stub Editor" Language="1033" Version="1.5.0.0" Manufacturer="dBosque" UpgradeCode="0b443edc-cf08-47ff-a16f-da141a377853">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     <MediaTemplate EmbedCab="yes" />
     <Icon Id="APPLICATIONICON.ico" SourceFile="dBosque.Stub.Editor.ico" />
     <Property Id="ARPPRODUCTICON" Value="APPLICATIONICON.ico" />
-  
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_462_OR_LATER_INSTALLED"/>
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-
+    <Condition Message="This application requires .NET Framework 4.6.2. Please install the .NET Framework then run this installer again.">
+        <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_462_OR_LATER_INSTALLED]]>
+    </Condition>
     
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">

@@ -148,78 +148,6 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema Objects\Security\Roles\Database Roles\Rol_Stub_Exec.role.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_AddRequestResponseByThumbprint.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_AddResponseCombination.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_AddCombinationXpathValue.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_MessageType_Insert.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_RemoveRequestResponseByThumbprint.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_RemoveXpathByID.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_RemoveCombinationWithResponse.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectBerichtenLog.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_selectmessagetypes.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectRequestResponseByLogID.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectResponseByResponseID.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectResponseByThumbprint.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectResponses.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectTemplatesForMessageType.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectXpathListForTemplate.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectXpathsByCombinationID.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectCombinatieByMessageType.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_SelectTemplateXpath.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_Xpath_Insert.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_Xpath_Update.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_TemplateXpath_Delete.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_TemplateXpath_Insert.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Stored Procedures\dbo.stp_Template_Insert.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Tables\dbo.MessageType.table.sql">
       <SubType>Code</SubType>
     </Build>
@@ -316,14 +244,11 @@
     <Build Include="Schema Objects\Tables\Keys\dbo.TemplateXpath.PKTemplateXpath.pkey.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Views\dbo.viewBerichtenLog.view.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="configuration\Tables\Tenant.sql" />
     <Build Include="configuration\Tables\TenantSecurity.sql" />
-    <Build Include="Security\configuration.sql" />
     <Build Include="configuration\Tables\Settings.sql" />
     <Build Include="Schema Objects\Stored Procedures\stp_selectlog.sql" />
+    <Build Include="Security\configuration.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties" />
@@ -337,7 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Default.publish.xml" />
-    <None Include="Scripts\Security.sql" />
     <None Include="Scripts\Defaults.sql" />
   </ItemGroup>
   <ItemGroup>

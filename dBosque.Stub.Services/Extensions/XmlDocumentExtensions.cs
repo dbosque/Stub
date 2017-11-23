@@ -111,7 +111,8 @@ namespace dBosque.Stub.Services.Extensions
         public static XmlDocument CreateDocument(this string content, bool stripEnvelope = true)
         {
             if (string.IsNullOrEmpty(content))
-                content = null;
+                return null;
+
             // Load the XML file. 
             var dom = new XmlDocument();
             try

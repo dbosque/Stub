@@ -87,7 +87,15 @@ namespace dBosque.Stub.Server.WebApi.Types
                     StatusCode = HttpStatusCode
                 };              
             }
-            return new NotFoundResult();
+            if (!string.IsNullOrEmpty(Matches.Error))
+                return new NotFoundResult();
+            else
+                return new ContentResult()
+                {
+                    Content = Matches.Error,
+                    ContentType = ContentType,
+                    StatusCode = 500
+                };
         }
 
         ///<summary>

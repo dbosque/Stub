@@ -44,7 +44,7 @@ namespace dBosque.Stub.Services.XSLT
             {
                 message.Matches = new StubMatchList()
                 {
-                    Error = ex.Message
+                    Error = $"During postprocessing {ex.Message}"
                 };
             }
         }

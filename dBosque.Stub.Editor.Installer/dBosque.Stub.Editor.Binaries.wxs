@@ -24,9 +24,6 @@
                 <File Id="fil466004C9FAB46C36E231AB7528A00BB6" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Editor.Interfaces.dll" />
             </Component>
             
-            <Component Id="cmpB84B74341ECDB7E62888FD19B6EA0D5D" Guid="*">
-                <File Id="filC651AC4B310E57E4ACADF5121FD59B86" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Editor.layout" />
-            </Component>
             
             <Component Id="cmp9C9248893F71135E7E0166B0976E72ED" Guid="*">
                 <File Id="fil21E8AC23AB95C07106ECE1E48246BFA2" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\dBosque.Stub.Editor.Plugin.Runner.dll" />
@@ -421,8 +418,8 @@
             <Component Id="cmpBF8809ED33815FD076E06377CDD76FBC" Guid="*">
                 <File Id="fil56DF007369EFF5DF7AED8BD5CD383E2A" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\SQLitePCLRaw.provider.e_sqlite3.dll" />
             </Component>
-            <Component Id="cmp161C839AFA7F415E607E8F0C73C607BB" Guid="*">
-                <File Id="fil01C424928A516A340D79F79D255060FA" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\StubTrace-2017-10-25.log" />
+            <Component Id="cmp60038A39FB95CCDC995FD6EAAF7562C1" Guid="*">
+                <File Id="fil65EEB887E53B92815736023DBABC747E" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\StubTrace-2017-11-23.log" />
             </Component>
             <Component Id="cmp013A04F13FEF865E687AAE7918B178B1" Guid="*">
                 <File Id="filC16BCC8B7F11A50E5A46DA67D68F8FFE" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\Swashbuckle.AspNetCore.dll" />
@@ -775,78 +772,14 @@
             <Component Id="cmpAB067D8F5470E21393A8E5750355C312" Guid="*">
                 <File Id="filC9218B16CCA3B5408C404B3A7004CD7A" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll" />
             </Component>
-            <Directory Id="dir58E8247E2885C01898CAD009F9EFD8BA" Name="runtimes">
-                <Directory Id="dir6F75383DB633D8F130457F52F58EA410" Name="linux-arm">
-                    <Directory Id="dirDE2B6474A7AE43169B31CD69645DD47A" Name="native">
-                        <Component Id="cmp0C2A5F3CA6D5F06168FD6F57A772AD34" Guid="*">
-                            <File Id="fil476660FEFE3965A95D7FA9A0BF939503" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\linux-arm\native\libuv.so" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dir4368456DE80A31A0FABEF422CF868A74" Name="linux-arm64">
-                    <Directory Id="dirD4D406B0649E8BA45C0D436FC1C3D7B7" Name="native">
-                        <Component Id="cmp1C492D2D4CF49456899165E7224CB6E0" Guid="*">
-                            <File Id="fil3F542413E5D73B27E128D772E113489D" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\linux-arm64\native\libuv.so" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dir5A82E1B4CD9A0049E60DF9F72B629F26" Name="linux-armel">
-                    <Directory Id="dirD74A970094F17ABF99BEB555E46D909F" Name="native">
-                        <Component Id="cmpA73CADC460B64A524C8A4217E05DFAB3" Guid="*">
-                            <File Id="fil74885D1D37545E929A47E2F5E84AF4E2" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\linux-armel\native\libuv.so" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dir986BEF73997BE02DCDBC34E856C19B36" Name="linux-x64">
-                    <Directory Id="dirE1E651EB5B4F1522E5E10B81FEA70677" Name="native">
-                        <Component Id="cmp9522A40D7C0C33FAE45DA950D6779D74" Guid="*">
-                            <File Id="fil1E227FDFF38B879707BFB308756E482B" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\linux-x64\native\libuv.so" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dir3DA9BA8D811ABA6F3AFA391339C320BE" Name="osx">
-                    <Directory Id="dir2887E24B7F769B7740C67C14A1BE2316" Name="native">
-                        <Component Id="cmp19846B0D32701EB4926900E5197E4C01" Guid="*">
-                            <File Id="filAE9EEB0FED7E7775A4FE5E8F500E8025" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\osx\native\libuv.dylib" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dir9FF0F9C1A7463CA0B24689AA89D869B5" Name="win-arm">
-                    <Directory Id="dir46754318AAFE7C2D3BBAC065B627290B" Name="native">
-                        <Component Id="cmpD3D59F5FBFF7930B07CB359EFF671D41" Guid="*">
-                            <File Id="fil8BAFF70A91B3145558308DC964F8B6EF" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\win-arm\native\libuv.dll" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dirB9C75524282911E40C3C964A8836A714" Name="win-x64">
-                    <Directory Id="dir1F9DF9DD2FB29AE2942604FAC206D5C4" Name="native">
-                        <Component Id="cmpB660EA9EDF6905CAEC01663CBC33C15F" Guid="*">
-                            <File Id="fil02D625AAEFCBA0905D2181671C9C17BF" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\win-x64\native\libuv.dll" />
-                        </Component>
-                    </Directory>
-                </Directory>
-                <Directory Id="dir92F336DAA82E5A629052407A3F87EF27" Name="win-x86">
-                    <Directory Id="dir2B43AAE918D399CEF13EC6CBA2D3D5EA" Name="native">
-                        <Component Id="cmpC299AF8DE729FCE1DD66AFE5EE2EEE77" Guid="*">
-                            <File Id="filA9C5C78E6A1ED97F18E156A4CB8962F4" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\runtimes\win-x86\native\libuv.dll" />
-                        </Component>
-                    </Directory>
-                </Directory>
-            </Directory>
             <Directory Id="dir43FCCFA109FBF584D9155DCE31E452EB" Name="x64">
                 <Component Id="cmpFC2E76D379F15CC9669BF089DCE68F67" Guid="*">
                     <File Id="fil80542949A7B72B7725050E8F571C7990" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\x64\e_sqlite3.dll" />
-                </Component>
-                <Component Id="cmp19F6DF8A2ABC78D782D76F1EEC9A5800" Guid="*">
-                    <File Id="filC7EA62E1AC64247AFBE682E8631402B8" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\x64\SQLite.Interop.dll" />
                 </Component>
             </Directory>
             <Directory Id="dir97F42FF68945B97AAE670945C4FDAE93" Name="x86">
                 <Component Id="cmp90F7B2BFC8AE78933FA8D6022B577DE2" Guid="*">
                     <File Id="filD2324BF0F7366DE3D97DA82595AC83C1" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\x86\e_sqlite3.dll" />
-                </Component>
-                <Component Id="cmp77484AF39EF2F8BD64E876C33A1C3E49" Guid="*">
-                    <File Id="filD2ACACD0EBAF09B1953E9C3793C13C69" KeyPath="yes" Source="$(var.dBosque.Stub.Editor.TargetDir)\x86\SQLite.Interop.dll" />
                 </Component>
             </Directory>
         </DirectoryRef>
@@ -863,7 +796,6 @@
             <ComponentRef Id="cmp35B18511CE513DDFEA93B431EDB0E535" />
             <ComponentRef Id="cmpF9B3AB5E95EBFF8DA3F578991A39F3BB" />
             
-            <ComponentRef Id="cmpB84B74341ECDB7E62888FD19B6EA0D5D" />
             
             <ComponentRef Id="cmp9C9248893F71135E7E0166B0976E72ED" />
             
@@ -1004,7 +936,7 @@
             <ComponentRef Id="cmp64C05AA1C43E0D9DBAD9C14A66C00F23" />
             <ComponentRef Id="cmp9E349E891D154ADBFB83038532027A46" />
             <ComponentRef Id="cmpBF8809ED33815FD076E06377CDD76FBC" />
-            <ComponentRef Id="cmp161C839AFA7F415E607E8F0C73C607BB" />
+            <ComponentRef Id="cmp60038A39FB95CCDC995FD6EAAF7562C1" />
             <ComponentRef Id="cmp013A04F13FEF865E687AAE7918B178B1" />
             <ComponentRef Id="cmpA5FED8161FD657378956DA3AE3A09E60" />
             <ComponentRef Id="cmp77BB727475A9C0C22B87E602EE0EA12F" />
@@ -1122,18 +1054,8 @@
             <ComponentRef Id="cmp74AD17100EF04DA9E0B6DB1AFA6D8D5C" />
             <ComponentRef Id="cmp2C9ADE433A5BF4F58225CCF53E6E4CF8" />
             <ComponentRef Id="cmpAB067D8F5470E21393A8E5750355C312" />
-            <ComponentRef Id="cmp0C2A5F3CA6D5F06168FD6F57A772AD34" />
-            <ComponentRef Id="cmp1C492D2D4CF49456899165E7224CB6E0" />
-            <ComponentRef Id="cmpA73CADC460B64A524C8A4217E05DFAB3" />
-            <ComponentRef Id="cmp9522A40D7C0C33FAE45DA950D6779D74" />
-            <ComponentRef Id="cmp19846B0D32701EB4926900E5197E4C01" />
-            <ComponentRef Id="cmpD3D59F5FBFF7930B07CB359EFF671D41" />
-            <ComponentRef Id="cmpB660EA9EDF6905CAEC01663CBC33C15F" />
-            <ComponentRef Id="cmpC299AF8DE729FCE1DD66AFE5EE2EEE77" />
             <ComponentRef Id="cmpFC2E76D379F15CC9669BF089DCE68F67" />
-            <ComponentRef Id="cmp19F6DF8A2ABC78D782D76F1EEC9A5800" />
             <ComponentRef Id="cmp90F7B2BFC8AE78933FA8D6022B577DE2" />
-            <ComponentRef Id="cmp77484AF39EF2F8BD64E876C33A1C3E49" />
         </ComponentGroup>
     </Fragment>
 </Wix>
