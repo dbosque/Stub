@@ -1,5 +1,6 @@
 ﻿using dBosque.Stub.Interfaces;
 using dBosque.Stub.Repository.Interfaces;
+using dBosque.Stub.Services.Logging;
 using dBosque.Stub.Services.XSLT;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,63 +14,10 @@ namespace dBosque.Stub.Services
     /// <typeparam name="TResult"></typeparam>
     public class GenericStubHandler<TResult> : IStubHandler<TResult> 
     {
-        public class LogMessage
-        {
-            public LogMessage(IStubMessage<TResult> msg)
-            {
-                Sender = msg.Sender;
-                Rootnode = $"{msg.RootNameSpace}/{msg.RootNode}";
-                Uri = msg.Uri;
-                Direction = "In";
-            }
-            public string Direction { get; set; }
-            public string Sender { get; set; }
-            public string Rootnode { get; set; }
-            public string Uri { get; set; }
-        }
-      
-
-        private class ResultMessage : LogMessage
-        {
-          
-            public ResultMessage(IStubMessage<TResult> msg, long elapsed)                
-                : base(msg)
-            {
-
-                Duration = elapsed;
-                Direction = (msg.IsPassTrough ? "Out Passthrough" : "Out");
-            }
-          
-
-            public long Duration { get; set; }
-        }
-
-        private class FailureMessage : ResultMessage
-        {
-            public FailureMessage(IStubMessage<TResult> msg, long elapsed)
-                : base(msg, elapsed)
-            {
-                Raw = msg.RawRequest;
-                ErrorMessage = msg.Matches.Error;
-            }
-            public string ErrorMessage { get; set; }
-            public string Raw { get; set; }
-        }
-        private class SuccessMessage : ResultMessage
-        {
-            public SuccessMessage(IStubMessage<TResult> msg, long elapsed)
-                : base(msg , elapsed)
-            {
-                ContentType = msg.ContentType;
-                StatusCode = msg.HttpStatusCode;
-            }
-            public int StatusCode { get; set; }
-            public string ContentType { get; set; }
-        }
-
         private IRepositoryFactory _factory;
         private ILogger _logger;
         private XSLTPostProcessor _xsltProcessor = new XSLTPostProcessor();
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -94,7 +42,7 @@ namespace dBosque.Stub.Services
                 IConfigurationRepository config = null;
                 if (Guid.TryParse(message.Tenant, out Guid tenantSecuritycode))
                     config = _factory.CreateConfigurationRepositoryFor(tenantSecuritycode);
-                else if (message.Tenant == "__default")
+                else if (message.Tenant == Constants.DefaultTenant)
                 {
                     config = _factory.CreateConfiguration();
                     _logger.LogInformation($"Configuration created for default.");
@@ -122,7 +70,7 @@ namespace dBosque.Stub.Services
                 message.HttpStatusCode = 409;
 
             watch.Stop();
-            _logger.LogWarning("{@Id}", new FailureMessage(message, watch.ElapsedMilliseconds));
+            _logger.LogWarning("{@Id}", message.Failure(watch.ElapsedMilliseconds));
         }
 
         /// <summary>
@@ -136,7 +84,7 @@ namespace dBosque.Stub.Services
                 message.Relay(message.PassthroughUri);
 
             watch.Stop();
-            _logger.LogInformation("{@Id}", new SuccessMessage(message, watch.ElapsedMilliseconds));
+            _logger.LogInformation("{@Id}", message.Success(watch.ElapsedMilliseconds));
             _logger.LogTrace(message.Response);
         }        
 
@@ -157,7 +105,7 @@ namespace dBosque.Stub.Services
                 if (data == null)
                     return message.AsUnauthorized();
 
-                _logger.LogInformation("[{@Id}]", new LogMessage(message));
+                _logger.LogInformation("[{@Id}]", message.Info());
                 _logger.LogTrace(message.RawRequest);
 
                 HandleSuccess(message, watch);
@@ -180,7 +128,7 @@ namespace dBosque.Stub.Services
                 if (data == null)
                     return message.AsUnauthorized();
 
-                _logger.LogInformation("[{@Id}]", new LogMessage(message));
+                _logger.LogInformation("[{@Id}]", message.Info());
                 _logger.LogTrace(message.RawRequest);
 
                 // Find a stub

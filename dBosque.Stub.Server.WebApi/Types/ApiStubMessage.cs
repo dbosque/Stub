@@ -39,7 +39,8 @@ namespace dBosque.Stub.Server.WebApi.Types
             var headers = _httpRequest.GetTypedHeaders();
             // If accept supports application/xml, let that one be the default.
             if (headers.Accept != null && headers.Accept.Any())
-                ContentType = headers.Accept.Any(a => a.MediaType.Value == ContentTypes.ApplicationXml) ? ContentTypes.ApplicationXml: headers.Accept.FirstOrDefault()?.MediaType.Value;
+                ContentType = headers.Accept.Any(a => a.MediaType.Value == ContentTypes.ApplicationXml) 
+                    ? ContentTypes.ApplicationXml: headers.Accept.FirstOrDefault()?.MediaType.Value;
             if (ContentType == ContentTypes.All)
                 ContentType = ContentTypes.ApplicationJson;
 
@@ -87,13 +88,13 @@ namespace dBosque.Stub.Server.WebApi.Types
                     StatusCode = HttpStatusCode
                 };              
             }
-            if (!string.IsNullOrEmpty(Matches.Error))
+            if (string.IsNullOrEmpty(Matches.Error))
                 return new NotFoundResult();
             else
                 return new ContentResult()
                 {
                     Content = Matches.Error,
-                    ContentType = ContentType,
+                    ContentType = ContentTypes.TextPlain,
                     StatusCode = 500
                 };
         }

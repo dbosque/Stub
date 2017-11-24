@@ -21,7 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj" />
     <ProjectReference Include="..\dBosque.Stub.Repository.Entities\dBosque.Stub.Repository.Entities.csproj" />
-    <ProjectReference Include="..\dBosque.Stub.Repository\dBosque.Stub.Repository.csproj" />
     <ProjectReference Include="..\dBosque.Stub.Services\dBosque.Stub.Services.csproj" />
   </ItemGroup>
 

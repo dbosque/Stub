@@ -79,7 +79,11 @@ namespace dBosque.Stub.Services.Extensions
             {
                 var doc = content.CreateDocument(strip);
                 return new DocumentInfo()
-                {Document = doc, Namespace = doc.DocumentElement.NamespaceURI, RootNode = doc.DocumentElement.LocalName};
+                {
+                    Document  = doc,
+                    Namespace = doc.DocumentElement.NamespaceURI,
+                    RootNode  = doc.DocumentElement.LocalName
+                };
             }
             catch (Exception)
             {

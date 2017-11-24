@@ -1,4 +1,5 @@
-﻿using dBosque.Stub.Services;
+﻿using dBosque.Stub.Interfaces;
+using dBosque.Stub.Services;
 using dBosque.Stub.Services.Extensions;
 using dBosque.Stub.Services.Types;
 using System.Text;
@@ -8,7 +9,7 @@ namespace dBosque.Stub.Server.Sockets.Types
     public class SocketMessage : StubMessage<string>
     {
         public SocketMessage(string sender, string msg) 
-            : base("__default", 200, ContentTypes.ApplicationXml)
+            : base(Constants.DefaultTenant, 200, ContentTypes.ApplicationXml)
         {
             Sender = sender;
             RawRequest = msg;
@@ -58,7 +59,7 @@ namespace dBosque.Stub.Server.Sockets.Types
         ///<param name="uri"></param>
         public override void Relay(string uri)
         {
-            // nothing, we can not relay a socker message
+            // nothing, we can not relay a socket message
         }
     }
 }

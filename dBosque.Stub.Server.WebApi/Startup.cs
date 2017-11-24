@@ -11,6 +11,10 @@ namespace dBosque.Stub.Server.WebApi
 {
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;            
@@ -51,7 +55,6 @@ namespace dBosque.Stub.Server.WebApi
                     name: "Generic",
                     template: "{*uri}",
                     defaults: new { controller = "GenericApi", action = "ExecuteDefault" });
-
             });
           
         }

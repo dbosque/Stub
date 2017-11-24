@@ -10,6 +10,12 @@
         /// </summary>
         public string Uri { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Hosting"/> is enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if enabled; otherwise, <c>false</c>.
+        /// </value>
         public bool Enabled { get; set; }
     }
 }

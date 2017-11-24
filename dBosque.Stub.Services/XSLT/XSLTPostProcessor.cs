@@ -42,10 +42,7 @@ namespace dBosque.Stub.Services.XSLT
             }
             catch (Exception ex)
             {
-                message.Matches = new StubMatchList()
-                {
-                    Error = $"During postprocessing {ex.Message}"
-                };
+                message.Matches.Error = $"Error during XSLT postprocessing : {ex.Message}";
             }
         }
     }

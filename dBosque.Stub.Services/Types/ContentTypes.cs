@@ -1,6 +1,9 @@
 ﻿
 namespace dBosque.Stub.Services.Types
 {
+    /// <summary>
+    /// Different contenttypes
+    /// </summary>
     public static class ContentTypes
     {
         public static string TextPlain = "text/plain";

@@ -3,67 +3,576 @@
     <Fragment>
         <DirectoryRef Id="INSTALLFOLDERSERVICE">
             <Component Id="cmpC2CEE5D0FB7C2E60047078257052E5CF" Guid="*">
-                <File Id="filBA9119C3F8DBBDE92020D776006AEDDC" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\appsettings.json" />
+                <File Id="filBA9119C3F8DBBDE92020D776006AEDDC" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\appsettings.json" />
             </Component>
             <Component Id="cmp9FA0D5D30D8EDAD2C0BFFA92F277F178" Guid="*">
-                <File Id="fil2B1AA3682AB58D59F0FB17461A1459B0" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Interfaces.dll" />
+                <File Id="fil2B1AA3682AB58D59F0FB17461A1459B0" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Interfaces.dll" />
             </Component>
             
             <Component Id="cmpC8ED21E8DDE3280C321F1A7EE4603688" Guid="*">
-                <File Id="fil9DEDFD6DB87DE4120AF12D78FF4E780F" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Repository.dll" />
+                <File Id="fil9DEDFD6DB87DE4120AF12D78FF4E780F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Repository.dll" />
             </Component>
             <Component Id="cmp976E11507C8F5BC820D66AF758524EC0" Guid="*">
-                <File Id="filF0B57553D02BDA099708ED6C6CB74D9F" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Repository.Entities.dll" />
+                <File Id="filF0B57553D02BDA099708ED6C6CB74D9F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Repository.Entities.dll" />
             </Component>
             
             <Component Id="cmpF9BF88E8A7D1CE9B038970987BB3CD5A" Guid="*">
-                <File Id="filAF3172CD2EB7CEC1BBAF57855D4F40E3" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Repository.Interfaces.dll" />
+                <File Id="filAF3172CD2EB7CEC1BBAF57855D4F40E3" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Repository.Interfaces.dll" />
             </Component>
             
             
             <Component Id="cmpAA7BD26F00A23D6B2550695F6CB61C8C" Guid="*">
-                <File Id="fil240F686E234ACC15546EDE92D0EB2EC1" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.AspNetCore.Host.dll" />
+                <File Id="fil240F686E234ACC15546EDE92D0EB2EC1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.AspNetCore.Host.dll" />
             </Component>
             
             <Component Id="cmp7A1CBA767A43D91FF903CD0A3C7D6209" Guid="*">
-                <File Id="filF5026A3932872AFE7F92E02DE8130E82" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.deps.json" />
+                <File Id="filF5026A3932872AFE7F92E02DE8130E82" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.deps.json" />
             </Component>
             <Component Id="cmp2236A1654E02828C1C1554FB1E7B2676" Guid="*">
-                <File Id="fil7C5D99C182AA62DBB8194362A2A49606" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.dll" />
+                <File Id="fil7C5D99C182AA62DBB8194362A2A49606" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.dll" />
             </Component>
             
-            <Component Id="cmp383067375E64B2215EBF26F9E3DE74F7" Guid="*">
-                <File Id="fil42E06D3426D412AF8AD2F9E1134D819C" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.runtimeconfig.dev.json" />
-            </Component>
             <Component Id="cmp4691FAA260ED99414F64BBEC7C0EA6A2" Guid="*">
-                <File Id="filD10BB1F2FC0B92DFF2A8B660CF47408F" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.runtimeconfig.json" />
+                <File Id="filD10BB1F2FC0B92DFF2A8B660CF47408F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.runtimeconfig.json" />
             </Component>
             <Component Id="cmp009475B4592EE4938DBC90401FE4434A" Guid="*">
-                <File Id="fil4E9A6264E80ABE7F628DA5C8F2D05811" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.Soap.dll" />
+                <File Id="fil4E9A6264E80ABE7F628DA5C8F2D05811" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.Soap.dll" />
             </Component>
             
             <Component Id="cmp6B42839800D9EE8293479C50C7759B95" Guid="*">
-                <File Id="filF9B6CAF0D3CE6F1667FB0DEFEDD2721E" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.Sockets.dll" />
+                <File Id="filF9B6CAF0D3CE6F1667FB0DEFEDD2721E" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.Sockets.dll" />
             </Component>
             
             <Component Id="cmpBBE2A703E8A1C293BA7ABB93277FBEEA" Guid="*">
-                <File Id="filA9FD1A7BE9020A74A3C2B93F2D8C01A2" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.WebApi.Configuration.dll" />
+                <File Id="filA9FD1A7BE9020A74A3C2B93F2D8C01A2" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.WebApi.Configuration.dll" />
             </Component>
             
             <Component Id="cmp843397A76B439C4F2B3B816D9CDD5E2B" Guid="*">
-                <File Id="filB29AC6D45243029EC2459CA4641D8F65" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.WebApi.Configuration.xml" />
+                <File Id="filB29AC6D45243029EC2459CA4641D8F65" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.WebApi.Configuration.xml" />
             </Component>
             <Component Id="cmpBFE907AEC7816A91DEA894E26C6928B8" Guid="*">
-                <File Id="filF5B737C7E0CCA71267524F23F54AF1EA" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Server.WebApi.dll" />
+                <File Id="filF5B737C7E0CCA71267524F23F54AF1EA" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Server.WebApi.dll" />
             </Component>
             
             <Component Id="cmp820B4E99CA23510B4EF87EDD1ED3DB62" Guid="*">
-                <File Id="fil35E2B341C9969F80279E9C78A3DC4C63" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dBosque.Stub.Services.dll" />
+                <File Id="fil35E2B341C9969F80279E9C78A3DC4C63" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dBosque.Stub.Services.dll" />
             </Component>
             
             <Component Id="cmp0F963B22C445F4A2DCE151047B4F8DE3" Guid="*">
-                <File Id="filC71726D2E245CCAB3F992A67C5FB431F" KeyPath="yes" Source="$(var.dBosque.Stub.Server.TargetDir)\dbstub.db" />
+                <File Id="filC71726D2E245CCAB3F992A67C5FB431F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\dbstub.db" />
             </Component>
+            <Component Id="cmp3C2BCA1C890EF681BD1C4DAA1AA66FA6" Guid="*">
+                <File Id="fil19DE7F95943F2A37F8893F2D6D48E7D6" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Antiforgery.dll" />
+            </Component>
+            <Component Id="cmp478BF3639568CF435F14D677DD0D2071" Guid="*">
+                <File Id="filF832FD4B920ED408DD117BAADD62E59A" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Authentication.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp2C38F998592FADCC008D60A2248F6AE2" Guid="*">
+                <File Id="fil909AA0A2F47FC1AA375EE6ED955E4606" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Authentication.Core.dll" />
+            </Component>
+            <Component Id="cmp053F96DC5921E14EFB6176368A7027AD" Guid="*">
+                <File Id="fil1FFE0D01246DF077BCA39D4FFBD3A234" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Authorization.dll" />
+            </Component>
+            <Component Id="cmp4472F64DA12F86D7002F4E034151C5D4" Guid="*">
+                <File Id="fil46753618BD3CF32764FBEFDEE9A20F0B" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Authorization.Policy.dll" />
+            </Component>
+            <Component Id="cmp3D094BC756B801AE492995692A4DD9E3" Guid="*">
+                <File Id="fil307421650B85B1EF1E1839B9C56DD429" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Cors.dll" />
+            </Component>
+            <Component Id="cmp706ADD40CEA81E7338EB1B7D065E497A" Guid="*">
+                <File Id="filBCADB44F91647D1BC740DB8406094320" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Cryptography.Internal.dll" />
+            </Component>
+            <Component Id="cmp762535A9E6C697F1EFAD5BDC90021112" Guid="*">
+                <File Id="fil796E28026334CC175071608FA8323D2D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.DataProtection.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp5EA0D21578DBB0E34073A1F857CA349B" Guid="*">
+                <File Id="fil0C3E7BA7EEDDAC4ECA08F2DDC7539A32" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.DataProtection.dll" />
+            </Component>
+            <Component Id="cmp85C78BAB508D5388F54E89E8F0E8BBBB" Guid="*">
+                <File Id="fil0779A949368928F9B43499AEE952356D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Diagnostics.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp8AFD71C9FA27D6EDE1F19F8F4EE8E156" Guid="*">
+                <File Id="fil76E86FDD2441130FD4B0BD65F17A72A5" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Diagnostics.dll" />
+            </Component>
+            <Component Id="cmp0C7DACF2ED2C60F5DD7F98F0FF1EBE81" Guid="*">
+                <File Id="filD3C6AF06C02058616C6222ACC622D957" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.dll" />
+            </Component>
+            <Component Id="cmp72270FDF11332FB89D2206E059581E7C" Guid="*">
+                <File Id="fil1A6EB080E8B63162F4479AD61CDE3C99" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Hosting.Abstractions.dll" />
+            </Component>
+            <Component Id="cmpEC1CDFFF26D514CC8A6941B27F86A4E3" Guid="*">
+                <File Id="fil1A0A9100AA5F7DDF4A20CA8A6295D603" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Hosting.dll" />
+            </Component>
+            <Component Id="cmp37FE06E84128AE67756C93F39B310617" Guid="*">
+                <File Id="filCADDEE2CB43E815B490675D22BC4AEE9" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp33A028C83DFE2816674E50E7D740BF65" Guid="*">
+                <File Id="filCB288B57357534F5B6EA43E11804B195" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Html.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp3F1FD27DD738E929907418DA60094ED8" Guid="*">
+                <File Id="fil65BA08B49AF91A1E0B1F4FCE56822DCE" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Http.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp396B5A8962EDCDEE35CABA7D8BCB188E" Guid="*">
+                <File Id="fil5F28439BDF24ECCCB749D355AF604DA9" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Http.dll" />
+            </Component>
+            <Component Id="cmp640FE3EC782A1C83655CD1B88F0DB051" Guid="*">
+                <File Id="fil4C76397EC47D05530B7C74BDE4BAC48D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Http.Extensions.dll" />
+            </Component>
+            <Component Id="cmp5CF10E70E43F2279A1A86FEA78A22398" Guid="*">
+                <File Id="filA33C8C94F2BA6D224B5C1154D502193B" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Http.Features.dll" />
+            </Component>
+            <Component Id="cmpDA4E6EA73A5856E3AB0BE4BFB530F939" Guid="*">
+                <File Id="filCCF44718ABFDC3DB71A2C284A3DBE0F8" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.HttpOverrides.dll" />
+            </Component>
+            <Component Id="cmp9001AB2D96B2A75F2B15AED15CF659C0" Guid="*">
+                <File Id="fil0831D47C3A730B3FF2ABF0E26EDEC704" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.JsonPatch.dll" />
+            </Component>
+            <Component Id="cmp0B04AEBA660F44ADE97F6573838D8B00" Guid="*">
+                <File Id="fil062C53FF2AC488257323A7910D0415E5" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Localization.dll" />
+            </Component>
+            <Component Id="cmpBB2A08B1C37C29DAE6E060A7185B0E28" Guid="*">
+                <File Id="filD8DC1A75808DD2C463A7D60A8AC179B7" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp01185F8E7C90A30AD16B9B92EA553156" Guid="*">
+                <File Id="filA216BAC0B7D6F1553CDBB94FD3D6FBC3" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.ApiExplorer.dll" />
+            </Component>
+            <Component Id="cmp50A77033D001CA10BAA4DFC52AF69A56" Guid="*">
+                <File Id="fil579D4ADC4200FB7DF675BFFBBB692B4F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Core.dll" />
+            </Component>
+            <Component Id="cmp26F4CAC0E89D7237B96BCB9C4188D429" Guid="*">
+                <File Id="filA2B01D4D0F2BA8F581E3296466E93500" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Cors.dll" />
+            </Component>
+            <Component Id="cmp33A389F47C74B97601C6AF1A59791DD9" Guid="*">
+                <File Id="fil75A86CD3D25734CFB5AE29EC81D0314A" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.DataAnnotations.dll" />
+            </Component>
+            <Component Id="cmpBE5BC5AD40C5A35B0EAA7541198C3D57" Guid="*">
+                <File Id="fil9B1288557178FAF3CFFBEE50E31787A4" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.dll" />
+            </Component>
+            <Component Id="cmp436BEF8C81162C15E7D4F3BF2B634758" Guid="*">
+                <File Id="filE801BBA7F6BB73DFE2890922D3EA7D29" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Formatters.Json.dll" />
+            </Component>
+            <Component Id="cmpA479BBDC2D260B9A3FED39EB9C92B6AF" Guid="*">
+                <File Id="fil7171CD2F7229720D7EE7D3CD7279E781" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll" />
+            </Component>
+            <Component Id="cmp9BC1812AADA9176970D5399E679AD0C5" Guid="*">
+                <File Id="filE465BACBD94F87E69202669072C575D2" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Localization.dll" />
+            </Component>
+            <Component Id="cmp2441608DEF9B0EF619112228701FDD7B" Guid="*">
+                <File Id="fil840DFA1D64D7A100EE770911615AD546" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Razor.dll" />
+            </Component>
+            <Component Id="cmpD9AAD5325799B0AA862AC126DC4307EC" Guid="*">
+                <File Id="filDA304377D6A070C3AD36C5EDB1F747BF" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll" />
+            </Component>
+            <Component Id="cmpECDBF7B0A4D16E7730DAC8CFD00A2735" Guid="*">
+                <File Id="filF367450131ECCCF029A97670A6ED7642" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.RazorPages.dll" />
+            </Component>
+            <Component Id="cmpF0577B1CB88F50529F41F4A507C1B859" Guid="*">
+                <File Id="fil55345F793D45FE962F23D422CF1F7593" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.TagHelpers.dll" />
+            </Component>
+            <Component Id="cmpE3DADA05B8F73FB649476099149A6AA1" Guid="*">
+                <File Id="fil495B7433CC4CC4C0391FD8CA1A2FFA18" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Mvc.ViewFeatures.dll" />
+            </Component>
+            <Component Id="cmp426EA7369E8410F523D420B1C84F3053" Guid="*">
+                <File Id="fil79E5234AD10EFDCC1B44BD2A2EDF51D4" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Razor.dll" />
+            </Component>
+            <Component Id="cmp7FFD5878F4E28A6E3BA7CE1EC29FA86F" Guid="*">
+                <File Id="filDDF16AD7EB52A6DE0FB61F715FB5D3AC" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Razor.Language.dll" />
+            </Component>
+            <Component Id="cmp2030EF9B96DB1A3D3EF13516F90BD94D" Guid="*">
+                <File Id="fil24B90A08441F65E8876F094661D1DE3C" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Razor.Runtime.dll" />
+            </Component>
+            <Component Id="cmpA58A2DC8A684D798D60240B6D0C89001" Guid="*">
+                <File Id="fil8369AFAD6834C35299024D37F4BDFA00" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp3774ED462FAE2C2E5B030402153A6526" Guid="*">
+                <File Id="filE23EFB3C706FFB5208BC545CBDF714E2" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Routing.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp6CAE4923051757D8730752858B237EA1" Guid="*">
+                <File Id="fil1AA60891B4C4ECE84B060CB4D43400B2" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Routing.dll" />
+            </Component>
+            <Component Id="cmp7270E28465868545C471B250938431A6" Guid="*">
+                <File Id="filFFD1DED6284F4BEE9C920410F75DDA5A" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Server.IISIntegration.dll" />
+            </Component>
+            <Component Id="cmp57AA11C3EBCBDCCAB141FBDD78720D3B" Guid="*">
+                <File Id="fil12317F6A34B8034A60FE34E11280B8EB" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Server.Kestrel.Core.dll" />
+            </Component>
+            <Component Id="cmp79B7A554217CAC368A8FE6D620A7C503" Guid="*">
+                <File Id="filBEAE71BA586F39C8D0C788305C557CB9" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Server.Kestrel.dll" />
+            </Component>
+            <Component Id="cmp4962768767B45940D98268C364899416" Guid="*">
+                <File Id="fil4E64F82A3337850AF9B4DBAC3FC2A27F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Server.Kestrel.Https.dll" />
+            </Component>
+            <Component Id="cmpF0C83656F7F2A4FA3A30C712A49817A2" Guid="*">
+                <File Id="filD8348E28BE9D99D4E3943F340A12C77D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll" />
+            </Component>
+            <Component Id="cmpE6512F5947C3DD088635459C27EB8360" Guid="*">
+                <File Id="fil1CA41734015CA1EE46B99164BDCD9B48" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll" />
+            </Component>
+            <Component Id="cmp44D0D98CFFE9303CAA723E325519631A" Guid="*">
+                <File Id="fil09C57780ACF2191EAC2C102BE3CCB459" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.StaticFiles.dll" />
+            </Component>
+            <Component Id="cmp31951F0D8D9C3A0AE0A3ECCDDDA4EAA2" Guid="*">
+                <File Id="fil813F66EA72241A61BDEB01AD00647941" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.AspNetCore.WebUtilities.dll" />
+            </Component>
+            <Component Id="cmp6A85905F6C42FD38E33E9349D8A5E077" Guid="*">
+                <File Id="filF12D43C3EF37B24B69BD5291AB14B4C1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.CodeAnalysis.CSharp.dll" />
+            </Component>
+            <Component Id="cmpC1551228B9D698939A49BAD71EBF1DF4" Guid="*">
+                <File Id="fil6CCFA070045D9DF1A39FCFBD84B41729" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.CodeAnalysis.dll" />
+            </Component>
+            <Component Id="cmp98A3DE06811F6A04D7E5BDA49EBCA251" Guid="*">
+                <File Id="fil2167CA483C39332B171C1414DABB02A6" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.CodeAnalysis.Razor.dll" />
+            </Component>
+            <Component Id="cmp4FBF47FD8A41C01B5B0114D68A8FE446" Guid="*">
+                <File Id="fil16C98796CC040CCB2C7AFD1A0A62365E" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Data.Sqlite.dll" />
+            </Component>
+            <Component Id="cmp1C24A0DBD7AFFA1B0136EB9C944C03BB" Guid="*">
+                <File Id="filE434D537370A05B7D0EBD75D2316F4CB" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.DotNet.PlatformAbstractions.dll" />
+            </Component>
+            <Component Id="cmp158D85EF06DA56C2ECE14E75B2C52A89" Guid="*">
+                <File Id="fil07C7E2E194C794D34256357738F6A697" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.EntityFrameworkCore.Design.dll" />
+            </Component>
+            <Component Id="cmp42166D03BF22FF09229147A67B779476" Guid="*">
+                <File Id="fil4CD6DB55B5C2C18CC18BA704D989F50C" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.EntityFrameworkCore.dll" />
+            </Component>
+            <Component Id="cmp527787BC49D0F558075927497E92DC91" Guid="*">
+                <File Id="fil20DBBF46946A4B008B3A4E3CF2CFA562" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.EntityFrameworkCore.Relational.dll" />
+            </Component>
+            <Component Id="cmpBE6DFCF1963770817C4974B091BAA75A" Guid="*">
+                <File Id="fil89B894D1AC70BEA7BB037AA671EF9097" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.EntityFrameworkCore.Sqlite.dll" />
+            </Component>
+            <Component Id="cmpEEC052F3E67A6055055369ED19B2DCCB" Guid="*">
+                <File Id="filBC0B8BAB69DED47695BDEA2293C4DA70" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+            </Component>
+            <Component Id="cmp9559B89F7536F1F7F18F83E520E6179C" Guid="*">
+                <File Id="fil8512B0EFAB95C8AD10763CCC2D78CDB2" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Caching.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp5F9F5A9A6E4970F34B836EA1331D6480" Guid="*">
+                <File Id="filDC8B7EDD7EFEB809E2B2EE841EFB7D2B" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Caching.Memory.dll" />
+            </Component>
+            <Component Id="cmpADEC943EEDAE54B4D24C4049DAB301AA" Guid="*">
+                <File Id="fil586CB59A4D0A114180B0B7F4CFB957B0" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.CommandLineUtils.dll" />
+            </Component>
+            <Component Id="cmp1485D574F81C4E5A200ADE159392F941" Guid="*">
+                <File Id="fil18A8D1FE422992B4B91AED6C79F513F1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.Abstractions.dll" />
+            </Component>
+            <Component Id="cmpC24B521BFC6C15217993E4243372823F" Guid="*">
+                <File Id="filA87FF207EC2F5EF9900FCBE1C86B3689" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.Binder.dll" />
+            </Component>
+            <Component Id="cmp70A0BDB718956AA154FFEB903EDB8AB3" Guid="*">
+                <File Id="fil59BA86CC2766C8A4F6678D28EDA2F024" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.CommandLine.dll" />
+            </Component>
+            <Component Id="cmpECB4DA96E3DCFD0F0A8311762EAB75DB" Guid="*">
+                <File Id="filFBB1C2EB3EBFBCEEC72DA64EA1FBFFDA" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.dll" />
+            </Component>
+            <Component Id="cmp3350B3D9F51D86B5DFC4F6972A7B60CA" Guid="*">
+                <File Id="filA12AA8F94FD24A0B76A3C025D2C4CB64" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+            </Component>
+            <Component Id="cmp2C9177E18F237F362A10F572F9F7201E" Guid="*">
+                <File Id="fil7C9CEE49F5CC3022F36DF10369EC2A8E" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+            </Component>
+            <Component Id="cmp6FFCB5E12CD8BAA95F86CDB6E8F121F3" Guid="*">
+                <File Id="filF1D4F003F2CAFDB6F314DEC0637D1BEA" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.Json.dll" />
+            </Component>
+            <Component Id="cmp42E8C78B7F93A8BD0B6B8738CE514D06" Guid="*">
+                <File Id="fil7F1B2F9780ABB356C68A5CC616802C1E" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+            </Component>
+            <Component Id="cmp0B4B1BF9324558BAD07615808079DE8F" Guid="*">
+                <File Id="fil3AABA16B50DD2D804B3E97D68803AC6C" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+            </Component>
+            <Component Id="cmpF7F896E38606CF93A4858FF088EDDD41" Guid="*">
+                <File Id="filBD1CE6769358238474A3793A6BFF44F9" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.DependencyInjection.dll" />
+            </Component>
+            <Component Id="cmpC2523C4E478F4F7383BDA54E97CAE9D0" Guid="*">
+                <File Id="fil8741D55B24F2C6E234EB0171BF617E1A" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.DependencyModel.dll" />
+            </Component>
+            <Component Id="cmpC938B782908E9DC7E758F9E09D698341" Guid="*">
+                <File Id="fil8128BD1FDA73416DCB842330AF231FEA" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+            </Component>
+            <Component Id="cmpC3FACF0CFA60D19667B932EF2D79000F" Guid="*">
+                <File Id="fil15B77901503BBDD7F656F316006CC8BB" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.FileProviders.Composite.dll" />
+            </Component>
+            <Component Id="cmp90BE10F5E1CAAC8677EC67E9483E1B7A" Guid="*">
+                <File Id="filBC239CAB5CC995D7E4AFB87387316FBB" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.FileProviders.Embedded.dll" />
+            </Component>
+            <Component Id="cmp8F95965E6E5358CC4F1F01147B49EBF4" Guid="*">
+                <File Id="fil5D6D11C8586F54B808F27544A563C649" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.FileProviders.Physical.dll" />
+            </Component>
+            <Component Id="cmp9E17836D9CC98631DB9DDD4FD593B7B6" Guid="*">
+                <File Id="fil4F2DAC7AC3166CBC4E48076BAFA3F021" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.FileSystemGlobbing.dll" />
+            </Component>
+            <Component Id="cmpE3D68DB334E7EFF68B4D0652CF9D3F37" Guid="*">
+                <File Id="filE280FF5457BB04738523EC01610BE292" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Hosting.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp8F8EC7B0CDB15BE019FA99F243E402DA" Guid="*">
+                <File Id="fil5EA966AD2D307F17B65FC9A023115A73" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Localization.Abstractions.dll" />
+            </Component>
+            <Component Id="cmp62C72D1028D11E57AE735884B327E2DB" Guid="*">
+                <File Id="filAF3E7C11A317AF10EBD33189E8DCD7B6" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Localization.dll" />
+            </Component>
+            <Component Id="cmp9CD1C6EB8B7242F32CDCC699DB1FE247" Guid="*">
+                <File Id="fil6A54E41C367C9F7A5188E9EC58C5FDDF" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Logging.Abstractions.dll" />
+            </Component>
+            <Component Id="cmpEF6F30EF93C2D884152FD47D4CF9B2CA" Guid="*">
+                <File Id="fil69E606C5E98C463A46477535D0601A64" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Logging.Configuration.dll" />
+            </Component>
+            <Component Id="cmp11B22FA1F352D725FB7811B0390E6DAB" Guid="*">
+                <File Id="fil31EBE3E581F34AD8301F2C57009E9362" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Logging.Console.dll" />
+            </Component>
+            <Component Id="cmpB6B825F73F47F4BEBE449B99F9258488" Guid="*">
+                <File Id="fil78D82738E05C1D811458AC7E5B666CAC" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Logging.Debug.dll" />
+            </Component>
+            <Component Id="cmp9F005E0388D7CC092D176A6C87C91414" Guid="*">
+                <File Id="fil6E7074F357BFA43566C26470620AAD3A" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Logging.dll" />
+            </Component>
+            <Component Id="cmp483DDE9618B34C9CA644340BD078F378" Guid="*">
+                <File Id="filCADD8FE50183CA0D4E4D92AAF8DC8168" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.ObjectPool.dll" />
+            </Component>
+            <Component Id="cmpD6DECCE51A667C00A8B35D72AC6CE69E" Guid="*">
+                <File Id="filE999FD289496CED4366E4EA12CB0F663" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+            </Component>
+            <Component Id="cmp7673804CACD0BAAC5B873D2092135B7B" Guid="*">
+                <File Id="fil3D0C22387B74CBF54305C705F71CC54D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Options.dll" />
+            </Component>
+            <Component Id="cmp0651C758C56D29C97C70A8D7F9B39F14" Guid="*">
+                <File Id="fil74A40BA3BC15A88447E37A28E70136B9" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.PlatformAbstractions.dll" />
+            </Component>
+            <Component Id="cmp33EB7015AD9D978D071779B4F1164EFB" Guid="*">
+                <File Id="filDBE5D76D23073E12CDA458B84303A00D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.Primitives.dll" />
+            </Component>
+            <Component Id="cmp9564456F9A9E164886342EC3F2B2F5AA" Guid="*">
+                <File Id="fil4ED51287CF1A8D816314C0E6B1E5CD62" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Extensions.WebEncoders.dll" />
+            </Component>
+            <Component Id="cmp083B9031E7CA1987A48A6F4F8AE353B2" Guid="*">
+                <File Id="filF91E3C4CE5E0415BFC2AFC51EDA1BA30" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Microsoft.Net.Http.Headers.dll" />
+            </Component>
+            <Component Id="cmpE73DB84583948C963E9EA91245A46037" Guid="*">
+                <File Id="fil24FA1D9AADDD30951E9368F7FF4E4E40" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Newtonsoft.Json.Bson.dll" />
+            </Component>
+            <Component Id="cmp124B1B5A23E8E2BA6E716C22163E28C3" Guid="*">
+                <File Id="filC2C316A6AE4D446B198927CACCE61D1C" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Newtonsoft.Json.dll" />
+            </Component>
+            <Component Id="cmpADB137E4B134F786B361B13F3C0F86C8" Guid="*">
+                <File Id="filF94D402C992EEE31241CCD70E2C7FB40" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\NJsonSchema.dll" />
+            </Component>
+            <Component Id="cmpFBCC852C85FA258761368D2D27C6117B" Guid="*">
+                <File Id="filF5CE2E92186B620F33D8AAA9A57A7EF4" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\NSwag.Core.dll" />
+            </Component>
+            <Component Id="cmpD8FAEC6284FA874EEAC708B64308A664" Guid="*">
+                <File Id="fil39E2E091360E8E0C1B2AE29F3B08BF1B" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Remotion.Linq.dll" />
+            </Component>
+            <Component Id="cmp67AE74BCFD8EF4B1DE787535A5D5BFC5" Guid="*">
+                <File Id="fil519203EBE857291CD3DA7854CD27495C" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.AspNetCore.dll" />
+            </Component>
+            <Component Id="cmp0B474CB536B63125B2137F4AED5AA7AE" Guid="*">
+                <File Id="filBCEFBA94765F2F38D9FA33EAC3597B31" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.dll" />
+            </Component>
+            <Component Id="cmp7E00EF7FA22CDF981CEE4F9F7F82B508" Guid="*">
+                <File Id="filB8A35893196988B53CAD2ADC543D11C1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.Extensions.Logging.dll" />
+            </Component>
+            <Component Id="cmpBD835EE7FE287EF53599562A5B6CE2F4" Guid="*">
+                <File Id="fil44E64DC0735BE4E375B257801E1D139A" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.Settings.Configuration.dll" />
+            </Component>
+            <Component Id="cmp7B4336923950CD8D96B8AA8F5CBC966E" Guid="*">
+                <File Id="filFC738FCA954DAF845C8072F797C7DDC3" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.Sinks.Console.dll" />
+            </Component>
+            <Component Id="cmpE88F6CCCC8599DC9A2E672083B05ABD6" Guid="*">
+                <File Id="fil009484B36AEDC10540E89F8ED7A49FB1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.Sinks.File.dll" />
+            </Component>
+            <Component Id="cmpC60D1E053A1DF1C02CFB1FE3D16CEDD9" Guid="*">
+                <File Id="filD44691C8CE22D43F16EE78D2992771C8" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Serilog.Sinks.RollingFile.dll" />
+            </Component>
+            <Component Id="cmpD3416F3F9E6A321D2B805D70D482DF6B" Guid="*">
+                <File Id="fil1FB8DFE638D9A760A2B8CF95A788F8D1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\SQLitePCLRaw.batteries_green.dll" />
+            </Component>
+            <Component Id="cmp03DC62AE6058E9DBB4D764890D0B3B09" Guid="*">
+                <File Id="filC7698F1C2B92167350F4CBECD2DD56E4" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\SQLitePCLRaw.batteries_v2.dll" />
+            </Component>
+            <Component Id="cmpA3A90136625E8FF11D30CF040762D33F" Guid="*">
+                <File Id="filC87ED29C1BE724C6009D134A3762DA99" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\SQLitePCLRaw.core.dll" />
+            </Component>
+            <Component Id="cmpB06948712E5252345333CAF738534E21" Guid="*">
+                <File Id="fil04D0F182F804B4BBE460BABB3DC0A18D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\SQLitePCLRaw.provider.e_sqlite3.dll" />
+            </Component>
+            <Component Id="cmp66F77B89E4894863DEFC54EC53634E26" Guid="*">
+                <File Id="fil55FFD3FFCCF25D8D9B819EC433B9678F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Swashbuckle.AspNetCore.dll" />
+            </Component>
+            <Component Id="cmpE21F09959BABC682282F6A4488541D40" Guid="*">
+                <File Id="fil58DC42B6A01A25E3E693CF872FD2DE23" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Swashbuckle.AspNetCore.Swagger.dll" />
+            </Component>
+            <Component Id="cmp92488016ACD6C20A49867BE619D1CB60" Guid="*">
+                <File Id="fil39A441F65FF6B7D6541375BBFD14483D" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+            </Component>
+            <Component Id="cmp1E1EEFAD014F0D4E94DA0A7C89510977" Guid="*">
+                <File Id="filC2430BFB0DC9EE5DC721DDC318FC09A4" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+            </Component>
+            <Component Id="cmp689BFF990544B00F911D3110E62B361F" Guid="*">
+                <File Id="fil9EEC5659BC04511C6E193A71C3DC5A86" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Data.SqlClient.dll" />
+            </Component>
+            <Component Id="cmp355C5BE339D4258B763155FD63D29F90" Guid="*">
+                <File Id="filB1F7D3BBC82D4896F5D9F91CD779B311" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Interactive.Async.dll" />
+            </Component>
+            <Component Id="cmp79FC6E47BD492C7F55CF42BFB2C0E73C" Guid="*">
+                <File Id="fil917D64C201F6116393F302997EEC1273" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Net.Http.WinHttpHandler.dll" />
+            </Component>
+            <Component Id="cmp4A38724D488E94B792ACBD7EF7398AF4" Guid="*">
+                <File Id="fil93AE5768FA3D7B97B339B905039F4204" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Runtime.CompilerServices.Unsafe.dll" />
+            </Component>
+            <Component Id="cmp2D75E47478F0A1A29B2021AF7D6FE29A" Guid="*">
+                <File Id="filA8630DCA4CE0E43A9A875DBAB8AEE16F" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Security.Cryptography.Xml.dll" />
+            </Component>
+            <Component Id="cmpFAE5F9DA869E82937A6E6B16CA1334B0" Guid="*">
+                <File Id="fil4AFB7FFF015ABB923D436FC0524CCC09" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.ServiceModel.Http.dll" />
+            </Component>
+            <Component Id="cmp77D8854FC3513B85D6D281024B92744D" Guid="*">
+                <File Id="filB997A72C51CEBCAB99A7DC46ECA309E4" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.ServiceModel.Primitives.dll" />
+            </Component>
+            <Component Id="cmp4D45D6D35D1C1559B629D8580CB3848B" Guid="*">
+                <File Id="filE9ED20A05F5E9A58369A1AD7DFFBFB57" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Text.Encoding.CodePages.dll" />
+            </Component>
+            <Component Id="cmp3EDA2F1D4DBBA31B40273EC8E6534409" Guid="*">
+                <File Id="fil24471341D609AE888E44DAA5665845B7" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\System.Text.Encodings.Web.dll" />
+            </Component>
+            <Directory Id="dirE9E9F4DDC4FE05C76210FF6D3DBD1BD0" Name="runtimes">
+                <Directory Id="dir3BF68D3C25A3FFF9CB6D0D58143F068B" Name="linux-arm">
+                    <Directory Id="dir0E00C651191875604BE0F918C392E0DF" Name="native">
+                        <Component Id="cmp4620A5E497283C1B4DDC89A734D23153" Guid="*">
+                            <File Id="filB4B7B656E74A60932811C8A2B74A6608" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\linux-arm\native\libuv.so" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirCC3585842099739D1DDDAA2FFC70158A" Name="linux-arm64">
+                    <Directory Id="dirC3B29D5F156ED06A72A3B1521765F63F" Name="native">
+                        <Component Id="cmpE4DB27644DF2EB610D4C61B6AF157241" Guid="*">
+                            <File Id="fil0586FA0069506594702BD71D4D63BABF" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\linux-arm64\native\libuv.so" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir88DE172F959E45C31F073427BB9DE1B2" Name="linux-armel">
+                    <Directory Id="dir926AE7B4233D9224D8C29544454F965C" Name="native">
+                        <Component Id="cmp8351E59360AAC6D78BB51056850E67C3" Guid="*">
+                            <File Id="filC45535FCE7AE85D91AC4AA6E143A25C2" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\linux-armel\native\libuv.so" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir6459B8432C4FD02703500DD4BF98AAFF" Name="linux-x64">
+                    <Directory Id="dir208EBF0661970EEF9B80B8D33E2A0930" Name="native">
+                        <Component Id="cmp73447E13D8EE74DEE33D94F032631C6B" Guid="*">
+                            <File Id="fil142A501D920BF0A687551FCB042519FB" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\linux-x64\native\libe_sqlite3.so" />
+                        </Component>
+                        <Component Id="cmpC18080E372B32350E45C115963E7853D" Guid="*">
+                            <File Id="filAD63D481C3C023F914A450B47F8D4B0B" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\linux-x64\native\libuv.so" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir82421F2F9D89E0DD5C1E8D89A1DE9D92" Name="linux-x86">
+                    <Directory Id="dirD6DD141BFAB4FBD0F8429C699BE5057E" Name="native">
+                        <Component Id="cmp557C674C9A016682536EDCC22122F661" Guid="*">
+                            <File Id="filCD76BFC245CEFDBB1897D8076471AA12" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\linux-x86\native\libe_sqlite3.so" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir2E5B2654EF46B050B8B48D6F76692722" Name="osx">
+                    <Directory Id="dirD442A67BABD4B027398084ED8A1BAB2E" Name="native">
+                        <Component Id="cmp6BC1F3003B4CF7269FF677BF8B086D66" Guid="*">
+                            <File Id="fil379A48DA55CC60DD7744B7A3390A1539" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\osx\native\libuv.dylib" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir83CAB8D3693F73303A0048F09665CFDB" Name="osx-x64">
+                    <Directory Id="dirB609E2E2B27110CC0D9BF0BA6189B6E6" Name="native">
+                        <Component Id="cmpFCD3230AE93A41C07F951C9B015359D5" Guid="*">
+                            <File Id="filE29BFADF3CC984F5C4F01F79E3AB4D43" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\osx-x64\native\libe_sqlite3.dylib" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirC66F0B1F5856855F9C372BF571F267DC" Name="unix">
+                    <Directory Id="dir3B487B5AF800CEDCC440280CD5B7DB7B" Name="lib">
+                        <Directory Id="dir9297809D07F41025CB8C2EFB0A1243D9" Name="netstandard2.0">
+                            <Component Id="cmpDEED84A69E0BB0D13AA31CB957D6983A" Guid="*">
+                                <File Id="filE273D5393C0613EEC4C41F70F4764399" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll" />
+                            </Component>
+                            <Component Id="cmpDAD7BAB615B29393F2F11D38FD220F14" Guid="*">
+                                <File Id="fil0878BC64F8F2B2157180666C8C6B0130" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir20866FD0187A5294F23F912B98858DF2" Name="win">
+                    <Directory Id="dir761EB5CE81CEADFABF03919FFEFF1B33" Name="lib">
+                        <Directory Id="dirD4A6163AC14D437EE44F1D04CEEF7100" Name="netcoreapp2.0">
+                            <Component Id="cmp25E1A7C048AF6CBF5EBA91A5CCA9D485" Guid="*">
+                                <File Id="filE926D587CAED51354C9F2262780B27B1" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dirA376A5A11EC68AADEE3492927C70E59B" Name="netstandard2.0">
+                            <Component Id="cmp696C7B06D698335C79398F2DB83C21D0" Guid="*">
+                                <File Id="fil6F5527385AE32287873CDF420400DE26" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll" />
+                            </Component>
+                            <Component Id="cmp3A623C9122DB048102895FE48C3DD1F2" Guid="*">
+                                <File Id="filC700064D20A25EBE97A5684654694542" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir5BD1643DB76FBC8C3683DC015D3B0127" Name="win-arm">
+                    <Directory Id="dirA586694DB6FB04251258CE00FAF38A43" Name="native">
+                        <Component Id="cmpEF5BD53D2C0CCA5C4A2CE9969EE6A0F3" Guid="*">
+                            <File Id="filFC81318C065E6A43EA1F7B3BBB5D90EB" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win-arm\native\libuv.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirE2BD0D1EEC501B0F53E777933DA32A1D" Name="win-arm64">
+                    <Directory Id="dirD6A94239543547FCBDC9668256F54644" Name="native">
+                        <Component Id="cmp14BE798A3DBCA9295EF94EB105CD354F" Guid="*">
+                            <File Id="fil2CD90A1C471199457A08FB6AFED66B47" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win-arm64\native\sni.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirEE3FE7B52AA88FD271E9211D7B3B8956" Name="win-x64">
+                    <Directory Id="dir781CC14D2861D109B71EE0EBA19ED31E" Name="native">
+                        <Component Id="cmp2D2E1B5F36D3C622C2CE348E0F8DF8C6" Guid="*">
+                            <File Id="filA93EDF78C5F3DD2C0EFC65E930B23ED5" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win-x64\native\libuv.dll" />
+                        </Component>
+                        <Component Id="cmp50211F0B3ECA9E0EA178AEACA8ABD435" Guid="*">
+                            <File Id="filE9461D4F20F00631FC119C0493DE21D8" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win-x64\native\sni.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir3EB3B19E769BD515FCD3804F8C257885" Name="win-x86">
+                    <Directory Id="dirD27E07384D1153E1B871EEF3E2139011" Name="native">
+                        <Component Id="cmpA9932A32919C5D959638C044BAD29A00" Guid="*">
+                            <File Id="fil040EDAAD9F490C92E60D0FEB25AC09FC" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win-x86\native\libuv.dll" />
+                        </Component>
+                        <Component Id="cmp1B68EFEB1C138E8DB7AC361535D93C57" Guid="*">
+                            <File Id="filC9E50CE3001627D771F9CF96B03D0532" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win-x86\native\sni.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirFA25D4A47E4F798C55D707EE242EE784" Name="win7">
+                    <Directory Id="dirA3F1D3DDE3A9C9E8AF148760C85E0BF7" Name="lib">
+                        <Directory Id="dir514DFE32091C679885ECC593CD641F2E" Name="netstandard2.0">
+                            <Component Id="cmpF3F3A97AAD71AE406FBF2DBCAAA837CE" Guid="*">
+                                <File Id="fil952A437378156B9B36C320800F21CF4B" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirB46BB93518182A34780C54A63E752554" Name="win7-x64">
+                    <Directory Id="dir33A952582B1ADF10879115D364E5C5BB" Name="native">
+                        <Component Id="cmp54C903F9718FC3C1DF578752757159CF" Guid="*">
+                            <File Id="fil2495D3124F121CBA69A54627A32D1311" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win7-x64\native\e_sqlite3.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir406CE1502ADB699406FE9E12739E3DB7" Name="win7-x86">
+                    <Directory Id="dir19773ED1386A6233D31E8438933CAD70" Name="native">
+                        <Component Id="cmp651826464981D94FD3FCF34637504376" Guid="*">
+                            <File Id="fil5C330B36AA565D38D5F200F7B6A7ECC6" KeyPath="yes" Source="C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\bin/Docker/publish\\runtimes\win7-x86\native\e_sqlite3.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
         </DirectoryRef>
     </Fragment>
     <Fragment>
@@ -82,7 +591,6 @@
             <ComponentRef Id="cmp7A1CBA767A43D91FF903CD0A3C7D6209" />
             <ComponentRef Id="cmp2236A1654E02828C1C1554FB1E7B2676" />
             
-            <ComponentRef Id="cmp383067375E64B2215EBF26F9E3DE74F7" />
             <ComponentRef Id="cmp4691FAA260ED99414F64BBEC7C0EA6A2" />
             <ComponentRef Id="cmp009475B4592EE4938DBC90401FE4434A" />
             
@@ -96,6 +604,152 @@
             <ComponentRef Id="cmp820B4E99CA23510B4EF87EDD1ED3DB62" />
             
             <ComponentRef Id="cmp0F963B22C445F4A2DCE151047B4F8DE3" />
+            <ComponentRef Id="cmp3C2BCA1C890EF681BD1C4DAA1AA66FA6" />
+            <ComponentRef Id="cmp478BF3639568CF435F14D677DD0D2071" />
+            <ComponentRef Id="cmp2C38F998592FADCC008D60A2248F6AE2" />
+            <ComponentRef Id="cmp053F96DC5921E14EFB6176368A7027AD" />
+            <ComponentRef Id="cmp4472F64DA12F86D7002F4E034151C5D4" />
+            <ComponentRef Id="cmp3D094BC756B801AE492995692A4DD9E3" />
+            <ComponentRef Id="cmp706ADD40CEA81E7338EB1B7D065E497A" />
+            <ComponentRef Id="cmp762535A9E6C697F1EFAD5BDC90021112" />
+            <ComponentRef Id="cmp5EA0D21578DBB0E34073A1F857CA349B" />
+            <ComponentRef Id="cmp85C78BAB508D5388F54E89E8F0E8BBBB" />
+            <ComponentRef Id="cmp8AFD71C9FA27D6EDE1F19F8F4EE8E156" />
+            <ComponentRef Id="cmp0C7DACF2ED2C60F5DD7F98F0FF1EBE81" />
+            <ComponentRef Id="cmp72270FDF11332FB89D2206E059581E7C" />
+            <ComponentRef Id="cmpEC1CDFFF26D514CC8A6941B27F86A4E3" />
+            <ComponentRef Id="cmp37FE06E84128AE67756C93F39B310617" />
+            <ComponentRef Id="cmp33A028C83DFE2816674E50E7D740BF65" />
+            <ComponentRef Id="cmp3F1FD27DD738E929907418DA60094ED8" />
+            <ComponentRef Id="cmp396B5A8962EDCDEE35CABA7D8BCB188E" />
+            <ComponentRef Id="cmp640FE3EC782A1C83655CD1B88F0DB051" />
+            <ComponentRef Id="cmp5CF10E70E43F2279A1A86FEA78A22398" />
+            <ComponentRef Id="cmpDA4E6EA73A5856E3AB0BE4BFB530F939" />
+            <ComponentRef Id="cmp9001AB2D96B2A75F2B15AED15CF659C0" />
+            <ComponentRef Id="cmp0B04AEBA660F44ADE97F6573838D8B00" />
+            <ComponentRef Id="cmpBB2A08B1C37C29DAE6E060A7185B0E28" />
+            <ComponentRef Id="cmp01185F8E7C90A30AD16B9B92EA553156" />
+            <ComponentRef Id="cmp50A77033D001CA10BAA4DFC52AF69A56" />
+            <ComponentRef Id="cmp26F4CAC0E89D7237B96BCB9C4188D429" />
+            <ComponentRef Id="cmp33A389F47C74B97601C6AF1A59791DD9" />
+            <ComponentRef Id="cmpBE5BC5AD40C5A35B0EAA7541198C3D57" />
+            <ComponentRef Id="cmp436BEF8C81162C15E7D4F3BF2B634758" />
+            <ComponentRef Id="cmpA479BBDC2D260B9A3FED39EB9C92B6AF" />
+            <ComponentRef Id="cmp9BC1812AADA9176970D5399E679AD0C5" />
+            <ComponentRef Id="cmp2441608DEF9B0EF619112228701FDD7B" />
+            <ComponentRef Id="cmpD9AAD5325799B0AA862AC126DC4307EC" />
+            <ComponentRef Id="cmpECDBF7B0A4D16E7730DAC8CFD00A2735" />
+            <ComponentRef Id="cmpF0577B1CB88F50529F41F4A507C1B859" />
+            <ComponentRef Id="cmpE3DADA05B8F73FB649476099149A6AA1" />
+            <ComponentRef Id="cmp426EA7369E8410F523D420B1C84F3053" />
+            <ComponentRef Id="cmp7FFD5878F4E28A6E3BA7CE1EC29FA86F" />
+            <ComponentRef Id="cmp2030EF9B96DB1A3D3EF13516F90BD94D" />
+            <ComponentRef Id="cmpA58A2DC8A684D798D60240B6D0C89001" />
+            <ComponentRef Id="cmp3774ED462FAE2C2E5B030402153A6526" />
+            <ComponentRef Id="cmp6CAE4923051757D8730752858B237EA1" />
+            <ComponentRef Id="cmp7270E28465868545C471B250938431A6" />
+            <ComponentRef Id="cmp57AA11C3EBCBDCCAB141FBDD78720D3B" />
+            <ComponentRef Id="cmp79B7A554217CAC368A8FE6D620A7C503" />
+            <ComponentRef Id="cmp4962768767B45940D98268C364899416" />
+            <ComponentRef Id="cmpF0C83656F7F2A4FA3A30C712A49817A2" />
+            <ComponentRef Id="cmpE6512F5947C3DD088635459C27EB8360" />
+            <ComponentRef Id="cmp44D0D98CFFE9303CAA723E325519631A" />
+            <ComponentRef Id="cmp31951F0D8D9C3A0AE0A3ECCDDDA4EAA2" />
+            <ComponentRef Id="cmp6A85905F6C42FD38E33E9349D8A5E077" />
+            <ComponentRef Id="cmpC1551228B9D698939A49BAD71EBF1DF4" />
+            <ComponentRef Id="cmp98A3DE06811F6A04D7E5BDA49EBCA251" />
+            <ComponentRef Id="cmp4FBF47FD8A41C01B5B0114D68A8FE446" />
+            <ComponentRef Id="cmp1C24A0DBD7AFFA1B0136EB9C944C03BB" />
+            <ComponentRef Id="cmp158D85EF06DA56C2ECE14E75B2C52A89" />
+            <ComponentRef Id="cmp42166D03BF22FF09229147A67B779476" />
+            <ComponentRef Id="cmp527787BC49D0F558075927497E92DC91" />
+            <ComponentRef Id="cmpBE6DFCF1963770817C4974B091BAA75A" />
+            <ComponentRef Id="cmpEEC052F3E67A6055055369ED19B2DCCB" />
+            <ComponentRef Id="cmp9559B89F7536F1F7F18F83E520E6179C" />
+            <ComponentRef Id="cmp5F9F5A9A6E4970F34B836EA1331D6480" />
+            <ComponentRef Id="cmpADEC943EEDAE54B4D24C4049DAB301AA" />
+            <ComponentRef Id="cmp1485D574F81C4E5A200ADE159392F941" />
+            <ComponentRef Id="cmpC24B521BFC6C15217993E4243372823F" />
+            <ComponentRef Id="cmp70A0BDB718956AA154FFEB903EDB8AB3" />
+            <ComponentRef Id="cmpECB4DA96E3DCFD0F0A8311762EAB75DB" />
+            <ComponentRef Id="cmp3350B3D9F51D86B5DFC4F6972A7B60CA" />
+            <ComponentRef Id="cmp2C9177E18F237F362A10F572F9F7201E" />
+            <ComponentRef Id="cmp6FFCB5E12CD8BAA95F86CDB6E8F121F3" />
+            <ComponentRef Id="cmp42E8C78B7F93A8BD0B6B8738CE514D06" />
+            <ComponentRef Id="cmp0B4B1BF9324558BAD07615808079DE8F" />
+            <ComponentRef Id="cmpF7F896E38606CF93A4858FF088EDDD41" />
+            <ComponentRef Id="cmpC2523C4E478F4F7383BDA54E97CAE9D0" />
+            <ComponentRef Id="cmpC938B782908E9DC7E758F9E09D698341" />
+            <ComponentRef Id="cmpC3FACF0CFA60D19667B932EF2D79000F" />
+            <ComponentRef Id="cmp90BE10F5E1CAAC8677EC67E9483E1B7A" />
+            <ComponentRef Id="cmp8F95965E6E5358CC4F1F01147B49EBF4" />
+            <ComponentRef Id="cmp9E17836D9CC98631DB9DDD4FD593B7B6" />
+            <ComponentRef Id="cmpE3D68DB334E7EFF68B4D0652CF9D3F37" />
+            <ComponentRef Id="cmp8F8EC7B0CDB15BE019FA99F243E402DA" />
+            <ComponentRef Id="cmp62C72D1028D11E57AE735884B327E2DB" />
+            <ComponentRef Id="cmp9CD1C6EB8B7242F32CDCC699DB1FE247" />
+            <ComponentRef Id="cmpEF6F30EF93C2D884152FD47D4CF9B2CA" />
+            <ComponentRef Id="cmp11B22FA1F352D725FB7811B0390E6DAB" />
+            <ComponentRef Id="cmpB6B825F73F47F4BEBE449B99F9258488" />
+            <ComponentRef Id="cmp9F005E0388D7CC092D176A6C87C91414" />
+            <ComponentRef Id="cmp483DDE9618B34C9CA644340BD078F378" />
+            <ComponentRef Id="cmpD6DECCE51A667C00A8B35D72AC6CE69E" />
+            <ComponentRef Id="cmp7673804CACD0BAAC5B873D2092135B7B" />
+            <ComponentRef Id="cmp0651C758C56D29C97C70A8D7F9B39F14" />
+            <ComponentRef Id="cmp33EB7015AD9D978D071779B4F1164EFB" />
+            <ComponentRef Id="cmp9564456F9A9E164886342EC3F2B2F5AA" />
+            <ComponentRef Id="cmp083B9031E7CA1987A48A6F4F8AE353B2" />
+            <ComponentRef Id="cmpE73DB84583948C963E9EA91245A46037" />
+            <ComponentRef Id="cmp124B1B5A23E8E2BA6E716C22163E28C3" />
+            <ComponentRef Id="cmpADB137E4B134F786B361B13F3C0F86C8" />
+            <ComponentRef Id="cmpFBCC852C85FA258761368D2D27C6117B" />
+            <ComponentRef Id="cmpD8FAEC6284FA874EEAC708B64308A664" />
+            <ComponentRef Id="cmp67AE74BCFD8EF4B1DE787535A5D5BFC5" />
+            <ComponentRef Id="cmp0B474CB536B63125B2137F4AED5AA7AE" />
+            <ComponentRef Id="cmp7E00EF7FA22CDF981CEE4F9F7F82B508" />
+            <ComponentRef Id="cmpBD835EE7FE287EF53599562A5B6CE2F4" />
+            <ComponentRef Id="cmp7B4336923950CD8D96B8AA8F5CBC966E" />
+            <ComponentRef Id="cmpE88F6CCCC8599DC9A2E672083B05ABD6" />
+            <ComponentRef Id="cmpC60D1E053A1DF1C02CFB1FE3D16CEDD9" />
+            <ComponentRef Id="cmpD3416F3F9E6A321D2B805D70D482DF6B" />
+            <ComponentRef Id="cmp03DC62AE6058E9DBB4D764890D0B3B09" />
+            <ComponentRef Id="cmpA3A90136625E8FF11D30CF040762D33F" />
+            <ComponentRef Id="cmpB06948712E5252345333CAF738534E21" />
+            <ComponentRef Id="cmp66F77B89E4894863DEFC54EC53634E26" />
+            <ComponentRef Id="cmpE21F09959BABC682282F6A4488541D40" />
+            <ComponentRef Id="cmp92488016ACD6C20A49867BE619D1CB60" />
+            <ComponentRef Id="cmp1E1EEFAD014F0D4E94DA0A7C89510977" />
+            <ComponentRef Id="cmp689BFF990544B00F911D3110E62B361F" />
+            <ComponentRef Id="cmp355C5BE339D4258B763155FD63D29F90" />
+            <ComponentRef Id="cmp79FC6E47BD492C7F55CF42BFB2C0E73C" />
+            <ComponentRef Id="cmp4A38724D488E94B792ACBD7EF7398AF4" />
+            <ComponentRef Id="cmp2D75E47478F0A1A29B2021AF7D6FE29A" />
+            <ComponentRef Id="cmpFAE5F9DA869E82937A6E6B16CA1334B0" />
+            <ComponentRef Id="cmp77D8854FC3513B85D6D281024B92744D" />
+            <ComponentRef Id="cmp4D45D6D35D1C1559B629D8580CB3848B" />
+            <ComponentRef Id="cmp3EDA2F1D4DBBA31B40273EC8E6534409" />
+            <ComponentRef Id="cmp4620A5E497283C1B4DDC89A734D23153" />
+            <ComponentRef Id="cmpE4DB27644DF2EB610D4C61B6AF157241" />
+            <ComponentRef Id="cmp8351E59360AAC6D78BB51056850E67C3" />
+            <ComponentRef Id="cmp73447E13D8EE74DEE33D94F032631C6B" />
+            <ComponentRef Id="cmpC18080E372B32350E45C115963E7853D" />
+            <ComponentRef Id="cmp557C674C9A016682536EDCC22122F661" />
+            <ComponentRef Id="cmp6BC1F3003B4CF7269FF677BF8B086D66" />
+            <ComponentRef Id="cmpFCD3230AE93A41C07F951C9B015359D5" />
+            <ComponentRef Id="cmpDEED84A69E0BB0D13AA31CB957D6983A" />
+            <ComponentRef Id="cmpDAD7BAB615B29393F2F11D38FD220F14" />
+            <ComponentRef Id="cmp25E1A7C048AF6CBF5EBA91A5CCA9D485" />
+            <ComponentRef Id="cmp696C7B06D698335C79398F2DB83C21D0" />
+            <ComponentRef Id="cmp3A623C9122DB048102895FE48C3DD1F2" />
+            <ComponentRef Id="cmpEF5BD53D2C0CCA5C4A2CE9969EE6A0F3" />
+            <ComponentRef Id="cmp14BE798A3DBCA9295EF94EB105CD354F" />
+            <ComponentRef Id="cmp2D2E1B5F36D3C622C2CE348E0F8DF8C6" />
+            <ComponentRef Id="cmp50211F0B3ECA9E0EA178AEACA8ABD435" />
+            <ComponentRef Id="cmpA9932A32919C5D959638C044BAD29A00" />
+            <ComponentRef Id="cmp1B68EFEB1C138E8DB7AC361535D93C57" />
+            <ComponentRef Id="cmpF3F3A97AAD71AE406FBF2DBCAAA837CE" />
+            <ComponentRef Id="cmp54C903F9718FC3C1DF578752757159CF" />
+            <ComponentRef Id="cmp651826464981D94FD3FCF34637504376" />
         </ComponentGroup>
     </Fragment>
 </Wix>

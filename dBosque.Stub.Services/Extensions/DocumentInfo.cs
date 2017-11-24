@@ -1,29 +1,32 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml;
-using System.Xml.Linq;
+﻿using System.Xml;
 namespace dBosque.Stub.Services.Extensions
 {
+    /// <summary>
+    /// XML info about a send document
+    /// </summary>
     public class DocumentInfo
     {
-        public XmlDocument Document
-        {
-            get;
-            set;
-        }
+        /// <summary>
+        /// Gets or sets the document.
+        /// </summary>
+        /// <value>
+        /// The document.
+        /// </value>
+        public XmlDocument Document { get; set; }
 
-        public string Namespace
-        {
-            get;
-            set;
-        }
-
-        public string RootNode
-        {
-            get;
-            set;
-        }
+        /// <summary>
+        /// Gets or sets the namespace.
+        /// </summary>
+        /// <value>
+        /// The namespace.
+        /// </value>
+        public string Namespace { get; set; }
+        /// <summary>
+        /// Gets or sets the root node.
+        /// </summary>
+        /// <value>
+        /// The root node.
+        /// </value>
+        public string RootNode { get; set; }
     }
 }

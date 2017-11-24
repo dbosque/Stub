@@ -44,6 +44,7 @@
   <ItemGroup>
     <Content Include="Filter.xslt" />
     <Content Include="dBosque.Stub.Editor.ico" />
+    <Content Include="HeatFix.ps1" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension">

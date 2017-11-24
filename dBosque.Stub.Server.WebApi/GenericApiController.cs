@@ -29,7 +29,6 @@ namespace dBosque.Stub.Server.WebApi
        // [Route("Execute")]
         public IActionResult Execute(string tenant, string uri)
         {
-          // var _handler = new GenericStubHandler<ApiStubMessage, IActionResult>();
             return _handler.HandleMessage(new ApiStubMessage(Request, uri, this, tenant));             
         }
 
@@ -47,7 +46,7 @@ namespace dBosque.Stub.Server.WebApi
         //[Route("ExecuteDefault")]
         public IActionResult ExecuteDefault(string uri)
         {
-            return Execute("__default", uri);
+            return Execute(Constants.DefaultTenant, uri);
         }
 
 
@@ -70,7 +69,6 @@ namespace dBosque.Stub.Server.WebApi
         {
             if (!string.IsNullOrEmpty(uri))
                 uri = "/" + uri;
-            //var _handler = new GenericStubHandler<ApiStubMessage, IActionResult>();
             return _handler.HandlePassthrough(new ApiStubMessage(Request, uri, this, tenant), $"{protocol}://{pass.Replace(":","/")}{uri}");
         }
 
@@ -90,7 +88,7 @@ namespace dBosque.Stub.Server.WebApi
      //   [Route("PassthroughDefault")]
         public IActionResult PassthroughDefault( string pass, string protocol, string uri)
         {
-            return Passthrough("__default", protocol, pass, uri);            
+            return Passthrough(Constants.DefaultTenant, protocol, pass, uri);            
         }
     }   
 }
