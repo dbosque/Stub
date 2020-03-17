@@ -67,7 +67,7 @@ namespace dBosque.Stub.Server.Soap.Types
         public override Message AsResult()
         {
             string messageStream = string.IsNullOrEmpty(Response)?"<empty/>":Response;
-            if (!HasMatch)
+            if (!HasMatch && !IsPassTrough)
                 messageStream = SerializeToString(AsFault());
 
             var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(messageStream));

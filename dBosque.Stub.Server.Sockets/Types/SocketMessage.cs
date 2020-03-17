@@ -33,7 +33,7 @@ namespace dBosque.Stub.Server.Sockets.Types
             if (HasMultipleMatches)
                 return "";
 
-            if (HasMatch)
+            if (HasMatch || IsPassTrough)
             {
                 if (Convert() != System.Net.HttpStatusCode.OK)
                 {

@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Collections.Generic;
 
 namespace dBosque.Stub.Server.WebApi.Types
 {
@@ -17,7 +18,7 @@ namespace dBosque.Stub.Server.WebApi.Types
         private readonly HttpRequest _httpRequest;
         private readonly Controller _controller;
         public ApiStubMessage(HttpRequest httpRequest, string uri, Controller controller, string tenant)
-            : base(tenant, 200, ContentTypes.TextHtml)
+            : base(tenant, 200, ContentTypes.ApplicationJson)
         {
             _controller = controller;
             _httpRequest = httpRequest;     
@@ -79,7 +80,7 @@ namespace dBosque.Stub.Server.WebApi.Types
             if (HasMultipleMatches)
                 return new StatusCodeResult(409);
 
-            if (HasMatch)
+            if (HasMatch || IsPassTrough)
             {
                 return new ContentResult()
                 {
@@ -109,8 +110,10 @@ namespace dBosque.Stub.Server.WebApi.Types
 
             newRequest.ContentType = ContentType;
             newRequest.Method = _httpRequest.Method;
+            newRequest.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+
             foreach (var headerKey in _httpRequest.Headers.Where(a => !WebHeaderCollection.IsRestricted(a.Key)).Select(a => a.Key))
-                newRequest.Headers[headerKey] = string.Join(",",_httpRequest.Headers.SelectMany(a => a.Value).ToArray());
+                newRequest.Headers[headerKey] = string.Join(",",_httpRequest.Headers.Where(a => a.Key == headerKey).SelectMany(a => a.Value).ToArray());
             var headers = _httpRequest.GetTypedHeaders();
             if (headers.ContentLength > 0)
             {
@@ -127,6 +130,11 @@ namespace dBosque.Stub.Server.WebApi.Types
                 ContentType = ContentTypes.First(response.ContentType);
                 HttpStatusCode = (int)response.StatusCode;
                 var reader = new StreamReader(response.GetResponseStream());
+               
+                ResponseHeaders = new Dictionary<string, string[]>();
+                foreach (var headerKey in response.Headers.AllKeys.Where(a => !WebHeaderCollection.IsRestricted(a)).Select(a => a))
+                    ResponseHeaders.Add(headerKey, response.Headers.GetValues(headerKey));
+
                 Response = reader.ReadToEnd();
             }
             catch (WebException ex)

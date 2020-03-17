@@ -58,6 +58,8 @@ namespace dBosque.Stub.Services
         ///The configured response to return (if any)
         ///</summary>
         public string Response          { get; set; }
+
+        public Dictionary<string, string[]> ResponseHeaders { get; set; }
         
         ///<summary>
         ///The rootnode extracted from the request

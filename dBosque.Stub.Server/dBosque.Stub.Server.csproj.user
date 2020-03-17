@@ -2,6 +2,6 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ShowAllFiles>false</ShowAllFiles>
-    <_LastSelectedProfileId>C:\Users\Robbert Uittenbosch\source\repos\Stub\dBosque.Stub.Server\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>D:\source\git\Stub\dBosque.Stub.Server\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
 </Project>

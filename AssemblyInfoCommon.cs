@@ -7,7 +7,7 @@
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("dBosque")]
 [assembly: AssemblyProduct("dBosque Stub Editor")]
-[assembly: AssemblyCopyright("Copyright © dBosque 2010-2017")]
+[assembly: AssemblyCopyright("Copyright © dBosque 2010-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

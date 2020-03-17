@@ -16,6 +16,7 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
@@ -89,6 +90,18 @@
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>60EF1CFAFDE8A6F6222E65E56EB48A4F9E23D919</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>dBosque.Stub.Editor_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -376,6 +389,7 @@
     <None Include="dBosque.Stub.Editor.Configuration.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="dBosque.Stub.Editor_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\MessageType.datasource" />
     <None Include="Properties\DataSources\MessageTypeItem.datasource" />
     <None Include="Properties\DataSources\Stub.Repository.ConfigurationDb.Setting.datasource" />
@@ -545,7 +559,7 @@
   <PropertyGroup>
     <PostBuildEvent>REM Merge assembly in exe
 REM "..\..\..\..\..\Beheer\External references\Microsoft\ilmerge" /out:"$(TargetDir)StubInspector.exe" "$(TargetPath)" "$(TargetDir)StubInspector.Interfaces.dll"
-call "C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe" dir  "$(TargetDir)."  -v -var var.dBosque.Stub.Editor.TargetDir -dr INSTALLFOLDER -srd -cg EditorBinaries -ag -scom -sreg -sfrag  -o "$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs"  -t "$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt"</PostBuildEvent>
+REM call "C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe" dir  "$(TargetDir)."  -v -var var.dBosque.Stub.Editor.TargetDir -dr INSTALLFOLDER -srd -cg EditorBinaries -ag -scom -sreg -sfrag  -o "$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs"  -t "$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

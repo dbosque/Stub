@@ -29,7 +29,16 @@ namespace dBosque.Stub.Server.WebApi
        // [Route("Execute")]
         public IActionResult Execute(string tenant, string uri)
         {
-            return _handler.HandleMessage(new ApiStubMessage(Request, uri, this, tenant));             
+            var msg = new ApiStubMessage(Request, uri, this, tenant);
+            var result = _handler.HandleMessage(msg);
+            if (msg.ResponseHeaders != null)
+            {
+                foreach (var h in msg.ResponseHeaders)
+                {
+                    Response.Headers.Add(h.Key, h.Value);
+                }
+            }
+            return result;
         }
 
         /// <summary>

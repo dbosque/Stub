@@ -16,6 +16,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DocumentationFile>bin\Debug\netstandard2.0\dBosque.Stub.WebApi.Configuration.xml</DocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\source\git\Stub\dBosque.Stub.Server.WebApi.Configuration\dBosque.Stub.Server.WebApi.Configuration.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="AssemblyInfoCommon.cs" />
   </ItemGroup>
