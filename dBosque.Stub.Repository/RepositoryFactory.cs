@@ -13,7 +13,8 @@ namespace dBosque.Stub.Repository
         private static IEnumerable<IDbContextBuilder> _builders = new List<IDbContextBuilder>()
         {
             new SQLiteDbContextBuilder(),
-            new SQLServerDbContextBuilder()
+            new SQLServerDbContextBuilder(),
+            new MySqlDbContextBuilder()
         };
 
         /// <summary>

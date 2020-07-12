@@ -263,6 +263,8 @@
   <ItemGroup>
     <None Include="Default.publish.xml" />
     <None Include="Scripts\Defaults.sql" />
+    <None Include="dbStub.publish.xml" />
+    <None Include="mysql.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="dbStub.refactorlog" />

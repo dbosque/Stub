@@ -16,6 +16,10 @@ insert into configuration.Settings
 values (@keyy,'Lite.ConnectionString','Data Source="dbstub.db"')
 insert into configuration.Settings
 values (@keyy,'Lite.Provider','System.Data.SQLite')
+insert into configuration.Settings
+values (@keyy,'MySQL.ConnectionString','Server=localhost;port=3306;Database=stubeditor;Uid=root;Pwd=root;')
+insert into configuration.Settings
+values (@keyy,'MySQL.Provider','System.Data.MySQL')
 
 insert into configuration.Settings
 values (0,'Log.System.Data.SqlClient','select l.StubLogID as id, l.Uri, l.ResponseDatumTijd, l.Request, r.ResponseText ,t.Name as Tenant, te.Description as Template, c.Description as Combination, m.Namespace, m.Rootnode
@@ -28,7 +32,7 @@ from StubLog l
 	where l.StubLogID @compare @prevVal
 order by ResponseDatumTijd desc')
 insert into configuration.Settings
-values (0,'Log.System.Data.SQLite','select l.StubLogID as id, l.Uri, l.ResponseDatumTijd, l.Request, t.Name as Tenant, te.Description as Template, c.Description as Combination, m.Namespace, m.Rootnode
+values (0,'Log.MySQL,'select l.StubLogID as id, l.Uri, l.ResponseDatumTijd, l.Request, t.Name as Tenant, te.Description as Template, c.Description as Combination, m.Namespace, m.Rootnode
 from StubLog l
 	left join Tenant t on t.TenantId = l.TenantID
 	left join Combination c on c.CombinationID = l.CombinationID

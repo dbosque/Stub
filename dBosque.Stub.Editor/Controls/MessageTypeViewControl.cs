@@ -142,8 +142,9 @@ namespace dBosque.Stub.Editor.Controls
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error", ex.Message);
                 // Show messagebox and exit
-                OnError?.Invoke(this, new ErrorEventArgs(ex));
+                //OnError?.Invoke(this, new ErrorEventArgs(ex));
             }
 
         }
