@@ -3,8 +3,12 @@
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="AssemblyInfoCommon.cs" />
@@ -28,18 +32,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.6" />
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.2" />
-    <PackageReference Include="Serilog" Version="2.5.0" />
-    <PackageReference Include="Serilog.AspNetCore" Version="2.0.0" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
-    <PackageReference Include="Serilog.Settings.Configuration" Version="2.4.0" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.6" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
   </ItemGroup>
 
@@ -62,12 +66,12 @@
   </ItemGroup>
 
   <Target Name="WixAfterPublish" AfterTargets="Publish">
-    <Message Text="********************************** WixAfterPublish start ***********************************" Importance="high" />
+    <!--<Message Text="********************************** WixAfterPublish start ***********************************" Importance="high" />
     <Message Text="$(ProjectDir)$(PublishDir)" Importance="high" />
     <Exec Command="call &quot;C:\Program Files (x86)\WiX Toolset v3.11\bin\heat.exe&quot; dir  &quot;$(ProjectDir)$(PublishDir).&quot;  -v -var var.dBosque.Stub.Server.TargetDir -dr INSTALLFOLDERSERVICE -srd -cg ServerBinaries -ag -scom -sreg -sfrag  -o &quot;$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs&quot;  -t &quot;$(SolutionDir)dBosque.Stub.Editor.Installer\Filter.xslt&quot;" />
     <Exec Command="powershell -Command &quot;&amp;{ &amp;'$(SolutionDir)dBosque.Stub.Editor.Installer\HeatFix.ps1' '$(ProjectDir)$(PublishDir)' '$(SolutionDir)dBosque.Stub.Editor.Installer\$(ProjectName).Binaries.wxs' }&quot;" />
 
-    <Message Text="********************************** WixAfterPublish end ***********************************" Importance="high" />
+    <Message Text="********************************** WixAfterPublish end ***********************************" Importance="high" />-->
   </Target>
 </Project>
 <!--  -->

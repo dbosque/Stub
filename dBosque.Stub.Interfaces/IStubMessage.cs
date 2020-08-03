@@ -1,4 +1,6 @@
-﻿namespace dBosque.Stub.Interfaces
+﻿using System.Collections.Generic;
+
+namespace dBosque.Stub.Interfaces
 {
     public interface IStubMessage<T>
     {
@@ -121,6 +123,11 @@
         /// Should any postprocessing be done.
         /// </summary>
         bool hasPostProcessing { get; }
+
+        /// <summary>
+        /// Possible headers to return to client
+        /// </summary>
+        Dictionary<string, string[]> ResponseHeaders { get; set; }
     }
 
    

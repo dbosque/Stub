@@ -1,7 +1,10 @@
 ﻿using dBosque.Stub.Editor.Controls.Models.Converters;
 using dBosque.Stub.Editor.Controls.Models.Descriptors;
 using dBosque.Stub.Editor.Controls.Models.Editors;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Drawing.Design;
 
 namespace dBosque.Stub.Editor.Controls.Models
@@ -32,17 +35,17 @@ namespace dBosque.Stub.Editor.Controls.Models
         /// <summary>
         /// The contenttype to return
         /// </summary>
-        [TypeConverter(typeof(ContentTypeConverter)), 
-         Description("Contenttype to return"), 
-         Category("Response"), 
-         DefaultValue("application/json")]    
+        [TypeConverter(typeof(ContentTypeConverter)),
+         Description("Contenttype to return"),
+         Category("Response"),
+         DefaultValue("application/json")]
         public string ContentType { get; set; }
 
         /// <summary>
         /// The statuscode to return
         /// </summary>
-        [TypeConverter(typeof(StatusCodeConverter)), 
-         Description("Statuscode to return"), 
+        [TypeConverter(typeof(StatusCodeConverter)),
+         Description("Statuscode to return"),
          Category("Response"),
          DefaultValue("OK (200)")]
         public string StatusCode { get; set; }
@@ -52,12 +55,18 @@ namespace dBosque.Stub.Editor.Controls.Models
         /// </summary>
         [Editor(typeof(CustomEditor), typeof(UITypeEditor)),
          Description("Matches"),
-         Category("Response"), 
+         Category("Response"),
          TypeConverter(typeof(MatchPropertyCollectionConverter))]
         public MatchPropertyCollection Matches { get; set; }
+
+        /// <summary>
+        /// Headers needed to return to the client
+        /// </summary>
+        [Description("Headers to return"),
+         Category("Response"),
+         TypeConverter(typeof(StringArrayConverter))]
+        public string[] Headers { get; set; }
+
     }
 
-   
-
-   
 }

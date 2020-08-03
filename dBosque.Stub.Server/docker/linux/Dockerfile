@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2-runtime-jessie
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8008

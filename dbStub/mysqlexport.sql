@@ -109,10 +109,11 @@ DROP TABLE IF EXISTS `response`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `response` (
   `ResponseID` int(11) NOT NULL AUTO_INCREMENT,
-  `Response` longtext NOT NULL,
+  `ResponseText` longtext NOT NULL,
   `Description` varchar(250) DEFAULT NULL,
   `StatusCode` int(11) DEFAULT NULL,
   `ContentType` varchar(250) DEFAULT NULL,
+ `Headers` LONGTEXT DEFAULT NULL ;
   PRIMARY KEY (`ResponseID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

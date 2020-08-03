@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Net;
+using Microsoft.AspNetCore.Http;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -37,8 +38,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The newly created stub.</returns>
         [Route("regex", Order = 10)]
         [HttpPost]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Created)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult CreateForRegEx([FromBody] RegexStub regex)
         {
             return TryCatch(() =>
@@ -68,7 +69,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>Possible stubs.</returns>
         [Route("wsdl")]
         [HttpPost]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Wsdl([FromBody] string data)
         {
             var wsdl = new WSDLResolver().Execute(data, _repository);
@@ -82,7 +83,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>Possible stubs.</returns>
         [Route("swagger")]
         [HttpPost]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Swagger([FromBody] string data)
         {
             var wsdl = new SwaggerResolver().Execute(data, _repository);
@@ -97,8 +98,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The newly created stub.</returns>
         [Route("")]
         [HttpPost]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Created)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult CreateFor([FromBody] string data)
         {
             return TryCatch(() =>
@@ -132,8 +133,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The found stub, or NotFound</returns>
         [Route("has", Order = -1)]
         [HttpPost]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult HasStubFor([FromBody] string data, string url = null)
         {
             return TryCatch(() => {
@@ -154,8 +155,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>All available stubs</returns>
         [Route("", Name = "GetAllStubs")]
         [HttpGet]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetPaged(int pageNo = 1, int pageSize = 50)
         {
             return TryCatchResponse(() =>
@@ -178,8 +179,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The stub matching the given id, or NotFound</returns>
         [Route("{id:int}")]
         [HttpGet]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(int id)
         {
             return TryCatch(() =>
@@ -198,9 +199,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>Ok if deleted, Conflict if there are still connected templates, otherwise NotFound</returns>
         [Route("{id:int}")]
         [HttpDelete]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Conflict)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public IActionResult Delete(int id)
         {
             return TryCatch(() =>
@@ -222,8 +223,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <param name="stub">The new data</param>
         /// <returns>The updated stub, or NotFound</returns>
         [Route("{id:int}", Order = -1)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPatch]
         public IActionResult Patch(int id, [FromBody]Model.Stub stub)
         {

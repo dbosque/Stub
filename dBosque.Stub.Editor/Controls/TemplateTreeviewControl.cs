@@ -466,6 +466,7 @@ namespace dBosque.Stub.Editor.Controls
                 a.Combination.FirstOrDefault().Description = prop.Name;
                 a.ResponseText = property.Message;
                 a.ContentType = prop.ContentType;
+                a.Headers = a.ToHeaders(prop.Headers);
                 a.StatusCode = StatusCodeConverter.Transpose(prop.StatusCode);
                 a.Combination.FirstOrDefault().CombinationXpath.ToList().ForEach(x => x.XpathValue = prop.Matches[x.Xpath.CleanExpression]?.Value );
             });
@@ -490,6 +491,7 @@ namespace dBosque.Stub.Editor.Controls
             {
                 Id = res.ResponseId,
                 Name = res.Combination.FirstOrDefault().Description,
+                Headers = res.ToHeadersStringArray(),
                 ContentType = res.ContentType ?? string.Empty,
                 StatusCode = StatusCodeConverter.Transpose(res.StatusCode),
                 Message = res.ResponseText,

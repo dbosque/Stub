@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using dBosque.Stub.Repository.Interfaces;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -33,8 +34,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         [Route("{id:int}")]
         [HttpGet]
     //    [ResponseType(typeof(Instance))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(int id)
         {
             return TryCatch(() =>
@@ -53,8 +54,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>Ok if deleted or NotFound</returns>
         [Route("{id:int}")]
         [HttpDelete]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Delete(int id)
         {
             return TryCatch(() =>
@@ -76,8 +77,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>the newly created item, or NotFound</returns>
         [Route("{id:int}/clone")]
         //      [ResponseType(typeof(Instance))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Created)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost]
         public IActionResult Clone(int id, [FromBody]Instance instance)
         {
@@ -104,6 +105,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
                         a.ContentType = instance.ContentType;
                     if ((instance?.HttpStatusCode.HasValue).HasValue)
                         a.StatusCode = instance.HttpStatusCode;
+                    if (instance?.Headers != null && instance.Headers.Any())
+                        a.Headers = a.ToHeaders(instance.Headers);
                 });
 
 
@@ -120,8 +123,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         [Route("{id:int}")]
        // [ResponseType(typeof(Instance))]
         [HttpPatch]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Patch(int id, [FromBody]Instance instance)
         {
             return TryCatch(() =>
@@ -134,6 +137,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration
                     a.Combination.FirstOrDefault().Description = instance.Name;
                     a.ResponseText = instance.Response;
                     a.ContentType = instance.ContentType;
+                    a.Headers = a.ToHeaders(instance.Headers);
                     a.StatusCode = instance.HttpStatusCode;
                 });
 

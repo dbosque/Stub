@@ -73,7 +73,7 @@ namespace dBosque.Stub.Editor.Controls
             Activated += MessageTypes_SelectedValueChanged;
             messageTypeViewOrginalColor = messageTypeView.BackColor;
             _tick = new PeriodicEventBehaviour(this, CheckNewData);
-            ApplyTheme();
+          //  ApplyTheme();
         }
 
         /// <summary>

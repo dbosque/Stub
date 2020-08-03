@@ -476,6 +476,7 @@ namespace dBosque.Stub.Repository
                     Description = def.Response.Description,
                     ResponseText = "<EMPTY_RESPONSE/>",
                     ContentType = def.Response.ContentType,
+                    Headers = def.Response.Headers,
                     StatusCode = def.Response.StatusCode
                 },
             };
@@ -596,6 +597,7 @@ namespace dBosque.Stub.Repository
             message.Response            = combo.Response.ResponseText;            
             message.HttpStatusCode      = (int)(combo.Response.StatusCode ?? 200);
             message.ContentType         = combo.Response.ContentType.IfEmpty(message.ContentType);
+            message.ResponseHeaders     = combo.Response.FromHeaders();
            
             message.IsPassTrough        = message.HttpStatusCode == -1;
             // If there was a match, but it is marked as passthrough, the passthrough uri is in the responsetext

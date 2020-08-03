@@ -1,5 +1,6 @@
 ﻿using dBosque.Stub.Repository.Interfaces;
 using dBosque.Stub.Server.WebApi.Configuration.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -49,13 +50,13 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         //}
 
         /// <summary>
-        /// Retrieve all stubs
+        /// Retrieve trace information
         /// </summary>
         /// <returns>All available stubs</returns>
         [Route("", Name = "GetAllTraces")]
         [HttpGet]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-       // [ResponseType(typeof(IEnumerable<Trace>))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        // [ResponseType(typeof(IEnumerable<Trace>))]
         public IActionResult Get(int pageNo = 1, int pageSize = 50, DateTime? from = null, DateTime? to = null, string filter = "", int? id = null )
         {
             return TryCatchResponse(() =>

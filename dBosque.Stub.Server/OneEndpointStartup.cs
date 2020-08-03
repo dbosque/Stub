@@ -28,18 +28,18 @@ namespace dBosque.Stub.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            _soapApi.ConfigureServices(services);
+            _soapApi.ConfigureServices(services);   
             _webApi.ConfigureServices(services);
             _configApi.ConfigureServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IOptions<Configuration.Hosting> hosting, ILogger<OneEndpointStartup> logger)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<Configuration.Hosting> hosting, ILogger<OneEndpointStartup> logger)
         {
             string basePath = hosting.Value?.Uri ?? "http://*:8081";
-            Configure(app, logger, "http", basePath, hosting.Value?.WebApi, (a, path) => a.Map(path, main => _webApi.Configure(main, env)));
-            Configure(app, logger, "soap", basePath, hosting.Value?.SoapApi, (a, path) => a.Map(path, main => _soapApi.Configure(main, env)));
-            Configure(app, logger, "configuration", basePath, hosting.Value?.ConfigurationApi, (a, path) => a.Map(path, main => _configApi.Configure(main, env)));
+            Configure(app, logger, "http", basePath, hosting.Value?.WebApi, (a, path) => a.Map(path, main => _webApi.Configure(main)));
+            Configure(app, logger, "soap", basePath, hosting.Value?.SoapApi, (a, path) => a.Map(path, main => _soapApi.Configure(main)));
+            Configure(app, logger, "configuration", basePath, hosting.Value?.ConfigurationApi, (a, path) => a.Map(path, main => _configApi.Configure(main)));
         }
 
         private void Configure(IApplicationBuilder app, ILogger<OneEndpointStartup> logger, string name, string basePath, Endpoint endpoint , Action<IApplicationBuilder, string> action)

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using NJsonSchema;
 using System.Linq;
 
@@ -13,17 +14,8 @@ namespace dBosque.Stub.Services.Extensions
         /// <param name="type"></param>
         /// <param name="prop"></param>
         /// <returns></returns>
-        private static object CreateDefault(JsonObjectType type = JsonObjectType.None, JsonProperty prop = null)
+        private static object CreateDefault(JsonObjectType type = JsonObjectType.None)
         {
-            if (prop != null)
-            {
-                type = prop.Type;
-                if (prop.IsEnumeration)
-                    return prop.Enumeration.FirstOrDefault();
-                if (prop.ExtensionData != null && prop.ExtensionData.Count != 0)
-                    return prop.ExtensionData.FirstOrDefault().Value;
-            }
-
             switch (type)
             {
                 case JsonObjectType.Boolean:
@@ -67,11 +59,11 @@ namespace dBosque.Stub.Services.Extensions
         /// </summary>
         /// <param name="schema"></param>
         /// <returns></returns>
-        public static JToken Parse(this JsonSchema4 schema)
+        public static JToken Parse(this JsonSchema schema)
         {
             // Override schema with reference is needed
-            if (schema.HasSchemaReference)
-                schema = schema.SchemaReference;
+            if (schema.HasReference)
+                schema = schema.Reference;
             else
                 schema = schema.ActualSchema;
 

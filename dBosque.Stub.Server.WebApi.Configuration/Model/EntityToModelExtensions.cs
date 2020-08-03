@@ -58,6 +58,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
                 Name = a.Description,
                 ContentType = a.Response.ContentType,
                 HttpStatusCode = a.Response.StatusCode,
+                Headers = a.Response.FromHeaders(),
                 Response = a.Response.ResponseText.Base64Encode(),
                 Template = new Template() { Id = a.TemplateId }.CreateLink(uri),
                 Matches = a.CombinationXpath.Select(c => c.AsModel(uri))
@@ -144,5 +145,6 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
                 Instance = a.CombinationId.HasValue ? new Template() { Id = a.CombinationId.Value }.CreateLink(uri):null
             }.CreateLink(uri) as Trace;
         }
+
     }
 }

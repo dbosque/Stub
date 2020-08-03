@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace dBosque.Stub.Repository.StubDb.Entities
 {
@@ -16,7 +17,7 @@ namespace dBosque.Stub.Repository.StubDb.Entities
         public string Description { get; set; }
         public long? StatusCode { get; set; }
         public string ContentType { get; set; }
-
+        public string Headers { get; set; }
         public virtual ICollection<Combination> Combination { get; set; }
         public virtual ICollection<RequestThumbprint> RequestThumbprint { get; set; }
     }

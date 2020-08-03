@@ -349,14 +349,6 @@
             </summary>
             <returns>All available stubs</returns>
         </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Extensions.ConflictResult">
-            <summary>
-            A conflict result
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Extensions.ConflictResult.ExecuteResult(Microsoft.AspNetCore.Mvc.ActionContext)">
-            <inheritdoc/>
-        </member>
         <member name="T:dBosque.Stub.Server.WebApi.Configuration.Extensions.PagedActionResult">
             <summary>
             A paged result
@@ -388,17 +380,6 @@
             </summary>
             <param name = "context">The context in which the result is executed. The context information includes
             information about the action that was executed and request information.</param>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.StatusCodeSwaggerResponseAttribute">
-            <summary>
-            HttpStatusCode to int converting SwaggerResponse Attribute
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StatusCodeSwaggerResponseAttribute.#ctor(System.Net.HttpStatusCode)">
-            <summary>
-            Default constructor
-            </summary>
-            <param name="code"></param>
         </member>
         <member name="T:dBosque.Stub.Server.WebApi.Configuration.Hosting">
             <summary>
@@ -855,17 +836,11 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
             <param name="app"></param>
-            <param name="env"></param>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Swagger.SwaggerOrderControllers">
-            <summary>
-            Define specific documentorder
-            </summary>
         </member>
         <member name="T:dBosque.Stub.Server.WebApi.Json.Configuration.BaseTypeFirstContractResolver">
             <summary>

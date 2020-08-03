@@ -249,7 +249,7 @@
     <Build Include="configuration\Tables\Settings.sql" />
     <Build Include="Schema Objects\Stored Procedures\stp_selectlog.sql" />
     <Build Include="Security\configuration.sql" />
-    <Build Include="mysqlexport.sql" />
+    <None Include="mysqlexport.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties" />

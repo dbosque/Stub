@@ -11,7 +11,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         /// <summary>
         /// 
         /// </summary>
-        public Instance(): base ("Instance")
+        public Instance() : base("Instance")
         {
         }
 
@@ -39,7 +39,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         /// The HttpStatusCode to return
         /// </summary>
         [JsonProperty(Order = 2)]
-        public long ? HttpStatusCode
+        public long? HttpStatusCode
         {
             get;
             set;
@@ -66,9 +66,19 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         }
 
         /// <summary>
-        /// A link back to the template
+        /// The headers to be returned.
         /// </summary>
         [JsonProperty(Order = 5)]
+        public Dictionary<string, string[]> Headers
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// A link back to the template
+        /// </summary>
+        [JsonProperty(Order = 6)]
         public Linkable Template
         {
             get;

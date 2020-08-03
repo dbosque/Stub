@@ -7,7 +7,7 @@ namespace dBosque.Stub.Services.Extensions
 {
     public static class SwaggerDocumentExtensions
     {    
-        public static IEnumerable<ExternalMessageType> ExtractInfo(this SwaggerDocument document)
+        public static IEnumerable<ExternalMessageType> ExtractInfo(this OpenApiDocument document)
         {
             if (document != null)
             {                
@@ -15,13 +15,13 @@ namespace dBosque.Stub.Services.Extensions
                 {
                     string request = string.Empty;
                     var path = o.Path;
-                    var bodyparam = o.Operation.Parameters.FirstOrDefault(p => p.Kind == SwaggerParameterKind.Body);
+                    var bodyparam = o.Operation.Parameters.FirstOrDefault(p => p.Kind == OpenApiParameterKind.Body);
                     if (bodyparam != null)
                         request = bodyparam.Schema.Parse().ToString();
-                    var queryparameters = o.Operation.Parameters.Where(p => p.Kind == SwaggerParameterKind.Query);
+                    var queryparameters = o.Operation.Parameters.Where(p => p.Kind == OpenApiParameterKind.Query);
                     if (queryparameters.Any())
                         path += "?"+ string.Join("&", queryparameters.Select(p => $"(<{p.Name}>{p.Type.AsNonGreedyRegex()})"));
-                    var pathparameters = o.Operation.Parameters.Where(p => p.Kind == SwaggerParameterKind.Path);
+                    var pathparameters = o.Operation.Parameters.Where(p => p.Kind == OpenApiParameterKind.Path);
                     if (pathparameters.Any())
                     {
                         // Remove the parameters in the path

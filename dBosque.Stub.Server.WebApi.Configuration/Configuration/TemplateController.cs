@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using dBosque.Stub.Repository.Interfaces;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -31,8 +32,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The found template, or NotFound</returns>
         [Route("{id:int}")]
         //[ResponseType(typeof(Template))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
         public IActionResult Get(int id)
         {
@@ -52,8 +53,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>Ok if deleted or NotFound</returns>
         [Route("{id:int}")]
         [HttpDelete]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Delete(int id)
         {
             return TryCatch(() =>
@@ -73,9 +74,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <param name="template">The template to create</param>
         /// <returns></returns>
         [Route("")]
-       // [ResponseType(typeof(Template))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.BadRequest)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Created)]
+        // [ResponseType(typeof(Template))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost]
         public IActionResult CreateFor([FromBody]Template template)
         {
@@ -118,9 +119,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <param name="template">The new data</param>
         /// <returns>The updated template, or NotFound</returns>
         [Route("{id:int}")]
-     //   [ResponseType(typeof(Template))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        //   [ResponseType(typeof(Template))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPatch]
         public IActionResult Update(int id, [FromBody]Template template)
         {

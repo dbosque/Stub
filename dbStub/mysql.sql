@@ -41,7 +41,7 @@ CREATE TABLE RequestThumbprint (
 
 CREATE TABLE Response (
     `ResponseID`  INT           AUTO_INCREMENT  NOT NULL,
-    `Response`    LONGTEXT  NOT NULL,
+    `ResponseText`    LONGTEXT  NOT NULL,
     `Description` VARCHAR (250) NULL,
     `StatusCode`  INT           NULL,
     `ContentType` VARCHAR (250) NULL,
@@ -110,7 +110,7 @@ CREATE TABLE `TenantSecurity`(
 
 
 
-INSERT INTO `settings` (`Id`, `TenantId`, `Name`, `Value`) VALUES ('2', '0', 'Log.MySQL', 'select l.StubLogID as Id, ifnull(r.Response,r.StatusCode) as ResponseText,  l.Uri, l.ResponseDatumTijd, l.Request, t.Name as Tenant, te.Description as Template, c.Description as Combination, m.Namespace, m.Rootnode
+INSERT INTO `settings` (`Id`, `TenantId`, `Name`, `Value`) VALUES ('2', '0', 'Log.MySQL', 'select l.StubLogID as Id, ifnull(r.ResponseText,r.StatusCode) as ResponseText,  l.Uri, l.ResponseDatumTijd, l.Request, t.Name as Tenant, te.Description as Template, c.Description as Combination, m.Namespace, m.Rootnode
 from StubLog l
 	left join Tenant t on t.TenantId = l.TenantID
 	left join Combination c on c.CombinationID = l.CombinationID

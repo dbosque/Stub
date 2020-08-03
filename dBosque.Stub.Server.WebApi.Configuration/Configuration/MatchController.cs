@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using dBosque.Stub.Repository.Interfaces;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -33,8 +34,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         [Route("for")]
         //[ResponseType(typeof(IEnumerable<Match>))]
         [HttpPost]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetXpathsFor([FromBody] string data)
         {
             return TryCatch(() =>
@@ -54,8 +55,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         [Route("")]
         [HttpPost]
         //[ResponseType(typeof(Match))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Conflict)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Created)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Create([FromBody]Match match)
         {
             return TryCatch(() =>
@@ -81,8 +82,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         [Route("")]
         [HttpGet]
         //[ResponseType(typeof(IEnumerable<Match>))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get()
         {
             return TryCatch(() =>
@@ -102,9 +103,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>Ok if deleted or NotFound or conflict in case the match is still being used</returns>
         [HttpDelete]
         [Route("{id:int}")]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.Conflict)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
         public IActionResult Delete(int id)
         {
             return TryCatch(() => 
@@ -126,9 +127,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The found match or NotFound</returns>
         [Route("{id:int}")]
         [HttpGet]
-      //  [ResponseType(typeof(Match))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        //  [ResponseType(typeof(Match))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(int id)
         {
             return TryCatch(() =>
@@ -147,9 +148,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <returns>The found match or NotFound</returns>
         [Route("Instance/{id:int}")]
         [HttpGet]
-       // [ResponseType(typeof(MatchInstance))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        // [ResponseType(typeof(MatchInstance))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetMatchInstance(int id)
         {
             return TryCatch(() =>
@@ -168,9 +169,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <param name="path">The updated match data</param>
         /// <returns>The updated match or NotFound</returns>
         [Route("Instance/{id:int}")]
-      //  [ResponseType(typeof(MatchInstance))]
-        [StatusCodeSwaggerResponse(HttpStatusCode.OK)]
-        [StatusCodeSwaggerResponse(HttpStatusCode.NotFound)]
+        //  [ResponseType(typeof(MatchInstance))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPost]
         public IActionResult PostMatchInstance(int id, [FromBody]MatchInstance path)
         {

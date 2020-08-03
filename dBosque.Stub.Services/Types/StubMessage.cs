@@ -59,6 +59,9 @@ namespace dBosque.Stub.Services
         ///</summary>
         public string Response          { get; set; }
 
+        /// <summary>
+        /// Possible headers to return to the client.
+        /// </summary>
         public Dictionary<string, string[]> ResponseHeaders { get; set; }
         
         ///<summary>

@@ -19,7 +19,7 @@ namespace dBosque.Stub.Services.ExternalReferenceResolvers
         ///<returns></returns>
         protected override IEnumerable<ExternalMessageType> FromContent(string content)
         {
-            var doc = Task.Run(async () => { return await SwaggerDocument.FromJsonAsync(content); }).Result;
+            var doc = Task.Run(async () => { return await OpenApiDocument.FromJsonAsync(content); }).Result;
             return doc.ExtractInfo().Distinct();
         }
 
@@ -30,10 +30,10 @@ namespace dBosque.Stub.Services.ExternalReferenceResolvers
         ///<returns></returns>
         protected override IEnumerable<ExternalMessageType> FromUri(string uri)
         {
-            SwaggerDocument doc = null;
+            OpenApiDocument doc = null;
             try
             {
-                doc = Task.Run(async () => { return await SwaggerDocument.FromUrlAsync(uri); }).Result; 
+                doc = Task.Run(async () => { return await OpenApiDocument.FromUrlAsync(uri); }).Result; 
 
             }
             catch (Exception)

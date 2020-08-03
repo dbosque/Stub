@@ -1,12 +1,12 @@
 ﻿using dBosque.Stub.Server.WebApi.Configuration.Raw;
 using dBosque.Stub.Server.WebApi.Configuration.Swagger;
 using dBosque.Stub.Server.WebApi.Json.Configuration;
+using dBosque.Stub.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
-using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -39,16 +39,16 @@ namespace dBosque.Stub.Server.WebApi.Configuration
             services.AddSwaggerGen(options =>
             {            
                 options.SwaggerDoc("v1",
-                    new Info
+                    new OpenApiInfo
                     {
-                        Title = "Configuration",
-                        Version = "v1",
-                        TermsOfService = "None"
+                        Title = "dBosque.Stub Service Configuration",
+                        Description = "Standalone stub hosting for SOAP, REST and sockets.",
+                        Version = "v1"
                     }
                  );
                 var filePath = System.IO.Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "dBosque.Stub.Server.WebApi.Configuration.xml");
                 options.IncludeXmlComments(filePath);
-                options.DescribeAllEnumsAsStrings();
+                //options.DescribeAllEnumsAsStrings();
                 options.DocumentFilter<SwaggerOrderControllers>();
             });
 
@@ -67,21 +67,23 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// </summary>
         /// <param name="app"></param>
-        /// <param name="env"></param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
       
             app.UseStaticFiles();
 
             app.UseSwagger(c =>
             {               
-                c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Host = httpReq.Host.Value);
+               // c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Host = httpReq.Host.Value);
             });
 
             app.UseSwaggerUI(c =>
-            {                
+            {
+                c.DocumentTitle = "dBosque.Stub Service Configuration";
+                c.DefaultModelRendering(Swashbuckle.AspNetCore.SwaggerUI.ModelRendering.Example);
+                c.RoutePrefix = string.Empty;
                 // Relative to the UI path
-                c.SwaggerEndpoint("v1/swagger.json", "V1 Docs");
+                c.SwaggerEndpoint("swagger/v1/swagger.json", "V1 Docs");
                
             });
 

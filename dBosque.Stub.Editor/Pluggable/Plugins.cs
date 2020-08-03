@@ -119,7 +119,7 @@ namespace dBosque.Stub.Editor.Pluggable
                 // Load assembly
                 Assembly ass = Assembly.LoadFile(filename);
                 // Get All Types
-                foreach (Type t in ass.GetTypes())
+                foreach (Type t in ass.GetTypes().Where(a => !a.IsInterface))
                 {
                     try
                     {
