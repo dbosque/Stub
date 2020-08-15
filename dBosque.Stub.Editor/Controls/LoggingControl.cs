@@ -48,29 +48,34 @@ namespace dBosque.Stub.Editor.Controls
         private void UpdateLogging(bool force = false)
         {
             tenantDataGridViewTextBoxColumn.Visible = GlobalSettings.Instance.Version?.IsFull ?? false;
-
-            // Get the query to use
-            var repos = _factory.CreateConfiguration();
-            var data = _factory.CreateDataRepository();//GlobalSettings.Instance.Configuration);
-            var logQuery = repos.Get("Log." + data.Provider);
-
-            var list = data.GetLogs(100, 0, false, logQuery).ToList();
-
-            if (list.Any() && last_id != list.Max(a => a.Id) || force)
+            try
             {
-                last_id = list.Max(a => a.Id);
-                switch (_logvisibility)
+                // Get the query to use
+                var repos = _factory.CreateConfiguration();
+                var data = _factory.CreateDataRepository();//GlobalSettings.Instance.Configuration);
+                var logQuery = repos.Get("Log." + data.Provider);
+
+                var list = data.GetLogs(100, 0, false, logQuery).ToList();
+
+                if (list.Any() && last_id != list.Max(a => a.Id) || force)
                 {
-                    case logVisibility.All:
-                        dataGridView1.DataSource = list;
-                        break;
-                    case logVisibility.Matches:
-                        dataGridView1.DataSource = list.Where(a => !string.IsNullOrEmpty(a.Combination)).ToList();
-                        break;
-                    default:
-                        dataGridView1.DataSource = list.Where(a => string.IsNullOrEmpty(a.Combination)).ToList();
-                        break;
+                    last_id = list.Max(a => a.Id);
+                    switch (_logvisibility)
+                    {
+                        case logVisibility.All:
+                            dataGridView1.DataSource = list;
+                            break;
+                        case logVisibility.Matches:
+                            dataGridView1.DataSource = list.Where(a => !string.IsNullOrEmpty(a.Combination)).ToList();
+                            break;
+                        default:
+                            dataGridView1.DataSource = list.Where(a => string.IsNullOrEmpty(a.Combination)).ToList();
+                            break;
+                    }
                 }
+            }
+            catch // Catch all, exception of no connection is triggerd somewhere else
+            { 
             }
         }
 

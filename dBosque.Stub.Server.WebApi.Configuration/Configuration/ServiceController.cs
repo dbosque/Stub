@@ -1,30 +1,29 @@
 ﻿using dBosque.Stub.Repository.Interfaces;
+using dBosque.Stub.Server.WebApi.Configuration.Model;
 using dBosque.Stub.Services.Extensions;
 using dBosque.Stub.Services.ExternalReferenceResolvers;
-using dBosque.Stub.Server.WebApi.Configuration.Extensions;
-using dBosque.Stub.Server.WebApi.Configuration.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
-using System.Net;
-using Microsoft.AspNetCore.Http;
+using System.Text.RegularExpressions;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
     /// <summary>
     /// Controller for Stubs
     /// </summary>
-    [Route("Stub")]
+    [Route("Service")]
     
-    public class StubController : ConfigurationController
+    public class ServiceController : ConfigurationController
     {
         /// <summary>
         /// Default constructor
         /// </summary>
         /// <param name="factory"></param>
         /// <param name="logger"></param>
-        public StubController(IRepositoryFactory factory, ILogger<StubController> logger) 
+        public ServiceController(IRepositoryFactory factory, ILogger<ServiceController> logger) 
             : base(factory, logger)
         {
         }
@@ -53,8 +52,23 @@ namespace dBosque.Stub.Server.WebApi.Configuration
                         a.Rootnode = string.Empty;
                         a.Namespace = regex.Pattern;
                         a.PassthroughEnabled = false;
-                        a.PassthroughUrl = string.Empty;                    
+                        a.PassthroughUrl = string.Empty;
                     });
+
+                    // Get all named groups and create rexpressions for them
+                    var groups = new Regex(regex.Pattern).GetGroupNames().Where(a => !int.TryParse(a, out int dummy)).ToArray();
+                    foreach (var g in groups)
+                    {
+                        var xpath = _repository.GetXpaths().FirstOrDefault(a => a.Expression == g && a.Type == 1);
+                        if (xpath == null)
+                        {
+                            _repository.UpdateXpath(null, a => {
+                                a.Type = 1;
+                                a.Expression = g;
+
+                            });
+                        }
+                    }
                     return Created(obj.AsModel(BaseUri));
                 }
 
@@ -177,6 +191,53 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// </summary>
         /// <param name="id">The id from the required stub</param>
         /// <returns>The stub matching the given id, or NotFound</returns>
+        [Route("{id:int}/instance")]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetInstances(int id)
+        {
+            return TryCatch(() =>
+            {
+                var obj = _repository.GetMessageType(id);
+                if (obj == null)
+                    return NotFound();
+
+                var combo = obj.Template.SelectMany(t => t.Combination);
+
+
+                return Ok(combo.Select(t => t.AsModel(BaseUri)));
+            });
+        }
+
+        /// <summary>
+        /// Retrieve a specific stub
+        /// </summary>
+        /// <param name="id">The id from the required stub</param>
+        /// <returns>The stub matching the given id, or NotFound</returns>
+        [Route("{id:int}/template")]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetTemplates(int id)
+        {
+            return TryCatch(() =>
+            {
+                var obj = _repository.GetMessageType(id);
+                if (obj == null)
+                    return NotFound();
+
+              
+
+                return Ok(obj.Template.Select(t => t.AsModel(BaseUri)));
+            });
+        }
+
+        /// <summary>
+        /// Retrieve a specific stub
+        /// </summary>
+        /// <param name="id">The id from the required stub</param>
+        /// <returns>The stub matching the given id, or NotFound</returns>
         [Route("{id:int}")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -226,7 +287,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPatch]
-        public IActionResult Patch(int id, [FromBody]Model.Stub stub)
+        public IActionResult Patch(int id, [FromBody]Model.Service stub)
         {
             return TryCatch(() =>
             {

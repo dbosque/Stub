@@ -56,6 +56,7 @@ CREATE TABLE StubLog (
     `TenantID` INT NULL,
 		`Request` LONGTEXT NOT NULL	,
 		`Uri` LONGTEXT NULL, 
+    `MessageTypeId` INT(11) NULL,
    PRIMARY KEY (`StubLogID`)
 ) 
 

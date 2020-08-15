@@ -78,7 +78,7 @@ namespace dBosque.Stub.Repository
             var msgTypes = database.MessageType.Where(mt => mt.Namespace == message.RootNameSpace &&
                                                                         mt.Rootnode == message.RootNode).ToList();           
 
-            // If no messagetype exists, and the uri is not null, try with xpath.
+            // If no messagetype exists, and the uri is not null, try with Regex on the uri.
             if (!msgTypes.Any() && !string.IsNullOrEmpty(message.Uri))
             {
                 msgTypes = database.MessageType
@@ -178,6 +178,7 @@ namespace dBosque.Stub.Repository
         {
             database.Dispose();
             database = _builder.CreateDbContext<StubDbEntities>(_connection.ConnectionString);
+            database.StubLog.FirstOrDefault();
         }
         ///<summary>
         ///The current connection
@@ -640,22 +641,28 @@ namespace dBosque.Stub.Repository
             bool isMatch = false;
 
             Match match = IsValidRegexMatch(uri, uriPattern, out Regex pattern);
+       
             var navigator = GetNavigator(message);
             foreach (var xpath in combo.CombinationXpath)
             {
                 // Content
                 if (xpath.Xpath.Type == 0)
                 {
-                    
                     Regex xpathRegex = AsSaveRegex(xpath.XpathValue);
                     var iterator = navigator.SelectSingleNode(message.LocalizeXpath(xpath.Xpath.Expression));
                     if (iterator != null)
-                        isMatch = (iterator.Value == xpath.XpathValue) || (xpathRegex?.IsMatch(iterator.Value)??false);
+                        isMatch = (iterator.Value == xpath.XpathValue) || (xpathRegex?.IsMatch(iterator.Value) ?? false);
                 }
                 // Uri
                 else if (xpath.Xpath.Type == 1)
                 {
                     isMatch = match != null && pattern.GetGroupNames().Contains(xpath.Xpath.Expression) && match.Groups[xpath.Xpath.Expression].Value == xpath.XpathValue;
+                }
+                // Regex op content
+                else if (xpath.Xpath.Type == 2)
+                {
+                    var patternContent = AsSaveRegex(xpath.Xpath.Expression);
+                    isMatch = patternContent?.IsMatch(message.Request.IfEmpty("<root/>"))??false;
                 }
                 else
                 {

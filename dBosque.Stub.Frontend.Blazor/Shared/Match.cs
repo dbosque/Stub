@@ -4,6 +4,25 @@ using System.Collections.Generic;
 namespace dBosque.Stub.Server.WebApi.Configuration.Model
 {
     /// <summary>
+    /// The different matchtypes supported
+    /// </summary>
+    public enum MatchType
+    {
+        /// <summary>
+        /// Xpatch to an object in the request
+        /// </summary>
+        XPath = 0,
+        /// <summary>
+        /// Group name of an uri regex
+        /// </summary>
+        UriGroupName = 1,
+       
+        /// <summary>
+        /// Regex to match on content
+        /// </summary>
+        RegEx = 2
+    }
+    /// <summary>
     /// A specifc Match (xpath of groupname)
     /// </summary>
     [JsonObject(Title = "Match")]
@@ -25,41 +44,20 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         }
 
         /// <summary>
-        /// The Path in the XML/Json document to match
+        /// The value of the match
         /// </summary>
         [JsonProperty(Order = 1)]
-        public string XPath
+        public string Expression
         {
             get;
             set;
         }
 
         /// <summary>
-        ///  The groupname from a regular expression
+        /// The type of match
         /// </summary>
         [JsonProperty(Order = 2)]
-        public string GroupName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The type of this match (groupname of xpath)
-        /// </summary>
-        [JsonProperty(Order = 3)]
-        [JsonIgnore]
-        public string Type
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// The templates that use this match
-        /// </summary>
-        [JsonProperty(Order = 4)]
-        public IEnumerable<Linkable> Templates
+        public MatchType Type 
         {
             get;
             set;

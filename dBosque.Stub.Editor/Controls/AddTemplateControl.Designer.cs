@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTemplateControl));
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.regexTestTb = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.regexTb = new System.Windows.Forms.TextBox();
             this.namespaceTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -82,6 +87,11 @@
             // 
             // splitContainer4.Panel1
             // 
+            this.splitContainer4.Panel1.Controls.Add(this.button1);
+            this.splitContainer4.Panel1.Controls.Add(this.regexTestTb);
+            this.splitContainer4.Panel1.Controls.Add(this.label6);
+            this.splitContainer4.Panel1.Controls.Add(this.label5);
+            this.splitContainer4.Panel1.Controls.Add(this.regexTb);
             this.splitContainer4.Panel1.Controls.Add(this.namespaceTb);
             this.splitContainer4.Panel1.Controls.Add(this.label4);
             this.splitContainer4.Panel1.Controls.Add(this.DescriptionTextBox);
@@ -93,8 +103,54 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer4.Size = new System.Drawing.Size(1274, 470);
-            this.splitContainer4.SplitterDistance = 69;
+            this.splitContainer4.SplitterDistance = 89;
             this.splitContainer4.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(738, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // regexTestTb
+            // 
+            this.regexTestTb.Location = new System.Drawing.Point(454, 63);
+            this.regexTestTb.Margin = new System.Windows.Forms.Padding(4);
+            this.regexTestTb.Name = "regexTestTb";
+            this.regexTestTb.Size = new System.Drawing.Size(277, 22);
+            this.regexTestTb.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(874, 63);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(387, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Enter a regular expression with groups to match any content";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 66);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(143, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Regular Expression : ";
+            // 
+            // regexTb
+            // 
+            this.regexTb.Location = new System.Drawing.Point(169, 63);
+            this.regexTb.Margin = new System.Windows.Forms.Padding(4);
+            this.regexTb.Name = "regexTb";
+            this.regexTb.Size = new System.Drawing.Size(277, 22);
+            this.regexTb.TabIndex = 8;
             // 
             // namespaceTb
             // 
@@ -112,9 +168,9 @@
             this.label4.Location = new System.Drawing.Point(18, 38);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(148, 17);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Description :";
+            this.label4.Text = "Template description :";
             // 
             // DescriptionTextBox
             // 
@@ -123,8 +179,8 @@
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(277, 22);
             this.DescriptionTextBox.TabIndex = 0;
-            this.DescriptionTextBox.Leave += new System.EventHandler(this.DescriptionTextBox_Leave);
             this.DescriptionTextBox.TextChanged += new System.EventHandler(this.DescriptionTextBox_Leave);
+            this.DescriptionTextBox.Leave += new System.EventHandler(this.DescriptionTextBox_Leave);
             // 
             // label3
             // 
@@ -143,9 +199,9 @@
             this.label1.Location = new System.Drawing.Point(18, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 17);
+            this.label1.Size = new System.Drawing.Size(37, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Namespace / Regex :";
+            this.label1.Text = "Stub";
             // 
             // label2
             // 
@@ -153,10 +209,10 @@
             this.label2.Location = new System.Drawing.Point(454, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(538, 17);
+            this.label2.Size = new System.Drawing.Size(535, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Select (multiple) Xpath(s), fill a description and press Apply to create a new te" +
-    "mplate";
+            this.label2.Text = "Select (multiple) Xpath(s), fill a description and press Save to create a new tem" +
+    "plate";
             // 
             // splitContainer2
             // 
@@ -172,7 +228,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.XpathLstbx);
-            this.splitContainer2.Size = new System.Drawing.Size(1274, 397);
+            this.splitContainer2.Size = new System.Drawing.Size(1274, 377);
             this.splitContainer2.SplitterDistance = 439;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 1;
@@ -185,7 +241,7 @@
             this.documentTreeView.Location = new System.Drawing.Point(0, 0);
             this.documentTreeView.Margin = new System.Windows.Forms.Padding(4);
             this.documentTreeView.Name = "documentTreeView";
-            this.documentTreeView.Size = new System.Drawing.Size(439, 397);
+            this.documentTreeView.Size = new System.Drawing.Size(439, 377);
             this.documentTreeView.TabIndex = 0;
             this.toolTip1.SetToolTip(this.documentTreeView, "Drop a file to create a new Xpath");
             this.documentTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.documentTreeView_NodeMouseDoubleClick);
@@ -226,7 +282,7 @@
             this.XpathLstbx.Margin = new System.Windows.Forms.Padding(4);
             this.XpathLstbx.Name = "XpathLstbx";
             this.XpathLstbx.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.XpathLstbx.Size = new System.Drawing.Size(830, 397);
+            this.XpathLstbx.Size = new System.Drawing.Size(830, 377);
             this.XpathLstbx.TabIndex = 0;
             this.XpathLstbx.ValueMember = "XpathID";
             this.XpathLstbx.DoubleClick += new System.EventHandler(this.XpathLstbx_DoubleClick);
@@ -248,7 +304,7 @@
             // 
             // xpathBindingSource
             // 
-            this.xpathBindingSource.DataSource = typeof(Stub.Repository.StubDb.Entities.Xpath);
+            this.xpathBindingSource.DataSource = typeof(dBosque.Stub.Repository.StubDb.Entities.Xpath);
             // 
             // toolStrip1
             // 
@@ -263,7 +319,7 @@
             this.saveButton});
             this.toolStrip1.Location = new System.Drawing.Point(9, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(120, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(141, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -273,7 +329,7 @@
             this.clearButton.Image = ((System.Drawing.Image)(resources.GetObject("clearButton.Image")));
             this.clearButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(24, 24);
+            this.clearButton.Size = new System.Drawing.Size(29, 24);
             this.clearButton.Text = "Clear";
             this.clearButton.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -283,7 +339,7 @@
             this.pasteButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteButton.Image")));
             this.pasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteButton.Name = "pasteButton";
-            this.pasteButton.Size = new System.Drawing.Size(24, 24);
+            this.pasteButton.Size = new System.Drawing.Size(29, 24);
             this.pasteButton.Text = "Paste";
             this.pasteButton.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -298,7 +354,7 @@
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(24, 24);
+            this.deleteButton.Size = new System.Drawing.Size(29, 24);
             this.deleteButton.Text = "Delete";
             this.deleteButton.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -313,7 +369,7 @@
             this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
             this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(24, 24);
+            this.saveButton.Size = new System.Drawing.Size(29, 24);
             this.saveButton.Text = "Save";
             this.saveButton.Click += new System.EventHandler(this.OkBtn_Click);
             // 
@@ -402,5 +458,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton deleteButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox regexTb;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox regexTestTb;
     }
 }

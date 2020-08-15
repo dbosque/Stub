@@ -57,13 +57,20 @@ namespace dBosque.Stub.Editor
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-
+            var current = (string)connectionlistbx.SelectedValue;
             var f = new DatabaseConnectionAddForm
             {
+                ConnectionName = current,
+                ConnectionString = Connections.FirstOrDefault(a => a.Name == current).ConnectionString,
+                Provider = Connections.FirstOrDefault(a => a.Name == current).ProviderName,
                 KnownModelNames = Connections.Select(a => a.Name).ToList()
             };
             if (f.ShowDialog() == DialogResult.OK)
             {
+                if (Connections.Any(a => a.Name == f.ConnectionName))
+                {
+                    Connections.Remove(Connections.FirstOrDefault(a => a.Name == f.ConnectionName));
+                }
                 Connections.Add(new ConnectionStringSetting(f.ConnectionName, f.ConnectionString, f.Provider));
                 var items = Connections.Select(a => new ComboItem(a)).ToList();
                 connectionlistbx.DataSource = items;                

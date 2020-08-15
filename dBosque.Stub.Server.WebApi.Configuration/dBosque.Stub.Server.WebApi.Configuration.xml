@@ -120,6 +120,23 @@
             <param name="instance">The new data </param>
             <returns>The updated intance or NotFound</returns>
         </member>
+        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Configuration.ListController">
+            <summary>
+            Helper methods to populate different lists
+            </summary>
+        </member>
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Configuration.ListController.GetContentType">
+            <summary>
+            Return a list of allowed contenttypes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Configuration.ListController.GetStatusCode">
+            <summary>
+            Return a list of possible statuscodes
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:dBosque.Stub.Server.WebApi.Configuration.MatchController">
             <summary>
             The Match controller
@@ -212,19 +229,19 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.StubController">
+        <member name="T:dBosque.Stub.Server.WebApi.Configuration.ServiceController">
             <summary>
             Controller for Stubs
             </summary>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.#ctor(dBosque.Stub.Repository.Interfaces.IRepositoryFactory,Microsoft.Extensions.Logging.ILogger{dBosque.Stub.Server.WebApi.Configuration.StubController})">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.#ctor(dBosque.Stub.Repository.Interfaces.IRepositoryFactory,Microsoft.Extensions.Logging.ILogger{dBosque.Stub.Server.WebApi.Configuration.ServiceController})">
             <summary>
             Default constructor
             </summary>
             <param name="factory"></param>
             <param name="logger"></param>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.CreateForRegEx(dBosque.Stub.Server.WebApi.Configuration.Model.RegexStub)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.CreateForRegEx(dBosque.Stub.Server.WebApi.Configuration.Model.RegexStub)">
             <summary>
             Create a new Stub based on the specifiec Regular Expression
             The .NET regular expression parser is used (https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
@@ -233,28 +250,28 @@
             <param name="regex">The regular expression.</param>
             <returns>The newly created stub.</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.Wsdl(System.String)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.Wsdl(System.String)">
             <summary>
             Retrieve possible stubs from the given wsdl
             </summary>
             <param name="data">The wsdl to parse from</param>
             <returns>Possible stubs.</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.Swagger(System.String)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.Swagger(System.String)">
             <summary>
             Retrieve possible stubs from the given Swagger doc
             </summary>
             <param name="data">The Swagger doc to parse from</param>
             <returns>Possible stubs.</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.CreateFor(System.String)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.CreateFor(System.String)">
             <summary>
             Create a new Stub based on a specifc namespace/rootnode taken from the posted data.
             </summary>
             <param name="data">The data from which to extract the namespace/rootnode.</param>
             <returns>The newly created stub.</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.HasStubFor(System.String,System.String)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.HasStubFor(System.String,System.String)">
             <summary>
             Check to see if for the given posted data a stub already exists.
             </summary>
@@ -262,27 +279,41 @@
             <param name="url">The url from which to extract the info</param>
             <returns>The found stub, or NotFound</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.GetPaged(System.Int32,System.Int32)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.GetPaged(System.Int32,System.Int32)">
             <summary>
             Retrieve all stubs
             </summary>
             <returns>All available stubs</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.Get(System.Int32)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.GetInstances(System.Int32)">
             <summary>
             Retrieve a specific stub
             </summary>
             <param name="id">The id from the required stub</param>
             <returns>The stub matching the given id, or NotFound</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.Delete(System.Int32)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.GetTemplates(System.Int32)">
+            <summary>
+            Retrieve a specific stub
+            </summary>
+            <param name="id">The id from the required stub</param>
+            <returns>The stub matching the given id, or NotFound</returns>
+        </member>
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.Get(System.Int32)">
+            <summary>
+            Retrieve a specific stub
+            </summary>
+            <param name="id">The id from the required stub</param>
+            <returns>The stub matching the given id, or NotFound</returns>
+        </member>
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.Delete(System.Int32)">
             <summary>
             Delete a specific stub
             </summary>
             <param name="id">The id from the required stub</param>
             <returns>Ok if deleted, Conflict if there are still connected templates, otherwise NotFound</returns>
         </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.StubController.Patch(System.Int32,dBosque.Stub.Server.WebApi.Configuration.Model.Stub)">
+        <member name="M:dBosque.Stub.Server.WebApi.Configuration.ServiceController.Patch(System.Int32,dBosque.Stub.Server.WebApi.Configuration.Model.Service)">
             <summary>
             Update the given stub
             </summary>
@@ -345,7 +376,7 @@
         </member>
         <member name="M:dBosque.Stub.Server.WebApi.Configuration.TraceController.Get(System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.Nullable{System.Int32})">
             <summary>
-            Retrieve all stubs
+            Retrieve trace information
             </summary>
             <returns>All available stubs</returns>
         </member>
@@ -461,318 +492,6 @@
             <param name="uri"></param>
             <returns></returns>
         </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.Instance">
-            <summary>
-            A specific instance from a template.
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.Name">
-            <summary>
-            A human readably name to identify this instance.
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.Response">
-            <summary>
-            The response to return (base64encoded)
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.HttpStatusCode">
-            <summary>
-            The HttpStatusCode to return
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.ContentType">
-            <summary>
-            The ContentType to return
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.Matches">
-            <summary>
-            The Matches and their corresponding values on which this instance reacts
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Instance.Template">
-            <summary>
-            A link back to the template
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable">
-            <summary>
-            A generic link class
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name = "url"></param>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable.IdFromLink">
-            <summary>
-            Get the Id from the supplied link
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable.Id">
-            <summary>
-            The Id for this item
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable.Link">
-            <summary>
-            The fully qualified id for this item
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable.CreateLink(System.String)">
-            <summary>
-            Create the link property
-            </summary>
-            <param name = "baseUri"></param>
-            <returns></returns>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Linkable.CreateLink">
-            <summary>
-            Create the link property
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.Match">
-            <summary>
-            A specifc Match (xpath of groupname)
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Match.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name = "url"></param>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Match.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Match.XPath">
-            <summary>
-            The Path in the XML/Json document to match
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Match.GroupName">
-            <summary>
-             The groupname from a regular expression
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Match.Type">
-            <summary>
-            The type of this match (groupname of xpath)
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Match.Templates">
-            <summary>
-            The templates that use this match
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.MatchInstance">
-            <summary>
-            A specific instance with value for a xpath/groupname
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.MatchInstance.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.MatchInstance.Value">
-            <summary>
-            The value on which to react
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult">
-            <summary>
-            Paged result set
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult.#ctor(System.Int32,System.Int32,System.Int32,System.String,System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
-            <summary>
-            Default constructor
-            </summary>
-            <param name = "pageNo"></param>
-            <param name = "pageSize"></param>
-            <param name = "total"></param>
-            <param name = "routeName"></param>
-            <param name = "additional"></param>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult.routeName">
-            <summary>
-            The route name
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult.pageNo">
-            <summary>
-            The current pageno
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult.pageSize">
-            <summary>
-            The current pagesize
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult.total">
-            <summary>
-            The total number of possible elements
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.PagedResult.Additional">
-            <summary>
-            Additional parameters
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.RegexStub">
-            <summary>
-            A Regex stub
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.RegexStub.Pattern">
-            <summary>
-            The regex pattern to use
-            The regular expression on which this stub reacts
-            The .NET regular expression parser is used (https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-            All named groups are extract and used as template restrictions (https://docs.microsoft.com/en-us/dotnet/standard/base-types/grouping-constructs-in-regular-expressions)
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.RegexStub.Description">
-            <summary>
-            A human readable name for the stub
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.Stub">
-            <summary>
-            A Stub
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.Description">
-            <summary>
-            A nice description to humanly identify the stub
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.Namespace">
-            <summary>
-            The namespace on which this stub reacts
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.UriRegex">
-            <summary>
-            The regular expression on which this stub reacts
-            The .NET regular expression parser is used (https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-            All named groups are extract and used as template restrictions (https://docs.microsoft.com/en-us/dotnet/standard/base-types/grouping-constructs-in-regular-expressions)
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.RootNode">
-            <summary>
-            The rootnode on which this stub reacts
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.AllowPassthrough">
-            <summary>
-            Allow passthrough of the request when no match was found.
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.PassthroughUri">
-            <summary>
-            The uri which to relay the request when no match was found.
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.Sample">
-            <summary>
-            Sample message (base64encoded)
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Stub.Templates">
-            <summary>
-            The templates that are available for this stub
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.Template">
-            <summary>
-            A abstract template (xpath collection)
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Template.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Template.Name">
-            <summary>
-            A human readable name for this template
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Template.Instances">
-            <summary>
-            The concrete instances that are avalable for this template
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Template.Matches">
-            <summary>
-            The Matches that make up this template.
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Template.Stub">
-            <summary>
-            A link back to the stub
-            </summary>
-        </member>
-        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Model.Trace">
-            <summary>
-            Trace info
-            </summary>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name = "url"></param>
-        </member>
-        <member name="M:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.Instance">
-            <summary>
-            The template instance that triggerd this trace
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.Stub">
-            <summary>
-            The stub that triggerd this trace
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.Time">
-            <summary>
-            The time the trace originated
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.Data">
-            <summary>
-            The data that was recieved (base64encoded)
-            </summary>
-        </member>
-        <member name="P:dBosque.Stub.Server.WebApi.Configuration.Model.Trace.Uri">
-            <summary>
-            The endpoint uri
-            </summary>
-        </member>
         <member name="T:dBosque.Stub.Server.WebApi.Configuration.Raw.RawRequestBodyFormatter">
             <summary>
             Formatter that allows content of type text/plain and application/octet stream
@@ -841,6 +560,11 @@
             // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
             <param name="app"></param>
+        </member>
+        <member name="T:dBosque.Stub.Server.WebApi.Configuration.Swagger.SwaggerOrderControllers">
+            <summary>
+            Define specific documentorder
+            </summary>
         </member>
         <member name="T:dBosque.Stub.Server.WebApi.Json.Configuration.BaseTypeFirstContractResolver">
             <summary>

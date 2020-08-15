@@ -14,6 +14,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration
     /// </summary>
     public abstract class ConfigurationController : Controller
     {        
+        
         /// <summary>
         /// Repository connection
         /// </summary>
@@ -36,8 +37,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// </summary>
         protected ConfigurationController(IRepositoryFactory factory, ILogger logger)
         {
-            _repository = factory.CreateDataRepository();
             _configRespository = factory.CreateConfiguration();
+            _repository = factory.CreateDataRepository(_configRespository);
             _logger = logger;
         }
 

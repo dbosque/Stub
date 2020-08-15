@@ -1,12 +1,10 @@
-﻿using dBosque.Stub.Services.Extensions;
-using dBosque.Stub.Server.WebApi.Configuration.Extensions;
+﻿using dBosque.Stub.Repository.Interfaces;
 using dBosque.Stub.Server.WebApi.Configuration.Model;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Net;
-using dBosque.Stub.Repository.Interfaces;
-using Microsoft.Extensions.Logging;
+using dBosque.Stub.Services.Extensions;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -32,7 +30,6 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         /// <param name="data">The request to check</param>
         /// <returns>All Matches that can react on this request, or NotFound</returns>
         [Route("for")]
-        //[ResponseType(typeof(IEnumerable<Match>))]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -40,7 +37,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         {
             return TryCatch(() =>
             {
-                var obj = data.CreateDocument().GetAllValidFor(_repository.GetXpaths().Where( x => x.IsContent), (x) => x.Expression).ToList();
+                var obj = data.CreateDocument().GetAllValidFor(_repository.GetXpaths().Where( x => x.Type == 0), (x) => x.Expression).ToList();
                 if (obj == null || obj.Count == 0)
                     return NotFound();
                 return Ok(obj.Select(a => a.AsModel(BaseUri)));
@@ -61,14 +58,13 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         {
             return TryCatch(() =>
             {
-                var type = string.IsNullOrEmpty(match.XPath) ? "Uri" : "Content";
-                var obj = _repository.GetXpaths().FirstOrDefault(a => a.Expression == (match.XPath ?? match.GroupName) && a.TypeToName() == type);
+                var obj = _repository.GetXpaths().FirstOrDefault(a => a.Expression == match.Expression && a.Type == (int)match.Type);
                 if (obj != null)
                     return new ConflictResult();
 
                 obj = _repository.UpdateXpath(null, a => {
-                    a.Type = a.TypeFromName(type);
-                    a.Expression = match.XPath ?? match.GroupName;
+                    a.Type = (int)match.Type;
+                    a.Expression = match.Expression;
 
                 });
                 return Created(obj.AsModel(BaseUri));

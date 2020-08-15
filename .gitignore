@@ -10,3 +10,9 @@
 /dbStub/dbStub.jfm
 /dbStub/dbStub.dbmdl
 /.vs/*
+/dBosque.Stub.Frontend.Blazor/Client/bin
+/dBosque.Stub.Frontend.Blazor/Client/obj
+/dBosque.Stub.Frontend.Blazor/Server
+/dBosque.Stub.Frontend.Blazor/Shared/bin
+/dBosque.Stub.Frontend.Blazor/Shared/obj
+/testb

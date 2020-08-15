@@ -92,11 +92,11 @@ namespace dBosque.Stub.Server.WebApi.Types
             if (string.IsNullOrEmpty(Matches.Error))
                 return new NotFoundResult();
             else
-                return new ContentResult()
+                return new ContentResult
                 {
                     Content = Matches.Error,
                     ContentType = ContentTypes.TextPlain,
-                    StatusCode = 500
+                    StatusCode = 501 // Not Implemented
                 };
         }
 

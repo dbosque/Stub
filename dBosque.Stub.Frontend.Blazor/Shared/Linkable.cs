@@ -9,6 +9,11 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
     [JsonObject(Title = "Link")]
     public class Linkable
     {
+
+        public Linkable()
+        {
+
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -22,7 +27,16 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         /// Get the Id from the supplied link
         /// </summary>
         /// <returns></returns>
-        public long IdFromLink() => (Id = long.Parse(Link.Split('/').Last())) ?? -1;
+        public long IdFromLink()
+        {
+            if (!Id.HasValue)
+            {
+                Id = long.Parse(Link.Split('/').Last());
+            }
+           
+            return Id.Value;
+        }
+        
         [JsonIgnore]
         private string url
         {

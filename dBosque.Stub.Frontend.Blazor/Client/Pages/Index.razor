@@ -1,0 +1,25 @@
+﻿@page "/"
+
+
+<h3>Configured Services</h3>
+
+
+@if (services == null)
+{
+    <p><em>Reading configuration...</em></p>
+}
+else
+{
+
+    <MatTabGroup>
+        <MatTab Label="Soap">
+            <ServicesComponent Type="soap" Services="services.Where(s => !string.IsNullOrEmpty(s.RootNode))"></ServicesComponent>
+        </MatTab>
+        <MatTab Label="Rest">
+            <ServicesComponent Type="rest" Services="services.Where(s => string.IsNullOrEmpty(s.RootNode))"></ServicesComponent>
+        </MatTab>
+    </MatTabGroup>
+
+    <MatFAB Class="app-fab-absolute" Icon="@MatIconNames.Add"  OnClick="AddServiceClick"></MatFAB>
+
+}

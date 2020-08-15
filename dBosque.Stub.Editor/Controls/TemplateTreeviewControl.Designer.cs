@@ -53,7 +53,7 @@
             this.treeView1.LabelEdit = true;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(738, 297);
+            this.treeView1.Size = new System.Drawing.Size(738, 293);
             this.treeView1.TabIndex = 0;
             this.treeView1.BeforeLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView_BeforeLabelEdit);
             this.treeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView_AfterLabelEdit);
@@ -100,9 +100,9 @@
             this.cloneButton,
             this.deleteButton,
             this.refreshButton});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(123, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(139, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -112,7 +112,7 @@
             this.cloneButton.Image = ((System.Drawing.Image)(resources.GetObject("cloneButton.Image")));
             this.cloneButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cloneButton.Name = "cloneButton";
-            this.cloneButton.Size = new System.Drawing.Size(24, 24);
+            this.cloneButton.Size = new System.Drawing.Size(29, 24);
             this.cloneButton.Text = "Clone";
             this.cloneButton.Click += new System.EventHandler(this.createNewToolStripMenuItem_Click);
             // 
@@ -122,7 +122,7 @@
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(24, 24);
+            this.deleteButton.Size = new System.Drawing.Size(29, 24);
             this.deleteButton.Text = "Delete";
             this.deleteButton.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -132,7 +132,7 @@
             this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(24, 24);
+            this.refreshButton.Size = new System.Drawing.Size(29, 24);
             this.refreshButton.Text = "Refresh";
             this.refreshButton.Click += new System.EventHandler(this.refreshToolStripMenuItem1_Click);
             // 
@@ -143,7 +143,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.treeView1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(738, 297);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(738, 293);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";

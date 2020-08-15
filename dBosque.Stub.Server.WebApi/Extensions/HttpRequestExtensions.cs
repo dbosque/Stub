@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Internal;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -18,9 +15,9 @@ namespace dBosque.Stub.Server.WebApi.Extensions
         public static string GetBody(this HttpRequest request)
         {
             var bodyStr = "";
-
             // Allows using several time the stream in ASP.Net Core
-            request.EnableRewind();
+            request.EnableBuffering();
+            
 
             // Arguments: Stream, Encoding, detect encoding, buffer size 
             // AND, the most important: keep stream opened

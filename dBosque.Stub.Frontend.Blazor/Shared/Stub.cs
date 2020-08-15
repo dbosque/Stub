@@ -6,12 +6,12 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
     /// <summary>
     /// A Stub
     /// </summary>
-    public class Stub : Linkable
+    public class Service : Linkable
     {
         /// <summary>
         /// 
         /// </summary>
-        public Stub(): base ("Stub")
+        public Service(): base ("Service")
         {
         }
 

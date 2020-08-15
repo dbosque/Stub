@@ -1,12 +1,11 @@
 ﻿using dBosque.Stub.Interfaces;
 using dBosque.Stub.Services;
-using dBosque.Stub.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace dBosque.Stub.Server.WebApi
 {
@@ -36,6 +35,33 @@ namespace dBosque.Stub.Server.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
+#if NETCOREAPP
+            app.UseRouting()
+               .UseSerilogRequestLogging()
+               .UseEndpoints(routes =>
+            {
+
+                routes.MapControllerRoute(
+                    name: "passthroughTenantSpecific",
+                    pattern: "passthrough/private/{tenant}/{protocol}/{pass}/{*uri}",
+                    defaults: new { controller = "GenericApi", action = "Passthrough" });
+
+                routes.MapControllerRoute(
+                    name: "passthrougSpecific",
+                    pattern: "passthrough/{protocol}/{pass}/{*uri}",
+                    defaults: new { controller = "GenericApi", action = "PassthroughDefault" });
+
+                routes.MapControllerRoute(
+                    name: "TenantSpecific",
+                    pattern: "private/{tenant}/{*uri}",
+                    defaults: new { controller = "GenericApi", action = "Execute" });
+
+                routes.MapControllerRoute(
+                    name: "Generic",
+                    pattern: "{*uri}",
+                    defaults: new { controller = "GenericApi", action = "ExecuteDefault" });
+            });
+#else
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -58,7 +84,7 @@ namespace dBosque.Stub.Server.WebApi
                     template: "{*uri}",
                     defaults: new { controller = "GenericApi", action = "ExecuteDefault" });
             });
-          
+#endif
         }
     }
 }

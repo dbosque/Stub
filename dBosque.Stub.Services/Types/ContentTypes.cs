@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace dBosque.Stub.Services.Types
 {
     /// <summary>
@@ -22,6 +24,10 @@ namespace dBosque.Stub.Services.Types
 
         public static string All = "*/*";
 
+        public static string[] AsArray()
+        {
+            return new [] { TextPlain, TextHtml, TextXml, ApplicationJson, ApplicationOctetStream, ApplicationXml, ApplicationSoapXml};
+        }
         public static string First(string value)
         {
             return value?.Split(';')[0];

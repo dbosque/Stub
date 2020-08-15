@@ -11,14 +11,14 @@ namespace dBosque.Stub.Repository.StubDb.Entities
 
         public string CleanExpression => Regex.Replace(Expression, @"\/\*\[local-name\(\)='(.*?)'\]", "/$1");
 
-        public bool IsContent => Type == 0;
-
         public string TypeToName()
         {
             if (Type == 0)
                 return "Content";
             if (Type == 1)
                 return "Uri";
+            if (Type == 2)
+                return "Content Regex";
             return "??";
         }
 
@@ -29,6 +29,8 @@ namespace dBosque.Stub.Repository.StubDb.Entities
 
             if (string.Compare(name, "Uri", true) == 0)
                 return 1;
+            if (string.Compare(name, "Content Regex", true) == 0)
+                return 2;
             return null; 
         }
 

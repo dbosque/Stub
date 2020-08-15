@@ -20,10 +20,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
             return new Match()
             {
                 Id = a.XpathId,
-                XPath = a.Type == 0 ? a.CleanExpression : null,
-                GroupName = a.Type == 1 ? a.CleanExpression : null,
-                Type = a.TypeToName(),
-                Templates = addTemplates ? a.TemplateXpath.Select(b => new Template() { Id = b.TemplateId }.CreateLink(uri)) : null
+                Expression = a.CleanExpression,
+                Type = (MatchType)a.Type
             }.CreateLink(uri) as Match;
         }
 
@@ -38,8 +36,8 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
             return new MatchInstance()
             {
                 Id = a.CombinationXpathId,
-                XPath = a.Xpath.Type == 0 ? a.Xpath.CleanExpression : null,
-                GroupName = a.Xpath.Type == 1 ? a.Xpath.CleanExpression : null,
+                Expression = a.Xpath.CleanExpression,
+                Type = (MatchType)a.Xpath.Type,
                 Value = a.XpathValue
             }.CreateLink(uri) as MatchInstance;
         }
@@ -77,9 +75,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
             {
                 Id = a.TemplateId,
                 Name = a.Description,
-                Stub =  new Stub() { Id = a.MessageTypeId }.CreateLink(uri),
+                Stub =  new Service() { Id = a.MessageTypeId }.CreateLink(uri),
                 Instances = a.Combination.Select(c => new Instance() { Id = c.CombinationId }.CreateLink(uri) ),
-                Matches = a.TemplateXpath.Select(t => new Match() { Id = t.XpathId, XPath = t.Xpath.CleanExpression, Type = t.Xpath.TypeToName()  }.CreateLink(uri))
+                Matches = a.TemplateXpath.Select(t => new Match() { Id = t.XpathId, Expression = t.Xpath.CleanExpression, Type = (MatchType)t.Xpath.Type  }.CreateLink(uri))
             }.CreateLink(uri) as Template;
         }
 
@@ -89,9 +87,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         /// <param name="a"></param>
         /// <param name="uri"></param>
         /// <returns></returns>
-        public static Stub AsModel(this Services.ExternalReferenceResolvers.InternalMessageType a, string uri = null)
+        public static Service AsModel(this Services.ExternalReferenceResolvers.InternalMessageType a, string uri = null)
         {
-            return new Stub()
+            return new Service()
             {
                 Id = a.Id,
                 Description = a.Description,
@@ -101,7 +99,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
                 AllowPassthrough = a.PassthroughEnabled,
                 PassthroughUri = a.Uri,  
                 Sample = a.Request.Base64Encode(),
-            }.CreateLink(uri) as Stub;
+            }.CreateLink(uri) as Service;
             
         }
 
@@ -111,9 +109,9 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
         /// <param name="a"></param>
         /// <param name="uri"></param>
         /// <returns></returns>
-        public static Stub AsModel(this Repository.StubDb.Entities.MessageType a, string uri = null)
+        public static Service AsModel(this Repository.StubDb.Entities.MessageType a, string uri = null)
         {
-            return new Stub()
+            return new Service()
             {
                 Id = a.MessageTypeId,
                 Description = a.Description,
@@ -124,7 +122,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
                 PassthroughUri = a.PassthroughUrl,
                 Sample = a.Sample.Base64Encode(),
                 Templates = a.Template.Select(t => new Template() { Id = t.TemplateId }.CreateLink(uri) )
-            }.CreateLink(uri) as Stub;
+            }.CreateLink(uri) as Service;
         }
 
         /// <summary>
@@ -139,7 +137,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Model
             {
                 Id = a.StubLogId,
                 Data = a.Request.Base64Encode(),
-                Stub = a.MessageTypeId.HasValue? new Stub() { Id = a.MessageTypeId.Value}.CreateLink(uri) : null,
+                Stub = a.MessageTypeId.HasValue? new Service() { Id = a.MessageTypeId.Value}.CreateLink(uri) : null,
                 Time = a.ResponseDatumTijd,
                 Uri = a.Uri,
                 Instance = a.CombinationId.HasValue ? new Template() { Id = a.CombinationId.Value }.CreateLink(uri):null

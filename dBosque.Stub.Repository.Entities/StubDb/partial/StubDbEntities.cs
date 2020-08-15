@@ -14,6 +14,10 @@ namespace dBosque.Stub.Repository.StubDb.Entities
             base(options)
         { }
 
+        public StubDbEntities(DbContextOptions<StubDbEntities> options) :
+            base(options)
+        {}
+
         private List<T> ExecSQL<T>(string query)
         {
             using (this)
@@ -51,5 +55,29 @@ namespace dBosque.Stub.Repository.StubDb.Entities
         {
             return ExecSQL<stp_selectLog_Result>(query);
         }           
+    }
+
+    public class MySQLStubDbEntities : StubDbEntities
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql(@"Server=localhost;port=3306;Database=stubeditor;Uid=root;Pwd=root;");
+        }
+    }
+
+    public class SqliteStubDbEntities : StubDbEntities
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql(@"Data Source='.\dbstub.db'");
+        }
+    }
+
+    public class SQLServerStubDbEntities : StubDbEntities
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql(@"Data Source=.;Initial Catalog=StubDb;Integrated Security=True");
+        }
     }
 }

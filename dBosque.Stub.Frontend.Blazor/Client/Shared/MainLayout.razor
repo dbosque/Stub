@@ -1,0 +1,31 @@
+﻿@inherits LayoutComponentBase
+
+<MatThemeProvider Theme="@theme">
+    <MatAppBarContainer>
+        <MatAppBar Fixed="true">
+            <MatAppBarRow>
+                <MatAppBarSection>
+                    <MatIconButton Icon="cloud_off"></MatIconButton>
+                    <MatAppBarTitle>dBosque Service Stub Editor</MatAppBarTitle>
+                </MatAppBarSection>
+
+            </MatAppBarRow>
+        </MatAppBar>
+
+        <MatAppBarContent>
+            <div class="main-container">
+                @Body
+            </div>
+        </MatAppBarContent>
+    </MatAppBarContainer>
+</MatThemeProvider>
+
+@code
+        {
+
+        MatTheme theme = new MatTheme()
+        {
+            Primary = "#1a237e",
+            Secondary = "#1a237e"
+        };
+    }

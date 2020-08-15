@@ -15,8 +15,7 @@ namespace dBosque.Stub.Editor.Controls.Extensions
         /// <returns></returns>
         public static string[] GetNamedGroups(this Regex regex)
         {
-            int dummy;
-            return regex.GetGroupNames().Where(a => !int.TryParse(a, out dummy)).ToArray();
+            return regex.GetGroupNames().Where(a => !int.TryParse(a, out int dummy)).ToArray();
         }
     }
 }

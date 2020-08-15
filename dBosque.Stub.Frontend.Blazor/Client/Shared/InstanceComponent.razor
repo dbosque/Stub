@@ -1,0 +1,36 @@
+﻿
+@if (Items != null)
+{
+    <div  align="left">
+        <MatNavMenu Multi="true">
+            @foreach (var i in Items)
+            {
+                <MatNavSubMenu>
+                    <MatNavSubMenuHeader>
+                        <MatNavItem AllowSelection="false" OnClick="@(_=>ChangeSelected(i))" Title="@ConvertResponse(i.Response)">@ValueOrDefault(i.Name, "Name") | @ValueOrDefault(i.HttpStatusCode, "StatusCode") | @ValueOrDefault(i.ContentType, "ContentType") </MatNavItem>
+                    </MatNavSubMenuHeader>
+                    <MatNavSubMenuList>
+                        @foreach (var m in i.Matches)
+                        {
+                            <MatNavItem>@string.Format($"{m.Expression} => {m.Value}")</MatNavItem>
+                        }
+                    </MatNavSubMenuList>
+                </MatNavSubMenu>
+            }
+        </MatNavMenu>
+    </div>
+    <div align="right">
+        @if (_selected != null)
+        {
+            <MatButton Icon="save" OnClick="@SaveSelected" Label="Save"></MatButton>
+            <MatTextField @bind-Value="_selected.Name" Label="Name"></MatTextField>
+            <MatTextField @bind-Value="_selected.HttpStatusCode" Label="HttpStatusCode"></MatTextField>
+            <MatTextField @bind-Value="_selected.ContentType" Label="ContentType"></MatTextField>
+
+            <MatTextFeld Value="@ConvertResponse(_selected.Response)" Label="Response" TextArea="true" FullWidth="true"></MatTextFeld>
+
+
+
+        }
+    </div>
+}

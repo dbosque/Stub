@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
@@ -34,7 +35,7 @@ namespace dBosque.Stub.Editor.Controls
 
         private void UpdateToolbarButtons()
         {
-            saveButton.Enabled = !string.IsNullOrEmpty(DescriptionTextBox.Text) && XpathLstbx.SelectedItems.Count > 0 && !saved;
+            saveButton.Enabled = !string.IsNullOrEmpty(DescriptionTextBox.Text) && (XpathLstbx.SelectedItems.Count > 0 || !string.IsNullOrEmpty(regexTb.Text)) && !saved;
             clearButton.Enabled = _dom != null;
             deleteButton.Enabled = XpathLstbx.SelectedItems.Count > 0;
         }
@@ -93,12 +94,19 @@ namespace dBosque.Stub.Editor.Controls
             Description = DescriptionTextBox.Text;
 
             // Checking
-            if (SelectedXpaths.Count <= 0)
-                UserInteractor.NoXpathsSelected.Warning();
+            if (SelectedXpaths.Count <= 0 && string.IsNullOrEmpty(regexTb.Text))
+                UserInteractor.NoXpathsRegExSelected.Warning();
             else if (string.IsNullOrEmpty(Description))
                 UserInteractor.NoDescription.Warning();
             else
             {
+                if (!string.IsNullOrEmpty(regexTb.Text))
+                {
+                    var regex = Repository.GetXpaths().Where(x => x.Type == 2).FirstOrDefault(a => a.Expression == regexTb.Text);
+                    if (regex == null )
+                        regex = Repository.UpdateXpath(null, a => { a.Expression = regexTb.Text; a.Type = 2; a.Description = string.Empty; });
+                    SelectedXpaths = new List<DB.Xpath> { regex };
+                }
                 try
                 {
                     var template = Repository.UpdateTemplate(null, t =>
@@ -261,34 +269,39 @@ namespace dBosque.Stub.Editor.Controls
 
         #region Fill the Xpath Listbox
 
-        /// <summary>
-        /// Refresh the items in the xpathlistbox
-        /// </summary>
-        private void RefreshListBox()
+        private IEnumerable<DB.Xpath> GetXPathsForRegEx(string pattern, int type)
         {
-            var list = Repository.GetXpaths().Where(x => x.IsContent).ToList();
-            // All xpaths nicely sorted
-            if (_dom != null)
-                list = _dom.GetAllValidFor(list, (x) => x.Expression ,GlobalSettings.Instance.StripSoapEnvelope).ToList();
-
             var regex = new Regex(SelectedMessageType.NameSpace);
             var groups = regex.GetNamedGroups();
             if (groups.Any())
             {
                 // Add all new regex groups
-               var regexes = Repository.GetXpaths().Where(x => !x.IsContent).Where(a => groups.Contains(a.Expression));
-               if (regexes.Count() != groups.Count())
-               {                    
+                var regexes = Repository.GetXpaths().Where(x => x.Type == type).Where(a => groups.Contains(a.Expression));
+                if (regexes.Count() != groups.Count())
+                {
                     foreach (var gr in groups)
                     {
                         if (!regexes.Any(a => a.Expression == gr))
-                            Repository.UpdateXpath(null, a => { a.Expression = gr; a.Type = 1; a.Description = string.Empty; });
+                            Repository.UpdateXpath(null, a => { a.Expression = gr; a.Type = type; a.Description = string.Empty; });
                     }
-               }
-               // Reload
-               regexes = Repository.GetXpaths().Where(x => !x.IsContent).Where(a => groups.Contains(a.Expression));
-               list.AddRange(regexes);
+                }
+                // Reload
+                return Repository.GetXpaths().Where(x => x.Type == type).Where(a => groups.Contains(a.Expression));
             }
+            return Enumerable.Empty<DB.Xpath>();
+        }
+        /// <summary>
+        /// Refresh the items in the xpathlistbox
+        /// </summary>
+        private void RefreshListBox()
+        {
+            var list = Repository.GetXpaths().Where(x => x.Type == 0).ToList();
+            // All xpaths nicely sorted
+            if (_dom != null)
+                list = _dom.GetAllValidFor(list, (x) => x.Expression ,GlobalSettings.Instance.StripSoapEnvelope).ToList();
+
+          
+            list.AddRange(GetXPathsForRegEx(SelectedMessageType.NameSpace, 1));
 
             XpathLstbx.DataSource = list.OrderBy(a => a.Expression).ToList();    
         }
@@ -374,6 +387,36 @@ namespace dBosque.Stub.Editor.Controls
         private void DescriptionTextBox_Leave(object sender, EventArgs e)
         {
             UpdateToolbarButtons();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var regex = new Regex($"^{regexTb.Text}$");
+                var isValid = regex.Match(regexTestTb.Text);
+                if (regex.GetNamedGroups().Length == 0)
+                {
+                    UserInteractor.RegexNoNamedGroups.Error();
+                }
+                else if (isValid.Success && isValid.Groups.Count > 1)
+                {
+                    StringBuilder builder = new StringBuilder();
+                    for (int i = 1; i < isValid.Groups.Count; i++)
+                        builder.AppendFormat("{0}:{1}{2}", regex.GroupNameFromNumber(i), isValid.Groups[i].Value, Environment.NewLine);
+
+                    UserInteractor.RegexMatch.Info(builder.ToString());
+
+                }
+                else
+                {
+                    UserInteractor.RegexNoMatch.Error();
+                }
+            }
+            catch (Exception ex)
+            {
+                UserInteractor.RegexError.Error(ex.Message);
+            }
         }
     }
 }

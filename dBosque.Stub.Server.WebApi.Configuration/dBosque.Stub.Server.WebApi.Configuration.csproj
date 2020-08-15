@@ -1,30 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TargetFramework>netstandard2.0</TargetFramework>
+	<TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>C:\Source\core\stub\dBosque.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
     <Platforms>AnyCPU;x64</Platforms>
+	  <OpenApiGenerateDocumentsOnBuild>false</OpenApiGenerateDocumentsOnBuild>
+	  <DocumentationFile>D:\source\git\Stub\dBosque.Stub.Server.WebApi.Configuration\dBosque.Stub.Server.WebApi.Configuration.xml</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\dBosque.Stub.Server.WebApi.Configuration.xml</DocumentationFile>
-  </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DocumentationFile>bin\Debug\netstandard2.0\dBosque.Stub.WebApi.Configuration.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\source\git\Stub\dBosque.Stub.Server.WebApi.Configuration\dBosque.Stub.Server.WebApi.Configuration.xml</DocumentationFile>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyInfoCommon.cs" Link="AssemblyInfoCommon.cs" />
   </ItemGroup>
-
-  <ItemGroup>
+	
+    <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+	    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+	    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.5.1" />
+    </ItemGroup>
+	
+  <ItemGroup Condition=" '$(TargetFramework)' != 'netcoreapp3.0'">
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
@@ -37,8 +37,17 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.5.1" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
-
+	
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+  </ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+		<ProjectReference Include="..\dBosque.Stub.Frontend.Blazor\Client\dBosque.Stub.Frontend.Blazor.Client.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+
+		<ProjectReference Include="..\dBosque.Stub.Frontend.Blazor\Shared\dBosque.Stub.Server.WebApi.Configuration.Model.csproj" />
     <ProjectReference Include="..\dBosque.Stub.Server.AspNetCore.Host\dBosque.Stub.Server.AspNetCore.Host.csproj" />
     <ProjectReference Include="..\dBosque.Stub.Interfaces\dBosque.Stub.Interfaces.csproj" />
     <ProjectReference Include="..\dBosque.Stub.Repository.Entities\dBosque.Stub.Repository.Entities.csproj" />

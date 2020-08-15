@@ -48,7 +48,7 @@ namespace dBosque.Stub.Server.AspNetCore.Host
         {
 
             var api = WebHost.CreateDefaultBuilder()            
-             .UseKestrel()
+             .UseKestrel(o => o.AllowSynchronousIO = true)
              .UseStartup<T>()             
              .UseConfiguration(configuration)
              .ConfigureServices(collectionAction)

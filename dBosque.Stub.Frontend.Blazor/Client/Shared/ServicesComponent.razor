@@ -1,0 +1,41 @@
+﻿<MatTable Items="@Services" Striped="true" AllowSelection="true" OnRowDbClick="OnItemSelect" ShowPaging="false" class="mat-elevation-z5">
+    <MatTableHeader>
+        <th>Description</th>
+        @if (Type == "soap")
+        {
+            <th>Namespace</th>
+            <th>Rootnode</th>
+        }
+        else
+        {
+            <th>Url</th>
+        }
+        <th>Passthrough Enabled</th>
+        <th>Passthrough URL</th>
+        <th></th>
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.Description</td>
+        @if (Type == "soap")
+        {
+            <td>@context.Namespace</td>
+            <td>@context.RootNode</td>
+        }
+        else
+        {
+            <td>@context.UriRegex</td>
+        }
+        <td>@context.AllowPassthrough</td>
+        <td>@context.PassthroughUri</td>
+        <td align="right">
+         
+            <MatButton Unelevated="true" Icon="edit" OnClick="@(_=>OnEdit(context))">Edit</MatButton>
+            <MatButton Unelevated="true" Icon="add_circle_outline" OnClick="@(_=>OnAddTemplate(context))">Stub</MatButton>
+            <MatButton Unelevated="true" Icon="remove_circle_outline" OnClick="@(_=>OnDelete(context))">Delete</MatButton>
+        </td>
+    </MatTableRow>
+</MatTable>
+@if (_selected != null)
+{
+<InstanceComponent Service="_selected"></InstanceComponent>
+}

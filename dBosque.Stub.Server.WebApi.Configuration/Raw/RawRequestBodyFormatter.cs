@@ -41,7 +41,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Raw
 
             var contentType = context.HttpContext.Request.ContentType;
             if (string.IsNullOrEmpty(contentType) || contentType == ContentTypes.TextPlain ||
-                contentType == ContentTypes.ApplicationOctetStream || contentType == ContentTypes.ApplicationJson)
+                contentType == ContentTypes.ApplicationOctetStream )
                 return true;
 
             return false;
@@ -59,7 +59,7 @@ namespace dBosque.Stub.Server.WebApi.Configuration.Raw
             var contentType = context.HttpContext.Request.ContentType;
 
 
-            if (string.IsNullOrEmpty(contentType) || contentType == ContentTypes.TextPlain || contentType == ContentTypes.ApplicationJson)
+            if (string.IsNullOrEmpty(contentType) || contentType == ContentTypes.TextPlain)
             {
                 using (var reader = new StreamReader(request.Body))
                 {

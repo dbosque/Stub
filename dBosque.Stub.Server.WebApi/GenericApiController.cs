@@ -1,6 +1,7 @@
 ﻿using dBosque.Stub.Interfaces;
 using dBosque.Stub.Server.WebApi.Types;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace dBosque.Stub.Server.WebApi
 {
@@ -31,13 +32,8 @@ namespace dBosque.Stub.Server.WebApi
         {
             var msg = new ApiStubMessage(Request, uri, this, tenant);
             var result = _handler.HandleMessage(msg);
-            if (msg.ResponseHeaders != null)
-            {
-                foreach (var h in msg.ResponseHeaders)
-                {
-                    Response.Headers.Add(h.Key, h.Value);
-                }
-            }
+
+            msg.ResponseHeaders?.ToList().ForEach(h => Response.Headers.Add(h.Key, h.Value));
             return result;
         }
 

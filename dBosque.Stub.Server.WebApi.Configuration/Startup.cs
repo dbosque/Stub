@@ -1,12 +1,10 @@
 ﻿using dBosque.Stub.Server.WebApi.Configuration.Raw;
 using dBosque.Stub.Server.WebApi.Configuration.Swagger;
-using dBosque.Stub.Server.WebApi.Json.Configuration;
-using dBosque.Stub.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
+using System.IO;
 
 namespace dBosque.Stub.Server.WebApi.Configuration
 {
@@ -46,19 +44,33 @@ namespace dBosque.Stub.Server.WebApi.Configuration
                         Version = "v1"
                     }
                  );
-                var filePath = System.IO.Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, "dBosque.Stub.Server.WebApi.Configuration.xml");
-                options.IncludeXmlComments(filePath);
+                options.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "dBosque.Stub.Server.WebApi.Configuration.xml"), true);
                 //options.DescribeAllEnumsAsStrings();
                 options.DocumentFilter<SwaggerOrderControllers>();
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("corspolicy",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost", "https://localhost:44318", "https://localhost").AllowAnyMethod();
+                                  });
+            });
+#if NETCOREAPP
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+#endif
+
             services.AddMvc(o => o.InputFormatters.Insert(0, new RawRequestBodyFormatter()))
+#if NETCOREAPP
                 .AddJsonOptions(j =>
                 {
-                    j.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-                    j.SerializerSettings.ContractResolver = BaseTypeFirstContractResolver.Instance;
+                    j.JsonSerializerOptions.IgnoreNullValues = true;          
                 });
-
+#else
+;
+#endif
 
         }
 
@@ -71,23 +83,33 @@ namespace dBosque.Stub.Server.WebApi.Configuration
         {
       
             app.UseStaticFiles();
-
+            app.UseCors("corspolicy");
             app.UseSwagger(c =>
             {               
-               // c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Host = httpReq.Host.Value);
+               // c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Host = httpReq.Host.Expression);
             });
 
             app.UseSwaggerUI(c =>
             {
                 c.DocumentTitle = "dBosque.Stub Service Configuration";
                 c.DefaultModelRendering(Swashbuckle.AspNetCore.SwaggerUI.ModelRendering.Example);
-                c.RoutePrefix = string.Empty;
+                c.RoutePrefix = "info";
                 // Relative to the UI path
                 c.SwaggerEndpoint("swagger/v1/swagger.json", "V1 Docs");
                
             });
-
+#if NETCOREAPP
+            app.UseDeveloperExceptionPage();
+            app.UseWebAssemblyDebugging();
+            app.UseBlazorFrameworkFiles();
+            app.UseRouting();
+            app.UseEndpoints(r => {
+                r.MapRazorPages();
+                r.MapControllers();
+            });
+#else
             app.UseMvc();
+#endif
         }
     }
 }

@@ -57,6 +57,7 @@ namespace dBosque.Stub.Editor
             {
                 okBt.Enabled = !string.IsNullOrEmpty(modelNameTb.Text) && !string.IsNullOrEmpty(customTb.Text) && !string.IsNullOrEmpty(customProviderName.Text);
             }
+            updateBtn.Enabled = ((!string.IsNullOrEmpty(modelNameTb.Text)) && KnownModelNames.Contains(modelNameTb.Text) && !HasInvalidChars(modelNameTb.Text));
         }
 
         public string Provider

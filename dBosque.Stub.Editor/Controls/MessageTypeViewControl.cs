@@ -73,7 +73,6 @@ namespace dBosque.Stub.Editor.Controls
             Activated += MessageTypes_SelectedValueChanged;
             messageTypeViewOrginalColor = messageTypeView.BackColor;
             _tick = new PeriodicEventBehaviour(this, CheckNewData);
-          //  ApplyTheme();
         }
 
         /// <summary>
@@ -83,14 +82,19 @@ namespace dBosque.Stub.Editor.Controls
         {
             if (_repository == null)
                 return;
-
-            var newData = _repository.GetMessageTypes().ToList();
-            bool same = (newData.Count == _typeList.Count);
-            newData.RemoveAll(a => _typeList.Select(t => t.Id).Contains(a.MessageTypeId));
-            same &= newData.Count == 0;
-            _dragdrop = new DragDropPasteBehaviour(messageTypeView, MessageTypes_DragDrop);
-            messageTypeView.BackColor = same ? messageTypeViewOrginalColor : Color.AliceBlue;
-
+            try
+            {
+                var newData = _repository.GetMessageTypes().ToList();
+                bool same = (newData.Count == _typeList.Count);
+                newData.RemoveAll(a => _typeList.Select(t => t.Id).Contains(a.MessageTypeId));
+                same &= newData.Count == 0;
+                _dragdrop = new DragDropPasteBehaviour(messageTypeView, MessageTypes_DragDrop);
+                messageTypeView.BackColor = same ? messageTypeViewOrginalColor : Color.AliceBlue;
+            }
+            catch
+            {
+                // Catch all
+            }
         }
 
 
@@ -140,11 +144,9 @@ namespace dBosque.Stub.Editor.Controls
                 messageTypeView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                 messageTypeView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error", ex.Message);
-                // Show messagebox and exit
-                //OnError?.Invoke(this, new ErrorEventArgs(ex));
+                // Catch all
             }
 
         }

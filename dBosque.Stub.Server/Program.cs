@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using Serilog.Events;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -107,6 +108,7 @@ namespace dBosque.Stub.Server
         private static void ConfigureLogging(IServiceProvider provider)
         {        
             Log.Logger = new LoggerConfiguration()
+                   .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
                    .SetupSeriLog(_configuration)
                    .WriteTo.RollingFile("./data/logs/log-{Date}.txt")
                    .WriteTo.Console()
@@ -160,15 +162,11 @@ namespace dBosque.Stub.Server
             ConfigureGeneric(serviceProvider);
 
             serviceProvider.AddLogging()
-                           .AddSocketModule(_configuration);
-
-            if (_onePort.HasValue())
-                serviceProvider.AddHostingModule();
-            else
-                serviceProvider
-                    .AddWebApiModule(_configuration)
-                    .AddWebApiConfigurationModule(_configuration)
-                    .AddSoapModule(_configuration);
+                           .AddSocketModule(_configuration)
+                           .AddHostingModule()
+                           .AddWebApiModule(_configuration)
+                           .AddWebApiConfigurationModule(_configuration)
+                           .AddSoapModule(_configuration);
 
             return serviceProvider;
         }

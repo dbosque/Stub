@@ -22,7 +22,7 @@ namespace dBosque.Stub.Client.EF.Interceptor
         /// <param name="server"></param>
         internal StubInterceptor(string server, int port, bool passthroughOnNotFound)
         {
-            _proxy = StubProxy. (server, port);
+            _proxy = StubProxy.Create(server, port);
             _passthroughOnNotFound = passthroughOnNotFound;
         }
 

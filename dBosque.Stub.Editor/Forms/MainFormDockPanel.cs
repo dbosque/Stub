@@ -149,10 +149,18 @@ namespace dBosque.Stub.Editor.Forms
             _plugins.SetupControls(pluginButton, pluginsToolStripMenuItem);
         }
 
-        private void ForceRepositoryReload()
+        private bool ForceRepositoryReload()
         {
-            _repository = null;
-            Repository.Flush();
+            try
+            {
+                _repository = null;
+                Repository.Flush();
+                return true;
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Error connecting to the database.");
+            }
+            return false;
         }
 
         private IStubDataRepository Repository
@@ -207,16 +215,20 @@ namespace dBosque.Stub.Editor.Forms
             {
                 if (form.Selected != selected)
                 {
-                    _dockController.CloseAll();
-
                     GlobalSettings.Instance.SelectedConnection = form.Selected;
                     _factory.SelectedConfiguration = _config.GetConnection(form.Selected);
-                    Repository.Flush();
 
-                    _dockController.Create();
                     // Make sure the repository is loaded from scratch
-                    ForceRepositoryReload();
-
+                    if (ForceRepositoryReload())
+                    {
+                        _dockController.CloseAll();
+                        _dockController.Create();
+                    } else
+                    {
+                        GlobalSettings.Instance.SelectedConnection = selected;
+                        _factory.SelectedConfiguration = _config.GetConnection(selected);
+                        ForceRepositoryReload();
+                    }
                 }
             }
         }

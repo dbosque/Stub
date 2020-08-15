@@ -69,7 +69,7 @@
             this.deleteButton});
             this.toolStrip1.Location = new System.Drawing.Point(8, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(99, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(71, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -79,8 +79,8 @@
             this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
             this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(24, 24);
-            this.addButton.Text = "Add new connection";
+            this.addButton.Size = new System.Drawing.Size(29, 24);
+            this.addButton.Text = "Add/Update new connection";
             this.addButton.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // deleteButton
@@ -89,7 +89,7 @@
             this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(24, 24);
+            this.deleteButton.Size = new System.Drawing.Size(29, 24);
             this.deleteButton.Text = "Delete connection";
             this.deleteButton.Click += new System.EventHandler(this.deletebtn_Click);
             // 
@@ -102,7 +102,7 @@
             this.toolStripContainer1.ContentPanel.Controls.Add(this.button1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.label1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.connectionlistbx);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(702, 98);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(702, 94);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
@@ -122,7 +122,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 28);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Ok";
+            this.button1.Text = "Select";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.okbtn_Click);
             // 

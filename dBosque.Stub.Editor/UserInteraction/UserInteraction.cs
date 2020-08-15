@@ -28,6 +28,7 @@ namespace dBosque.Stub.Editor.UserInteraction
         public static UserInteractor AddXpathToList => new UserInteractor("Add Xpath {0} to the list?");
         public static UserInteractor XpathExists => new UserInteractor("Xpath {0} already exists.") ;
         public static UserInteractor NoXpathsSelected => new UserInteractor("No xpaths selected.");
+        public static UserInteractor NoXpathsRegExSelected => new UserInteractor("No xpaths selected or Regular Expression entered.");
         public static UserInteractor NoDescription => new UserInteractor("Empty description.") ;
 
         public static UserInteractor DeleteTemplateAll => new UserInteractor("There are Combinaties with a different UserInteractionType but with the same template, these will also be deleted.");
